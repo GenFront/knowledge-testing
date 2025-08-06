@@ -1,0 +1,87 @@
+body {
+  width: 900px; 
+  margin: 0 auto; 
+  /*Центрирование таблицы*/
+  padding: 20px 10px;
+  /* font-size: 18px;  */
+  /* font-family: "Arial", sans-serif;  */
+}
+
+
+table {
+  width: 100%;
+  /*Гибкая ширина */
+  margin: 20px 0;
+  border-collapse: collapse;
+  /*Убираем двойные рамки. Удобен, когда нужна аккуратная таблица без "двойных" границ.
+          Часто применяется в вёрстке для улучшения внешнего вида таблиц.*/
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  /* Легкая тень */
+  
+}
+
+th {
+  background-color: #f8f8f8;
+  /*Светлый фон*/
+  border-bottom: 2px solid black;
+  padding: 12px 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  /*Поля в ячеках (задали больше воздуха)*/
+  transition: background 0.3s;
+  /* Плавное изменение фона */
+  border: 1px solid #ddd;
+  /* Светлые границы */
+  border-bottom: 2px solid #333;
+  /* Чёткое разделение строк, значение применяется только нижней рамке
+  Задает серый цвет, solid это стиль (сплошная линия) */
+
+}
+
+caption {
+
+  font-family: "Arial", cursive;
+  /*Шрифт для элемента*/
+  font-weight: bold;
+  /*Ширина шрифта*/
+  color: #F3CD26;
+  font-size: 2em;
+  padding: 10px;
+}
+
+.command {
+    color: brown; /* Специфичный цвет для команд, коричневый цвет текста */
+    font-weight: bold; /* Выделение важности, жирное начертание */
+  }
+  pre {
+    background: #f5f5f5; /* Светлый фон (Светло-серый фон) */
+    padding: 8px; /* Внутренние отступы 8px со всех сторон */
+    border-radius: 4px; /* Скругление углов на 4px */
+    margin: 5px 0;  /* Внешние отступы: 5px сверху/снизу, 0 по бокам  */
+    overflow-x: auto; /* Добавляет горизонтальную прокрутку, если код не помещается */
+  }
+  code {
+    font-family: 'Courier New', monospace; /* Моноширинный шрифт */
+  }
+  strong {
+  color: #d63384; /* Цвет для терминов */
+}
+ .html-tag {
+    font-size: 16px;
+    color: #d63384;
+    font-weight: bold;
+  }
+
+  .protocol-box {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #e0e0e0; /* Серый фон */
+  color: black;              /* Чёрный текст */
+  border: 1px solid #999;    /* Граница (опционально) */
+  border-radius: 3px;        /* Закруглённые углы */
+  font-family: monospace;    /* Моноширинный шрифт */
+  font-size: 14px;
+}

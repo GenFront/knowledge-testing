@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пути и ссылки</title>
+  <!-- Пустая фавиконка (предотвращает 404-ошибку) -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">  
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 18px;
+        }
+        h1, h2, h3 {
+      color: #2c3e50;
+    }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap; /* Сохраняет переносы строк */
+            word-break: break-all;
+            border-left: 4px solid #3498db; /* Акцентная полоса слева */
+            background-color: #f8f9fa; /* Светлый фон */
+        }
+        
+        code {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .tag {
+            color: #905; /* Цвет для тегов */
+        }
+        
+        .attr-name {
+            color: #690; /* Цвет для имен атрибутов */
+        }
+        
+        .attr-value {
+            color: #07a; /* Цвет для значений атрибутов */
+        }
+        
+        .content {
+            background-color: #e6f3ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 2px 0;
+        }
+        .protocol-box {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #e0e0e0; /* Серый фон */
+  color: black;              /* Чёрный текст */
+  border: 1px solid #999;    /* Граница (опционально) */
+  border-radius: 3px;        /* Закруглённые углы */
+  font-family: monospace;    /* Моноширинный шрифт */
+  font-size: 14px;
+}
+.example-title {
+color: #3498db;
+      margin-top: 30px;
+}
+
+ ul {
+      padding-left: 25px;
+      list-style-type: none; /* Убираем стандартные маркеры */
+      padding-left: 0;
+    }
+    
+    li::before {
+      margin-bottom: 10px;
+      content: "•";
+      color: #3498db;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+
+    }
+    
+    section {
+       margin-bottom: 30px;
+       padding-bottom: 20px;
+       border-bottom: 1px solid #eee; /*Визуальный разделитель*/
+    }
+
+    @media (max-width: 600px) {
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  pre {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+    </style>
+</head>
+<body>
+  <section>
+  <h1>В чем разница между абсолютными и относительными путями?</h1>
+  <p>
+    <b>Путь</b> — это строка, указывающая местоположение файла или каталога в файловой системе. В веб-разработке пути позволяют разработчикам ссылаться на такие ресурсы, как изображения, таблицы стилей, скрипты и другие веб-страницы. Существуют абсолютные и относительные пути — оба они необходимы для указания местоположения файлов в файловой системе. Давайте рассмотрим их, чтобы вы могли решить, какой из них использовать и когда.
+  </p>
+  </section>
+
+  <section>
+    <h2>Абсолютный путь</h2>
+  <p>
+    <b>Абсолютный путь</b> — это полная ссылка на ресурс. Он начинается с корневого каталога, включает все остальные каталоги и, наконец, имя файла и расширение. «Корневой каталог» относится к каталогу или папке верхнего уровня в иерархии.
+  </p>
+  <p>
+    Абсолютный путь также включает протокол (например <span class="protocol-box">http</span>, <span class="protocol-box">https</span> и <span class="protocol-box">file</span>), а также доменное имя, если ресурс находится в сети. Вот пример абсолютного пути, ведущего к логотипу freeCodeCamp:
+  </p>
+
+  <h3 class="example-title">&nabla; Пример кода</h3>
+  <pre>
+    <code>
+      <span class="tag">&lt;a</span>
+      <span class="attr-name">href</span>=<span class="attr-value">"https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg"</span><span class="tag">&gt;</span>
+      <span class="content">View fCC Logo</span>
+      <span class="tag">&lt;/a&gt;</span>
+    </code>
+</pre>
+  
+  <p>
+    В этом примере протокол — <span class="protocol-box">https</span>, доменное имя — <span class="protocol-box">design-style-guide.freecodecamp.org</span>, а имя файла — <span class="protocol-box">fcc_secondary_small.svg</span>.</p>
+<p>
+А что, если ресурс, на который вы хотите указать абсолютный путь, находится на вашем локальном компьютере? Вот как создать ссылку на <span class="protocol-box">about.html</span> файл с абсолютным путем:
+  </p>
+  
+
+  <h3 class="example-title">&nabla; Пример кода</h3>
+  <pre>
+    <code>
+      <span class="tag">&lt;p&gt;</span>
+        <span class="content">Read more on the</span>
+          <span class="tag">&lt;a</span>
+          <span class="attr-name">href</span>=<span class="attr-value">"/Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/about.html"</span><span class="tag">&gt;</span>
+          <span class="content">About Page</span>
+          <span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;/p&gt;</span>
+    </code>
+  </pre>
+  <p>Это выглядит так, потому что мы переходим в папку с названием <span class="protocol-box">Users</span>, затем в папку с названием <span class="protocol-box">user</span>, затем в папку с названием <span class="protocol-box">Desktop</span>, затем в папку с названием <span class="protocol-box">fCC</span>, затем в папку с названием <span class="protocol-box">script-code</span>, затем в папку с названием <span class="protocol-box">absolute-vs-relative-paths</span>, затем в папку с названием <span class="protocol-box">pages</span>, чтобы наконец получить <span class="protocol-box">about.html</span> файл.</p>
+
+<p>Вот как выглядит абсолютный URL в адресной строке браузера:</p>
+<h3 class="example-title">&nabla; Пример кода</h3>
+<pre>
+  <code>
+<span class="attr-name">href</span>=<span class="attr-value">"file:///Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/about.html"</span>
+  </code>
+</pre>
+<p>URL-адрес включает протокол. <span class="protocol-box">file://</span>. Он также включает путь, который выглядит следующим образом: <span class="protocol-box">/Users/user/Desktop/fCC/script-code/absolute-vs-relative-paths/pages/</span>и представляет собой последовательность папок, ведущих к файлу. И наконец, он также включает <span class="protocol-box">about.html</span>, то есть имя файла и расширение.
+</p>
+</section>
+<section>
+<h2>Относительный путь</h2>
+<p>Теперь рассмотрим относительный путь. Относительный путь указывает расположение файла относительно каталога текущего файла. Он не включает протокол и доменное имя, что делает его короче и гибче для внутренних ссылок внутри одного и того же веб-сайта. Вот пример ссылки на страницу <span class="protocol-box">about.html</span> со <span class="protocol-box">contact.html</span> страницы, обе из которых находятся в одной папке:
+  </p>
+  <h3 class="example-title">&nabla; Пример кода</h3>
+  <pre>
+    <code>
+      <span class="tag">&lt;p&gt;</span>
+        <span class="content">Read more on the</span>
+          <span class="tag">&lt;a </span><span class="attr-name">href</span>=<span class="attr-value">"about.html"</span><span class="tag">&gt;</span>
+          <span class="content">About Page</span>
+          <span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;/p&gt;</span>
+    </code>
+  </pre>
+ <p> Итак, представьте, что вы находитесь на <span class="protocol-box">contact.html</span>странице, и поскольку <span class="protocol-box">about.html</span> она находится в том же месте, вы просто получаете имя файла. Это пример использования относительного пути к файлу.
+</p>
+<p>
+Итак, какой путь использовать и когда: абсолютный или относительный? Вот правила, которым следует следовать:
+</p>
+</section>
+<section>
+  <h2>Когда какой путь использовать?</h2>
+<ul>
+  <li>Используйте абсолютные пути при ссылке на ресурс, размещенный на внешнем веб-сайте.</li>
+  <li>Используйте абсолютные пути, когда вам нужно, чтобы ссылка на страницу или ресурс работала одинаково независимо от расположения документа на сайте.</li>
+  <li>Используйте относительные пути при ссылках на ресурсы в пределах одного веб-сайта.</li>
+  <li>Используйте относительные пути, если вы хотите, чтобы ваш код был чище и его было легче поддерживать в процессе разработки.</li>
+  <li>Используйте относительные пути во время локального тестирования, чтобы гарантировать работу ссылок без подключения к Интернету.</li>
+</ul>
+</section>
+</body>
+</html>
