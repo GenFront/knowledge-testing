@@ -41,4 +41,16 @@
 - Добавлены пустые папки для шрифтов: `fonts/custom/`, `fonts/google_fonts/`, `fonts/system/` с файлами `.gitkeep`.  
 
 ### Removed  
-- Удалена лишняя папка `add/`.  
+- Удалена лишняя папка `add/`. 
+
+## [Unreleased]
+### Added
+- Добавлены файлы в `doc_fonts/`:
+  - `library_icons_Al.html` (библиотеки иконок)
+  - `notes_font_Al.html` (кастомные шрифты)
+  - `paths_links.html` (пути и ссылки)
+- Добавлен файл `bootstrap-cheatsheet.html` в `snippets/` (Bootstrap 4 сниппеты).
+
+### Changed
+- Обновлён файл `styles/style.css`.
+- Добавлены данные в `index.html` (таблица с темами изучения).
