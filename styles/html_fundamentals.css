@@ -1,0 +1,69 @@
+body {
+  width: 900px; 
+  margin: 0 auto; 
+  /*Центрирование таблицы*/
+  padding: 20px 10px;
+  font-size: 20px; 
+  font-family: "Arial", sans-serif; 
+}
+
+ h1, h2, h3 {
+      color: #2c3e50;
+    }
+ .protocol-box {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #e0e0e0; /* Серый фон */
+  color: black;              /* Чёрный текст */
+  border: 1px solid #999;    /* Граница (опционально) */
+  border-radius: 3px;        /* Закруглённые углы */
+  font-family: monospace;    /* Моноширинный шрифт */
+  font-size: 14px;
+}
+.tag {
+            color: #905; /* Цвет для тегов */
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 3px 10px;  /* padding — контролирует внутренние отступы. */
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap; /* Сохраняет переносы строк */
+            word-break: break-all;
+            border-left: 4px solid #3498db; /* Акцентная полоса слева */
+            background-color: #f8f9fa; /* Светлый фон */
+            margin: 0 auto; /* Центрирует блок по горизонтали */
+  
+        }
+        
+        code {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            line-height: 1.5; /* line-height — уменьшает расстояние между строками. */
+          
+        }
+
+         .attr-name {
+            color: #690; /* Цвет для имен атрибутов */
+        }
+
+        .content {
+            background-color: #e6f3ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+            /* display: inline-block; */
+            margin: 2px 0;
+        }
+        /* Стиль для имени атрибута (attribute) */
+.attr-name {
+  color: #048f16; /* Оранжевый для атрибутов */
+}
+
+/* Стиль для значения атрибута ("value") */
+.attr-value {
+  color: #3713ec; /* Зеленый для значений */
+}
+.commet{
+color: #999;
+}

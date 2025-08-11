@@ -85,3 +85,10 @@ caption {
   font-family: monospace;    /* Моноширинный шрифт */
   font-size: 14px;
 }
+
+.git-add, 
+.git-status, 
+.git-commit, 
+.git-push {
+  color: blue;
+}
