@@ -7,6 +7,10 @@ body {
   /* font-family: "Arial", sans-serif;  */
 }
 
+ol {
+  color: #347402;
+}
+
 
 table {
   width: 100%;
@@ -39,6 +43,16 @@ td {
   /* Чёткое разделение строк, значение применяется только нижней рамке
   Задает серый цвет, solid это стиль (сплошная линия) */
 
+}
+
+tr:hover {
+background-color: #fcf8e3;
+}
+a:link{
+  color: #999;
+}
+a:hover{
+color: rgb(74, 12, 231);
 }
 
 caption {
