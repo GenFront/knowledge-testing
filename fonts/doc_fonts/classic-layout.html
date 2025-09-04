@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Классическая схема верстки</title>
+  <link rel="stylesheet" href="/styles/html_fundamentals.css">
+</head>
+<body>
+ <main>
+  <h1 class="h1-centered">Классическая схема верстки</h1>
+  <section>
+    <h2>Что это за схема?</h2>
+    <ol>
+      <li>Ограничивающий контейнер
+      
+       <pre>
+<code class="language-html">
+  <span class="tag">&lt;div class="container"&gt;</span>
+  &lt;!-- Весь контент сайта --&gt;
+  <span class="tag">&lt;/div&gt;</span>               
+</code>
+</pre> 
+      
+<p><b>Назначение:</b> Контроль максимальной ширины, центрирование, общие отступы.</p>
+</li>
+      <li>"Обнуленный" CSS (Reset/Normalize)
+      
+      <pre>
+<code class="language-css">
+  /* Обнуление стандартных стилей браузера */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  ul { list-style: none; }
+  a { text-decoration: none; color: inherit; }
+  /* и т.д. */         
+</code>
+</pre> 
+</li>
+</ol>
+
+<h2>Зачем это нужно?</h2>
+<p><b>Проблема:</b> Браузеры имеют встроенные стили</p>
+<ul>
+  <li>Разные отступы у &lt;body&gt;, &lt;h1&gt; - &lt;h6&gt;, &lt;p&gt;, &lt;ul&gt;&lt;/ul&gt; </li>
+  <li>Разные шрифты и их размеры</li>
+  <li>Разные цвета ссылок</li>
+</ul>
+<p><b>Решение:</b> Reset CSS приводит все к единому виду</p>
+<h2>Какие селекторы обнуляются по умолчанию:</h2>
+<p>Базовые обнуления:</p>
+<pre>
+<code class="language-css">
+  /* 1. Box model */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Списки */
+ul, ol {
+  list-style: none;
+}
+
+/* 3. Ссылки */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Кнопки */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 5. Изображения */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 6. Формы */
+input, textarea, select {
+  border: none;
+  outline: none;
+  font-family: inherit;
+}             
+</code>
+</pre> 
+
+<h2>Почему именно эти селекторы:</h2>
+<ol>
+  <li>Box-model - чтобы отступы были предсказуемыми</li>
+  <li>Списки - убирают маркеры для навигаций</li>
+  <li>Ссылки - убирают подчеркивание для дизайна</li>
+  <li>Кнопки - убирают стандартные стили ОС</li>
+  <li>Изображения - предотвращают растягивание</li>
+  <li>Формы - единообразие across browsers</li>
+</ol>
+<h2>Популярные подходы:</h2>
+<p>Reset CSS (полное обнуление):</p>
+<pre>
+<code class="language-css">
+  * { margin: 0; padding: 0; }             
+</code>
+</pre> 
+<p>Normalize.css (щадящее выравнивание):</p>
+<pre>
+<code class="language-css">
+  /* Сохраняет полезные стили, но приводит к единому виду */             
+</code>
+</pre> 
+<p>Modern approach (компромисс):</p>
+<pre>
+<code class="language-css">
+  :where(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}            
+</code>
+</pre> 
+<h3>Преимущества схемы:</h3>
+<ol>
+  <li><b>Единообразие</b> во всех браузерах</li>
+  <li><b>Предсказуемость</b> отступов и размеров</li>
+  <li><b>Чистая</b> основа для собственных стилей</li>
+  <li><b>Кроссбраузерность</b> с меньшими усилиями</li>
+</ol>
+<p>Эта схема — профессиональный стандарт для предсказуемой верстки!</p>
+</section>
+</main> 
+</body>
+</html>
+  
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+
+
+
+    
+
+
+    

@@ -7,6 +7,10 @@ body {
   font-family: "Arial", sans-serif; 
 }
 
+.h1-centered {
+  text-align: center;
+}
+
  h1, h2, h3 {
       color: #2c3e50;
     }

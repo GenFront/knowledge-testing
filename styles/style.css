@@ -2,7 +2,7 @@ body {
   width: 900px; 
   margin: 0 auto; 
   /*Центрирование таблицы*/
-  padding: 20px 10px;
+  padding: 20px 20px;
   /* font-size: 18px;  */
   /* font-family: "Arial", sans-serif;  */
 }
@@ -16,7 +16,8 @@ table {
   width: 100%;
   /*Гибкая ширина */
   margin: 20px 0;
-  border-collapse: collapse;
+  border-spacing: 10px;
+  /* border-collapse: collapse; */
   /*Убираем двойные рамки. Удобен, когда нужна аккуратная таблица без "двойных" границ.
           Часто применяется в вёрстке для улучшения внешнего вида таблиц.*/
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -27,22 +28,23 @@ table {
 th {
   background-color: #f8f8f8;
   /*Светлый фон*/
-  border-bottom: 2px solid black;
-  padding: 12px 10px;
+  border-bottom: 5px solid black; /*Задаю отображение нижней рамки ячеек в заголовке*/
+  border-left: 2px solid lightgray; /* Задаю отображение левой рамки ячеек в заголовке */
+  padding: 30px 10px; /*Заданы отступы в ячейке заголовка вверх/низ и справо/слева */
   text-align: left;
 }
 
 td {
   padding: 10px;
-  /*Поля в ячеках (задали больше воздуха)*/
+  /* Все 4 стороны: 10px (верх, право, низ, лево) Поля в ячеках (задали больше воздуха)*/
   transition: background 0.3s;
   /* Плавное изменение фона */
   border: 1px solid #ddd;
   /* Светлые границы */
   border-bottom: 2px solid #333;
-  /* Чёткое разделение строк, значение применяется только нижней рамке
+  /* Чёткое разделение строк, значение применяется только нижней рамке ячеек
   Задает серый цвет, solid это стиль (сплошная линия) */
-
+  border-left: 2px solid lightgray; /*Задаю отображение левой рамки ячеек таблицы */ 
 }
 
 tr:hover {
