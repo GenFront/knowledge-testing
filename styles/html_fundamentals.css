@@ -38,8 +38,12 @@ body {
             border-left: 4px solid #3498db; /* Акцентная полоса слева */
             background-color: #f8f9fa; /* Светлый фон */
             margin: 0 auto; /* Центрирует блок по горизонтали */
+            margin-top: 20px;    /* Отступ сверху */
+            margin-bottom: 20px; /* Отступ снизу */
+          }
+            
+
   
-        }
         
         code {
             font-family: 'Courier New', monospace;
