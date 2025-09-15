@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Обзор HTML</title>
-  <link rel="stylesheet" href="/styles/html_fundamentals.css">
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
   <main>
@@ -13,30 +13,30 @@
   <h2>Основы HTML</h2>
    <p>
   <ul>
-    <li><b>Роль HTML</b> : HTML представляет содержание и структуру веб-страницы.</li>
-    <li><b>Элементы HTML</b>Элементы — это строительные блоки HTML-документа. Они представляют собой заголовки, абзацы, ссылки, изображения и многое другое. Большинство элементов HTML состоят из открывающего тега ( <span class="protocol-box">&lt;elementName&gt;</span>) и закрывающего тега ( <span class="protocol-box">&lt;/elementName&gt;</span>).
+    <li><span class="bold-text">Роль HTML:</span> HTML представляет содержание и структуру веб-страницы.
+    </li>
+    <li><span class="bold-text">Элементы HTML:</span> Элементы — это строительные блоки HTML-документа. Они представляют собой заголовки, абзацы, ссылки, изображения и многое другое. Большинство элементов HTML состоят из открывающего тега ( <span class="protocol-box">&lt;elementName&gt;</span>) и закрывающего тега ( <span class="protocol-box">&lt;/elementName&gt;</span>).
 </li>
   </ul>
+
 </p>
 <p>Вот основной синтаксис:</p>
-<pre>
-<code>
+<pre><code>
   <span class="tag">&lt;elementName&gt;</span><span class="content">Content goes here</span><span class="tag">&lt;elementName&gt</span>
-</code>
-</pre> 
+</code></pre> 
 <ul>
-    <li><b>Элементы Void</b> : Элементы Void не могут иметь никакого содержимого и имеют только начальный тег. Примеры включают элементы <span class="protocol-box">img</span> и <span class="protocol-box">meta</span>.
+    <li><span class="bold-text">Элементы Void:</span> Элементы Void не могут иметь никакого содержимого и имеют только начальный тег. Примеры включают элементы <span class="protocol-box">img</span> и <span class="protocol-box">meta</span>.
 </li>
     </ul> 
-    <pre>
-    <code><span class="tag">&lt;img&gt;</span>
+    <pre><code>
+    <span class="tag">&lt;img&gt;</span>
     <span class="tag">&lt;meta&gt;</span> </code></pre>
     <p>В некоторых кодовых базах часто встречается косая черта <span class="protocol-box">/</span> внутри элемента void. Оба варианта допустимы:</p>
-    <pre>
-    <code><span class="tag">&lt;img&gt;</span>
+    <pre><code>
+    <span class="tag">&lt;img&gt;</span>
     <span class="tag">&lt;img&gt;</span> </code></pre>
    <ul>
-    <li><b>Атрибуты</b> : Атрибут — это значение, помещённое в открывающий тег HTML-элемента. Атрибуты предоставляют дополнительную информацию об элементе или определяют его поведение. Ниже представлен базовый синтаксис атрибута:</li>
+    <li><span class="bold-text">Атрибуты:</span> Атрибут — это значение, помещённое в открывающий тег HTML-элемента. Атрибуты предоставляют дополнительную информацию об элементе или определяют его поведение. Ниже представлен базовый синтаксис атрибута:</li>
   </ul>
   <pre>
 <code>
@@ -48,8 +48,9 @@
   </p>
   <p>
   <ul>
-    <li><b>Комментарии</b> : Комментарии используются в программировании для того, чтобы оставлять заметки для себя и других разработчиков в коде. Вот синтаксис комментария в HTML:</li>
+    <li><span class="bold-text">Комментарии:</span> Комментарии используются в программировании для того, чтобы оставлять заметки для себя и других разработчиков в коде. Вот синтаксис комментария в HTML:</li>
   </ul>
+  <hr>
   <pre><code><span class="commet">&lt;!--This is an HTML comment.--&gt;</span></code></pre>
 </p>
 </section>
@@ -57,30 +58,40 @@
 <section>
   <h2>Общие элементы HTML</h2>
   <ul>
-    <li><b>Элементы заголовков:</b>в HTML существует шесть элементов заголовков. <span class="protocol-box">h1</span> Сквозные <span class="protocol-box">h6</span> элементы заголовков используются для обозначения важности содержимого, находящегося под ними. Чем меньше число, тем выше важность, поэтому <span class="protocol-box">h2</span> элементы имеют меньшую важность, чем <span class="protocol-box">h1</span> элементы.
+    <li><span class="bold-text">Элементы заголовков:</span> в HTML существует шесть элементов заголовков. <span class="protocol-box">h1</span> Сквозные <span class="protocol-box">h6</span> элементы заголовков используются для обозначения важности содержимого, находящегося под ними. Чем меньше число, тем выше важность, поэтому <span class="protocol-box">h2</span> элементы имеют меньшую важность, чем <span class="protocol-box">h1</span> элементы.
     
     <pre><code>
-      <span class="tag">&lt;H1&gt;</span>most important heading element<span class="tag">&lt;/H1&gt;</span>
-      <span class="tag">&lt;H2&gt;</span>second most important heading element<span class="tag">&lt;/H2&gt;</span>
-      <span class="tag">&lt;H3&gt;</span>third most important heading element<span class="tag">&lt;/H3&gt;</span>
-      <span class="tag">&lt;H4&gt;</span>fourth most important heading element<span class="tag">&lt;/H4&gt;</span>
-      <span class="tag">&lt;H5&gt;</span>fifth most important heading element<span class="tag">&lt;/H5&gt;</span>
-      <span class="tag">&lt;H6&gt;</span>least important heading element<span class="tag">&lt;/H6&gt;</span>
+      <span class="tag">&lt;H1&gt;</span> most important heading element  <span class="tag">&lt;/H1&gt;</span>
+      <span class="tag">&lt;H2&gt;</span> second most important heading element <span class="tag">&lt;/H2&gt;</span>
+      <span class="tag">&lt;H3&gt;</span> third most important heading element <span class="tag">&lt;/H3&gt;</span>
+      <span class="tag">&lt;H4&gt;</span> fourth most important heading element <span class="tag">&lt;/H4&gt;</span>
+      <span class="tag">&lt;H5&gt;</span> fifth most important heading element <span class="tag">&lt;/H5&gt;</span>
+      <span class="tag">&lt;H6&gt;</span> least important heading element <span class="tag">&lt;/H6&gt;</span>
     </code></pre> 
   </li>
-  <li><b>Элементы абзаца:</b> используются для абзацев на веб-странице.
+  <li><span class="bold-text">Элементы абзаца:</span> используются для абзацев на веб-странице.
   <pre><code>
       <span class="tag">&lt;p&gt;</span>This is a paragraph element.<span class="tag">&lt;/p&gt;</span>
   </pre></code>
   </li>
-  <li> <b><span class="protocol-box">img</span> Элементы:</b> <span class="protocol-box">img</span> элемент используется для добавления изображений на веб-страницу.<span class="protocol-box">src</span> Атрибут используется для указания местоположения изображения. Для элементов изображений рекомендуется включать ещё один атрибут, называемый <span class="protocol-box">alt</span> атрибутом. Вот пример элемента <span class="protocol-box">img</span> с атрибутами <span class="protocol-box">src</span> и <span class="protocol-box">alt</span>:
-    <pre>
-<code>
-  &lt;<span class="tag">img</span> <span class="attr-name">src</span> = <span class="attr-value">"https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"</span> <span class="attr-name">alt</span> = <span class="attr-value">"A slice of lasagna on a plate."</span>&gt;
-</code>
-</pre> 
-</li>
-  <li></li>
+  <li> <span class="bold-text"><span class="protocol-box">img</span> Элементы:</span> <span class="protocol-box">img</span> элемент используется для добавления изображений на веб-страницу.<span class="protocol-box">src</span> Атрибут используется для указания местоположения изображения. Для элементов изображений рекомендуется включать ещё один атрибут, называемый <span class="protocol-box">alt</span> атрибутом. Вот пример элемента <span class="protocol-box">img</span> с атрибутами <span class="protocol-box">src</span> и <span class="protocol-box">alt</span>:
+    <pre><code>
+      &lt;<span class="tag">img</span> <span class="attr-name">src</span> = <span class="attr-value">"https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"</span> <span class="attr-name">alt</span> = <span class="attr-value">"A slice of lasagna on a plate."</span>&gt;
+    </code>
+    </pre> 
+    </li>
+    <li><span class="bold-text"><span class="protocol-box">body</span>Элемент:</span> этот элемент используется для представления содержимого HTML-документа.
+      <pre>
+  <code>
+    &lt;<span class="tag">body</span>&gt;
+      &lt;<span class="tag">h1</span>&gt;CatPhotoApp&lt;<span class="tag">/h1</span>&gt;
+      &lt;<span class="tag">p</span>&gt;This is a paragraph element.&lt;<span class="tag">/p</span>&gt;
+    &lt;<span class="tag">body</span>&gt;
+  </code>
+  </pre> 
+    </li>
+  
+
   <li></li>
   <li></li>
   <li></li>
