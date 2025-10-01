@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalize.css - Руководство</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        code { background: #f4f4f4; padding: 2px 5px; }
+        pre { background: #f4f4f4; padding: 15px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>Normalize.css - Руководство использования</h1>
+    
+    <h2>Что это?</h2>
+    <p>Normalize.css - это CSS-файл, который обеспечивает единообразное отображение HTML-элементов в разных браузерах.</p>
+    
+    <h2>Установка</h2>
+    <p>Файл находится в папке: <code>vendor/normalize.css</code></p>
+    
+    <h2>Подключение</h2>
+    <pre><code>&lt;head&gt;
+    &lt;!-- Normalize должен подключаться ПЕРВЫМ --&gt;
+    &lt;link rel="stylesheet" href="../vendor/normalize.css"&gt;
+    &lt;!-- Затем ваши стили --&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+    <h2>Что делает Normalize?</h2>
+    <ul>
+        <li>Убирает margin/padding по умолчанию</li>
+        <li>Стандартизирует размеры заголовков</li>
+        <li>Исправляет баги браузеров</li>
+        <li>Обеспечивает единый line-height</li>
+    </ul>
+
+    <h2>Преимущества</h2>
+    <ul>
+        <li>Кроссбраузерная совместимость</li>
+        <li>Сохранение полезных стилей по умолчанию</li>
+        <li>Легковесность (всего 1.5KB)</li>
+    </ul>
+
+    <h2>Частые вопросы</h2>
+    <p><strong>Почему margin: 0 перечеркнут в DevTools?</strong><br>
+    A: Это нормально! Normalize устанавливает базовые стили, которые вы можете переопределять.</p>
+    
+    <p><strong>Q: Нужно ли удалять Normalize после разработки?</strong><br>
+    A: НЕТ! Normalize должен оставаться в продакшене навсегда.</p>
+</body>
+</html>
