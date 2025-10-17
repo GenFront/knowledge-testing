@@ -312,5 +312,10 @@ knowledge-testing/
  ## 🎯 Что это?
 Normalize.css - это CSS-файл, который обеспечивает единообразное отображение HTML-элементов в разных браузерах.
 ## 📥 Установка
-Файл находится в папке: `css/normalize.`
+Файл находится в папке: `css/normalize.css`
 Руководство использования в docs/Normalize.html
+
+17.10.25
+
+Добавил файл fallback.html
+Файл находится в папке: `fonts/doc_fonts/fallback.html

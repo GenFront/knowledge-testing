@@ -11,7 +11,7 @@
   --accent-color: #f093fb;
   --success-color: #4ecdc4;
   --warning-color: #ffe66d;
-  --danger-color: #ff6b6b;
+  --danger-color: #ec0606;
   --info-color: #4ecdc4;
 
   /* Нейтральные цвета */
@@ -245,7 +245,7 @@ caption {
 
 /* ===== CODE & PRE ===== */
 pre {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: var( --text-secondary);
   color: #e2e8f0;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
