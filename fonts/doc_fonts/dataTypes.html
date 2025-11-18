@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Типы данных в JS</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: rgb(69, 61, 50);
+    }
+
+    li {
+      font-size: 20px;
+    }
+
+    span {
+      font-weight: 700;
+      color: brown;
+
+    }
+
+
+
+    .conteiner {
+      height: 500px;
+      border: 5px solid rgb(183, 183, 235);
+      margin: 50px;
+      padding: 0 40px;
+
+    }
+  </style>
+</head>
+
+
+<body>
+  <section class="conteiner">
+    <h1>В JavaScript есть 8 основных типов данных и оператор typeof</h1>
+    <ul>
+      <li>Семь из них называют «примитивными» типами данных:
+        <ul>
+          <li><span>number</span> для любых чисел: целочисленных или чисел с плавающей точкой; целочисленные значения
+            ограничены диапазоном ±(253-1).</li>
+          <li><span>bigint</span> для целых чисел произвольной длины.</li>
+          <li><span>string</span> для строк. Строка может содержать ноль или больше символов, нет отдельного символьного
+            типа.</li>
+          <li><span>boolean</span> для true/false.</li>
+          <li><span>null</span> для неизвестных значений – отдельный тип, имеющий одно значение null.</li>
+          <li><span>undefined</span> для неприсвоенных значений – отдельный тип, имеющий одно значение undefined.</li>
+          <li><span>symbol</span> для уникальных идентификаторов.</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Оператор <span>typeof</span> позволяет нам увидеть, какой тип данных сохранён в переменной:
+        <ul>
+          <li>Имеет две формы: <span>typeof x </span>или <span>typeof(x)</span>.</li>
+          <li>Возвращает строку с именем типа. Например, <span>"string"</span>.</li>
+          <li>Для null возвращается <span>"object"</span> – это ошибка в языке, на самом деле это не объект.</li>
+        </ul>
+      </li>
+    </ul>
+
+  </section>
+</body>
+
+</html>

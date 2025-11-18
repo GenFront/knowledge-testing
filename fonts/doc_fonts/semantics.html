@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Div vs Семантика — шпаргалка</title>
+  <style>
+    :root {
+      --bg-dark: #0e1014;
+      --bg-light: #1a1a2e;
+      --text: #d1d5db;
+      --accent: #9e289e;
+      --border: #333;
+      --font: "Montserrat", sans-serif;
+      --bg-secondary: #f8fafc;
+      --primary-color: #a3b1ef;
+      --secondary-color: #b886eb;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-secondary);
+      color: var(--primary-color);
+
+      line-height: 1.6;
+      padding: 40px;
+    }
+
+    h1,
+    h2 {
+      color: var(--secondary-color);
+      text-align: center;
+    }
+
+    section {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px rgba(158, 40, 158, 0.3);
+    }
+
+    .example {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .block {
+      flex: 1;
+      padding: 20px;
+      background: #9acee8;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .block h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    code {
+      background: #d9e1ea;
+      color: #070707;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Div или Семантическая разметка</h1>
+  <p style="text-align:center;">
+    <strong>Зачем заменять <code>&lt;div&gt;</code>?</strong> — чтобы сделать код понятным не только глазам, но и
+    браузеру, поисковикам, скринридерам и SEO.
+  </p>
+
+  <!-- HEADER -->
+  <section>
+    <h2>1. Header (шапка сайта)</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="header"&gt;Меню и логотип&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;header&gt;Меню и логотип&lt;/header&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAV -->
+  <section>
+    <h2>2. Навигация</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="nav"&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;nav&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/nav&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section>
+    <h2>3. Основной контент</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="main"&gt;Контент&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;main&gt;Контент&lt;/main&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section>
+    <h2>4. Статья / карточка</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="article"&gt;Пост блога&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;article&gt;Пост блога&lt;/article&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASIDE -->
+  <section>
+    <h2>5. Сайдбар</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="sidebar"&gt;Ссылки&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;aside&gt;Ссылки&lt;/aside&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section>
+    <h2>6. Подвал</h2>
+    <div class="example">
+      <div class="block">
+        <h3>❌ До</h3>
+        <code>&lt;div class="footer"&gt;Контакты&lt;/div&gt;</code>
+      </div>
+      <div class="block">
+        <h3>✅ После</h3>
+        <code>&lt;footer&gt;Контакты&lt;/footer&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Семантическая шпаргалка. Сделано с 💜 и без лишних div’ов.</footer>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "lint:css": "stylelint \"**/*.{css,scss}\"",
+    "lint:css-fix": "stylelint \"**/*.{css,scss}\" --fix"
+  },
+  "devDependencies": {
+    "postcss-html": "^1.8.0",
+    "postcss-scss": "^4.0.9",
+    "stylelint": "^16.25.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-scss": "^6.12.1"
+  }
+}
