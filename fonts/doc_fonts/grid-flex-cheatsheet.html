@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Шпаргалка: Grid vs Flex — Cheatsheet</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #60a5fa;
+      --muted: #94a3b8;
+      --glass: rgba(255, 255, 255, 0.03)
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #071025 0%, #071827 100%);
+      color: #e6eef8
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border-radius: 12px;
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6)
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0
+    }
+
+    p.lead {
+      margin: 6px 0 18px;
+      color: var(--muted)
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      background: var(--glass);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 600
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    .section {
+      margin-bottom: 14px
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 0 0 8px
+    }
+
+    code,
+    pre {
+      background: #061322;
+      padding: 8px;
+      border-radius: 6px;
+      color: #dbeafe;
+      display: block;
+      overflow: auto
+    }
+
+    pre {
+      padding: 12px
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .pattern {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+      font-size: 13px
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px
+    }
+
+    .toc h3 {
+      margin: 0 0 8px
+    }
+
+    details {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.02)
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .copy {
+      float: right;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer
+    }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    @media (max-width:900px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" id="root">
+    <header>
+      <div>
+        <h1>Шпаргалка: Grid vs Flex — Cheatsheet</h1>
+        <p class="lead">Коротко и по делу: куда применять Grid, куда — Flex. С готовыми паттернами и ошибками, которые
+          лучше не повторять.</p>
+      </div>
+      <nav>
+        <button class="btn" onclick="print()">Печать</button>
+        <button class="btn" id="exportBtn">Скачать HTML</button>
+      </nav>
+    </header>
+
+    <div class="grid" style="margin-top:18px">
+      <main class="card">
+
+        <section class="section">
+          <h2>1 — Общий принцип</h2>
+          <p>Grid — для структуры страницы (layout). Flex — для внутренних элементов (micro-layout).</p>
+        </section>
+
+        <section class="section">
+          <h2>2 — Когда использовать GRID</h2>
+          <p class="muted">Подходит для каркаса страницы, галерей, dashboard, двумерных структур.</p>
+          <ul>
+            <li>Страница: header / main / sidebar / footer</li>
+            <li>Галереи и каталоги</li>
+            <li>Двумерные структуры — строки и колонки</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>3 — Когда использовать FLEX</h2>
+          <p class="muted">Идеально для кнопок, меню, выравнивания вдоль одной оси.</p>
+          <ul>
+            <li>Кнопки с иконками</li>
+            <li>Header: логотип + меню</li>
+            <li>Вложенные элементы карточки</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>4 — Правило идеальной комбинации</h2>
+          <p><strong>Layout = GRID</strong>. <strong>Micro-layout = FLEX</strong>.</p>
+        </section>
+
+        <section class="section">
+          <h2>5 — Визуальные схемы (текстовые)</h2>
+          <details>
+            <summary>Когда Grid, когда Flex — схема</summary>
+            <pre class="pattern">                 ┌────────────────────────┐
+                 │  Нужно расположение:   │
+                 └───────────┬────────────┘
+                             │
+                ┌────────────▼─────────────┐
+                │     В 2 измерениях?      │
+                └───────┬─────────┬────────┘
+                        │         │
+                Да ─────▼         ▼───── Нет
+                     GRID       FLEX</pre>
+          </details>
+
+          <details>
+            <summary>Скелет страницы на Grid</summary>
+            <pre class="pattern">┌──────────────────────────────────────────┐
+│                  HEADER                  │
+└───────┬──────────────────────────┬───────┘
+        │                          │
+ SIDEBAR│         CONTENT          │ EXTRA
+        │                          │
+┌───────▼──────────────────────────▼───────┐
+│                  FOOTER                  │
+└──────────────────────────────────────────┘
+</pre>
+          </details>
+
+          <details>
+            <summary>Микросетка на Flex внутри карточки</summary>
+            <pre class="pattern">┌─────────────── card (flex-column) ────────────────┐
+│  [изображение]                                     │
+│  [заголовок]                                       │
+│  [описание]                                        │
+│  ┌────────────────────────┐   ┌──────────────────┐ │
+│  │   кнопка 1 (flex-row)  │   │ кнопка 2         │ │
+│  └────────────────────────┘   └──────────────────┘ │
+└────────────────────────────────────────────────────┘
+</pre>
+          </details>
+        </section>
+
+        <section class="section">
+          <h2>6 — Типичные ошибки</h2>
+          <ul>
+            <li><strong>Страницу строят на Flex с кучей вложенностей</strong> — плохо для адаптивности.</li>
+            <li><strong>Использовать Grid для простой строки</strong> — избыточно.</li>
+            <li><strong>Использовать float</strong> — устарело: Grid/Flex закрывают кейсы float.</li>
+            <li><strong>Grid без gap</strong> — трудоёмкие костыли с margin.</li>
+            <li><strong>Перебор с медиа-запросами</strong> когда `auto-fit`/`minmax` решают задачу.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>7 — Практические паттерны</h2>
+
+          <details>
+            <summary>Галерея карточек (Grid)</summary>
+            <pre class="pattern">.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}</pre>
+          </details>
+
+          <details>
+            <summary>Header (Flex)</summary>
+            <pre class="pattern">header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}</pre>
+          </details>
+
+          <details>
+            <summary>Кнопка с иконкой</summary>
+            <pre class="pattern">.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}</pre>
+          </details>
+
+          <details>
+            <summary>Двумерная сетка для dashboard</summary>
+            <pre class="pattern">.dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.widget-large { grid-column: span 6 }
+.widget-small { grid-column: span 3 }</pre>
+          </details>
+
+          <details>
+            <summary>Вертикальная карточка (Flex-column)</summary>
+            <pre class="pattern">.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}</pre>
+          </details>
+
+          <details>
+            <summary>Макет страницы (Grid + Flex внутри)</summary>
+            <pre class="pattern">.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+header { grid-column: 1 / -1; display:flex; justify-content:space-between; padding:20px }
+.sidebar { grid-row:2 }
+.main { grid-row:2; display:grid; gap:20px; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)) }
+</pre>
+          </details>
+
+        </section>
+
+        <footer>
+          <small>Сохраните файл в библиотеку и используйте как быстрый справочник.</small>
+        </footer>
+
+      </main>
+
+      <aside class="card toc">
+        <h3>Содержание</h3>
+        <ol>
+          <li>Общий принцип</li>
+          <li>Когда использовать Grid</li>
+          <li>Когда использовать Flex</li>
+          <li>Правило комбинации</li>
+          <li>Визуальные схемы</li>
+          <li>Ошибки</li>
+          <li>Паттерны</li>
+        </ol>
+
+        <div style="margin-top:14px">
+          <h3>Быстрые подсказки</h3>
+          <p class="muted">Если думаешь «строки и колонки» → Grid. Если «выравнивание по оси» → Flex.</p>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const html = '<!doctype html>\n' + document.documentElement.innerHTML;
+      const blob = new Blob([html], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'grid-flex-cheatsheet.html';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+
+</html>
