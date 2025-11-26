@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Debug CSS Cheatsheet</title>
+  <!-- Подключение расширенного debug CSS -->
+  <link rel="stylesheet" href="super-debug-extended.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1,
+    h2 {
+      margin-top: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 0.95em;
+    }
+
+    pre {
+      background: #f8f8f8;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Debug CSS — шпаргалка</h1>
+
+  <!-- Кнопка включения debug -->
+  <button id="debug-toggle">🛠 Debug</button>
+
+  <h2>Как использовать Super Debug Extended</h2>
+
+  <p>Чтобы быстро видеть структуру DOM, размеры блоков и flex/grid контейнеры, следуй этим шагам:</p>
+
+  <ol>
+    <li>
+      <strong>Подключи CSS</strong> к своему проекту:
+      <pre>
+&lt;link rel="stylesheet" href="super-debug-extended.css"&gt;
+    </pre>
+    </li>
+    <li>
+      <strong>Добавь кнопку Debug</strong> в body для включения и выключения:
+      <pre>
+&lt;button id="debug-toggle"&gt;🛠 Debug&lt;/button&gt;
+    </pre>
+      <p>При нажатии кнопки класс <code>debug</code> добавляется на &lt;body&gt; и подсветка включается.</p>
+    </li>
+    <li>
+      <strong>Подключи JS для кнопки и горячей клавиши</strong>:
+      <pre>
+&lt;script&gt;
+const toggle = document.getElementById("debug-toggle");
+toggle.addEventListener("click", () =&gt; document.body.classList.toggle("debug"));
+
+document.addEventListener("keydown", e =&gt; {
+  if (e.key === "d" &amp;&amp; e.ctrlKey) {
+    document.body.classList.toggle("debug");
+  }
+});
+&lt;/script&gt;
+    </pre>
+      <p>Теперь Ctrl+D также включает/выключает debug.</p>
+    </li>
+  </ol>
+
+  <h2>Что ты видишь при включении</h2>
+  <ul>
+    <li>Все блоки страницы подсвечены <code>outline</code> разного цвета по уровням вложенности</li>
+    <li>Flex и Grid контейнеры выделены пунктирной рамкой</li>
+    <li>На каждом элементе видны: <code>W</code>, <code>H</code>, <code>padding</code>, <code>margin</code>,
+      <code>display</code>, классы и id</li>
+    <li>Элемент под курсором подсвечивается яркой рамкой</li>
+  </ul>
+
+  <h2>Как использовать для практики</h2>
+  <ol>
+    <li>Открой любой HTML проект и подключи этот CSS.</li>
+    <li>Включи debug кнопкой или Ctrl+D.</li>
+    <li>Наведи курсор на блоки, чтобы увидеть их размеры и свойства.</li>
+    <li>Изучи структуру DOM, flex/grid, padding и margin.</li>
+    <li>Копируй блоки кода, классы или стили в свои шпаргалки.</li>
+  </ol>
+
+  <p>Этот файл можно использовать как <strong>шпаргалку по визуализации верстки</strong> в твоей библиотеке: открываешь,
+    включаешь debug и копируешь нужные куски к себе.</p>
+
+</body>
+
+</html>
