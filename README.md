@@ -412,7 +412,15 @@ Live обновление размеров при изменении DOM или 
 
 Добавлен: 
 - список когда использовать Flex, когда Grid
-- схема структуры React-компонента
+- схема структуры React-компонента в файле /fonts/doc_fonts/react-structure.html
+
+16.12.25
+
+Создан файл css-heights-flex-grid-vars.html и css-heights-flex-grid-vars.css в котором находятся краткая, практическая шпаргалка по темам CSS — высоты, flex, grid и CSS‑переменные
+
+18.12.25
+
+Создаю файл ui-ux-prakticheskiy-spravochnik.html и стили к нему в ui-ux-prakticheskiy-spravochnik.css который раскоывает тему UI/UX
 
 
 

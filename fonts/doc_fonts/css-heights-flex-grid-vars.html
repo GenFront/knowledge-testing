@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS — высоты, flex, grid и CSS-переменные</title>
+  <link rel="stylesheet" href="/styles/css-heights-flex-grid-vars.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>CSS — высоты, flex, grid и CSS-переменные</h1>
+      <p>Краткая, практическая шпаргалка для базы знаний</p>
+    </header>
+
+    <main class="main">
+      <section class="height-vs-min-height">
+        <h2>
+          Высоты: height vs min-height
+        </h2>
+        <h3>height:</h3>
+        <ul>
+          <li>жёсткая высота</li>
+          <li>контент <strong>не может</strong> увеличить элемент</li>
+          <li>часто ломает layout</li>
+        </ul>
+        <pre><code>.modal {
+   height: 100dvh;
+   }</code></pre>
+        <p><strong>Использовать для:</strong></p>
+
+        <ul>
+          <li>модалок</li>
+          <li>fullscreen-меню</li>
+          <li>overlay</li>
+        </ul>
+        <hr>
+        <h3>min-height:</h3>
+        <ul>
+          <li>минимальная высота</li>
+          <li>контент <strong>может</strong> увеличить элемент</li>
+        </ul>
+        <pre><code>.body {
+    min-height: 100dvh;
+    } </code></pre>
+        <p><strong>Использовать для:</strong></p>
+        <ul>
+          <li>body</li>
+          <li>layout страниц</li>
+          <li>hero-блоков</li>
+          <li>sticky footer</li>
+        </ul>
+        <hr>
+        <h3>vh vs dvh:</h3>
+        <ul>
+          <li>100vh — статичная высота viewport</li>
+          <li>100dvh — динамическая, учитывает адресную строку на мобильных</li>
+        </ul>
+        <pre><code>.section {
+    min-height: 100dvh;
+    } </code></pre>
+        <span>Рекомендуется для современных проектов</span>
+      </section>
+
+      <section class="flex-container">
+        <h2>Flex: две колонки (аналог grid-template-columns: 1fr 160px)</h2>
+        <pre><code>.header {
+    display: flex;
+      padding: 30px 0 70px 20px;
+    }
+
+    .title {
+    flex: 1; /* занимает всё доступное */
+    }
+
+    .quote {
+    width: 160px; /* фиксированная колонка */
+    flex-shrink: 0; /* запрещаем сжиматься */
+   }
+  </code></pre>
+        <hr>
+        <h3>Важное правило Flex:</h3>
+        <p class="vline"><strong>Flex-элемент не может быть шире контейнера.</strong></p>
+
+        <p>Если что-то не растягивается — проверь:</p>
+        <ul>
+          <li>ширину родителя</li>
+          <li>flex-shrink</li>
+          <li>overflow</li>
+        </ul>
+      </section>
+      <section class="var-container">
+        <h2>CSS-переменные (var())</h2>
+        <h3>Объявление</h3>
+        <pre><code>:root {
+    --border: 2px solid #000;
+    --radius: 4px;
+    }</code></pre>
+        <hr>
+        <h3>Почему border-radius работает, а border — нет</h3>
+        <pre><code>
+  :border-radius: var(--radius); /* ✔ работает */
+  border: var(--border); /* ❌ может не работать */</code></pre>
+        <p>Причина:</p>
+        <ul>
+          <li>border-radius — <strong>одно значение</strong></li>
+          <li>border — <strong> shorthand</strong> (width + style + color)</li>
+          <li>если хоть часть невалидна → всё свойство отбрасывается</li>
+        </ul>
+        <hr>
+        <h3>Надёжный вариант с fallback</h3>
+        <pre><code>
+   border: var(--border, 2px solid black);</code></pre>
+        <p>Если переменная недоступна — используется запасное значение.</p>
+        <h3>Диагностический тест переменных</h3>
+        <pre><code>
+   border: var(--border, 5px solid lime);</code></pre>
+        <p>Результат:</p>
+        <ul>
+          <li>🟩 lime появился → переменная не доступна</li>
+          <li>⬛ чёрный → переменная есть, но возможно переопределена ниже</li>
+        </ul>
+
+      </section>
+
+    </main>
+    <footer class="footer">
+      <div class="footer__issues">
+        <h2>Частые проблемы</h2>
+        <ul>
+          <li>:root в CSS Module без :global</li>
+          <li>CSS-файл не импортирован</li>
+          <li>переменная переопределена ниже</li>
+          <li>shorthand без fallback</li>
+        </ul>
+      </div>
+      <div class="footer__model">
+        <h2>Ментальная модель</h2>
+        <p class="vline"><strong>CSS-переменная — это ссылка, а не значение.</strong></p>
+        <p>Если ссылка не резолвится → браузер берёт fallback <br> или игнорирует свойство.</p>
+      </div>
+      <div class="footer__rules">
+        <h2>Базовые правила</h2>
+        <ul>
+          <li>Layout → min-height, не height</li>
+          <li>Body → min-height: 100dvh</li>
+          <li>Modals → height: 100dvh</li>
+          <li>Flex → flex: 1 + flex-shrink: 0</li>
+          <li>Shorthand → всегда с fallback</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
