@@ -420,7 +420,11 @@ Live обновление размеров при изменении DOM или 
 
 18.12.25
 
-Создаю файл ui-ux-prakticheskiy-spravochnik.html и стили к нему в ui-ux-prakticheskiy-spravochnik.css который раскоывает тему UI/UX
+Создаю файл ui-ux-prakticheskiy-spravochnik.html и стили к нему в ui-ux-prakticheskiy-spravochnik.css который раскоывает тему UI/UX 
+Этот файл можно использовать как:
+- как чеклист перед релизом
+- как аргументацию решений в команде
+- как основу для UI-kit и дизайн-системы
 
 
 
