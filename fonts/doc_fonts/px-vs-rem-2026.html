@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шпаргалка: PX vs REM (январь 2026)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #3b82f6;
+      --secondary: #8b5cf6;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 12px;
+      --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      --base-size: 18px;
+      /* 2026: увеличили базовый размер */
+    }
+
+    html {
+      font-size: var(--base-size);
+    }
+
+    /* Ключевое правило! */
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: var(--light);
+      padding: 2rem;
+      /* = 36px */
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 1rem;
+      /* = 18px */
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      /* = 54px */
+      padding: 2.5rem 0;
+      /* = 45px */
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: var(--radius);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* = 45px */
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    h2 {
+      color: var(--secondary);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid var(--border);
+      font-size: 1.8rem;
+      /* = 32.4px */
+    }
+
+    h3 {
+      color: var(--primary);
+      margin: 1.5rem 0 1rem;
+      font-size: 1.3rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: calc(var(--radius) - 4px);
+      border-left: 4px solid var(--primary);
+    }
+
+    .code-block {
+      background: #1e1e2e;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: calc(var(--radius) - 4px);
+      font-family: 'Consolas', 'Monaco', monospace;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .demo-box {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: calc(var(--radius) - 4px);
+      margin: 1rem 0;
+      border: 2px dashed #cbd5e1;
+    }
+
+    .px-demo {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .rem-demo {
+      font-size: 1rem;
+      padding: 0.625rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .do {
+      background: #d1fae5 !important;
+    }
+
+    .dont {
+      background: #fee2e2 !important;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+
+    .badge-px {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-rem {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-2026 {
+      background: #a7f3d0;
+      color: #065f46;
+    }
+
+    .converter {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+    }
+
+    .converter input {
+      padding: 0.75rem;
+      width: 100px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      font-size: 1.1rem;
+      margin: 0 0.5rem;
+    }
+
+    .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --base-size: 16px;
+      }
+
+      /* На мобилах уменьшаем базовый размер */
+      body {
+        padding: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      :root {
+        --base-size: 20px;
+      }
+
+      /* На 4K-экранах увеличиваем */
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>PX vs REM: Практическая шпаргалка</h1>
+    <p class="subtitle">Актуально на январь 2026 года • Базовая единица: 18px</p>
+    <div style="margin-top: 1rem;">
+      <span class="badge badge-2026">2026 Тренд</span>
+      <span class="badge badge-rem">REM-первый подход</span>
+      <span class="badge badge-px">PX для точности</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Когда что использовать (практические правила)</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th width="30%">Тип свойства</th>
+          <th width="35%">Использовать</th>
+          <th width="35%">Пример (база 18px)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="do">
+          <td><strong>Все размеры текста</strong><br>font-size, line-height</td>
+          <td><strong class="badge badge-rem">REM</strong> (обязательно)</td>
+          <td><code>font-size: 1.125rem</code> (≈20px)<br><code>line-height: 1.6</code> (без единиц!)</td>
+        </tr>
+        <tr class="do">
+          <td><strong>Отступы и расположение</strong><br>margin, padding, gap, top/left</td>
+          <td><strong class="badge badge-rem">REM</strong> (рекомендуется)</td>
+          <td><code>padding: 1.5rem 1rem</code> (27px 18px)<br><code>gap: 0.75rem</code> (≈13.5px)</td>
+        </tr>
+        <tr class="do">
+          <td><strong>Размеры контейнеров</strong><br>width, height, max-width</td>
+          <td><strong class="badge badge-rem">REM</strong> для адаптивности</td>
+          <td><code>max-width: 80rem</code> (1440px)<br><code>min-height: 20rem</code> (360px)</td>
+        </tr>
+        <tr>
+          <td><strong>Бордюры и тени</strong><br>border, outline, box-shadow</td>
+          <td><strong class="badge badge-px">PX</strong> (чаще)<br><span class="badge badge-rem">REM</span> (для толстых
+            рамок)</td>
+          <td><code>border: 1px solid #ccc</code><br><code>box-shadow: 0 2px 8px rgba(0,0,0,.1)</code></td>
+        </tr>
+        <tr class="dont">
+          <td><strong>Мелкие декоративные элементы</strong><br>иконки, разделители, детали</td>
+          <td><strong class="badge badge-px">PX</strong> (фиксированно)</td>
+          <td><code>width: 24px; height: 24px;</code><br><code>border-radius: 2px;</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="demo-box">
+      <h3>🔍 Демонстрация различий:</h3>
+      <div style="display: flex; gap: 2rem; margin-top: 1rem;">
+        <div class="px-demo" style="background: #fee2e2;">
+          <strong>PX-блок</strong><br>
+          font-size: 16px<br>
+          padding: 10px
+        </div>
+        <div class="rem-demo" style="background: #dbeafe;">
+          <strong>REM-блок</strong><br>
+          font-size: 1rem (18px)<br>
+          padding: 0.625rem (≈11.25px)
+        </div>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
+        ⚠️ Измените масштаб браузера (Ctrl+ +/-) — REM-блок масштабируется, PX-блок остаётся фиксированным
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Конвертер PX → REM (база 18px)</h2>
+
+    <div class="grid-2">
+      <div class="converter">
+        <h3>Быстрая конвертация</h3>
+        <p>Формула: <code>rem = px / 18</code></p>
+        <div style="margin: 1.5rem 0;">
+          <input type="number" id="pxInput" value="24" min="1" max="1000">
+          <label>px =</label>
+          <span id="remResult" class="result">1.333rem</span>
+        </div>
+        <div class="code-block">
+          /* Автоматический расчёт через calc() */ <br>
+          .element { <br>
+          padding: calc(1rem * 24 / 18); /* 24px в rem */ <br>
+          margin: calc(1rem * 36 / 18); /* 36px в rem */ <br>
+          }
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Частые значения (шпаргалка)</h3>
+        <ul style="margin-left: 1.5rem; line-height: 2;">
+          <li>4px = <code>0.222rem</code></li>
+          <li>8px = <code>0.444rem</code></li>
+          <li>12px = <code>0.667rem</code></li>
+          <li>16px = <code>0.889rem</code></li>
+          <li>24px = <code>1.333rem</code></li>
+          <li>32px = <code>1.778rem</code></li>
+          <li>48px = <code>2.667rem</code></li>
+          <li>64px = <code>3.556rem</code></li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+          💡 В 2026 многие дизайнеры сразу дают макеты в REM!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Адаптивность с REM (ключевой нюанс 2026)</h2>
+
+    <div class="code-block">
+      :root { <br>
+      /* 2026: умная адаптивная база */ <br>
+      --base-size: clamp(16px, 1vw + 14px, 20px); <br>
+      } <br><br>
+
+      /* ИЛИ классический подход с медиа-запросами */ <br>
+      html { <br>
+      font-size: 18px; /* Десктоп по умолчанию */ <br>
+      } <br><br>
+
+      @media (max-width: 768px) { <br>
+      html { <br>
+      font-size: 16px; /* Мобильные */ <br>
+      /* ВСЁ САЙТА УМЕНЬШИТСЯ ПРОПОРЦИОНАЛЬНО! */ <br>
+      } <br>
+      } <br><br>
+
+      @media (min-width: 1920px) { <br>
+      html { <br>
+      font-size: 20px; /* 4K-экраны */ <br>
+      /* ВСЁ САЙТА УВЕЛИЧИТСЯ ПРОПОРЦИОНАЛЬНО! */ <br>
+      } <br>
+      } <br><br>
+
+      /* Компоненты автоматически адаптируются */ <br>
+      .container { <br>
+      padding: 2rem; /* 36px на десктопе */ <br>
+      max-width: 80rem; /* 1440px на десктопе */ <br>
+      font-size: 1.125rem; /* 20.25px на десктопе */ <br>
+      } <br>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3>🔥 Новое в 2026: CSS-функция clamp()</h3>
+      <p>Одна строка вместо медиа-запросов:</p>
+      <div class="code-block">
+        :root {
+        /* Минимум 16px, идеал 1vw + 14px, максимум 20px */
+        font-size: clamp(16px, 1vw + 14px, 20px);
+        }
+      </div>
+      <p style="margin-top: 0.75rem;">
+        Это создаёт плавное масштабирование без резких скачков на брейкпоинтах!
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🚫 Чего точно НЕ делать в 2026</h2>
+
+    <div class="grid-2">
+      <div class="card" style="border-left-color: var(--danger);">
+        <h3 style="color: var(--danger);">❌ Запрещено</h3>
+        <ul style="margin-left: 1.5rem; color: var(--danger);">
+          <li>Использовать px для font-size (нарушает доступность)</li>
+          <li>Смешивать px и rem без системы в одном компоненте</li>
+          <li>Задавать line-height в px (используйте безразмерные значения: 1.5, 1.6)</li>
+          <li>Забывать про пользовательские настройки масштаба</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-left-color: var(--success);">
+        <h3 style="color: var(--success);">✅ Обязательно</h3>
+        <ul style="margin-left: 1.5rem; color: var(--success);">
+          <li>Определить :root { font-size: ... } в начале CSS</li>
+          <li>Использовать CSS-переменные для единообразия</li>
+          <li>Тестировать с увеличенным масштабом браузера (200%)</li>
+          <li>Согласовать подход в команде (единая методология)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🏆 Итог и рекомендация на 2026 год</h2>
+
+    <div class="card">
+      <h3>🎯 Главный принцип 2026: "REM-first approach"</h3>
+      <p><strong>Начинайте с REM для всего</strong>, затем точечно используйте PX там, где нужна абсолютная точность.
+      </p>
+
+      <div class="code-block" style="margin: 1rem 0;">
+        /* РЕКОМЕНДУЕМАЯ СТРУКТУРА 2026 */ <br>
+        :root { <br>
+        --base-font: clamp(16px, 1vw + 14px, 20px); <br>
+        --spacing-unit: 0.5rem; /* 9px при базисе 18px */ <br>
+        font-size: var(--base-font); <br>
+        } <br><br>
+
+        .component { <br>
+        /* Всё в REM */ <br>
+        font-size: 1.125rem; <br>
+        padding: calc(var(--spacing-unit) * 3); <br>
+        margin-bottom: 2rem; <br><br>
+
+        /* Исключения в PX */ <br>
+        border: 1px solid #ddd; <br>
+        box-shadow: 0 2px 8px rgba(0,0,0,.1); <br>
+        } <br>
+      </div>
+
+      <h3>Тренды января 2026:</h3>
+      <ol style="margin-left: 1.5rem; margin-top: 0.75rem;">
+        <li><strong>clamp() вместо медиа-запросов</strong> для базового размера</li>
+        <li><strong>CSS-переменные</strong> для spacing system (0.25rem, 0.5rem, 1rem...)</li>
+        <li><strong>Figma-плагины</strong>, которые экспортируют сразу в REM</li>
+        <li><strong>Автоматический конвертер</strong> в сборке (PostCSS плагины)</li>
+        <li>Базовый размер <strong>18-20px</strong> вместо старых 16px (лучшая читаемость)</li>
+      </ol>
+    </div>
+
+    <div class="demo-box" style="background: #f0f9ff; margin-top: 1.5rem;">
+      <h3>Будущее (2027+): container units и dynamic viewport</h3>
+      <p>Следите за появлением <code>cqw</code>, <code>cqh</code> (контейнерные единицы) и <code>dvh</code>,
+        <code>dvw</code> (динамические единицы вьюпорта).
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Шпаргалка актуальна на январь 2026 года</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
+      Базовая единица этой страницы: 18px • Все размеры в REM (кроме рамок и теней)
+    </p>
+  </footer>
+
+  <script>
+    // Конвертер PX -> REM
+    document.getElementById('pxInput').addEventListener('input', function () {
+      const px = parseInt(this.value) || 0;
+      const rem = (px / 18).toFixed(3);
+      document.getElementById('remResult').textContent = rem + 'rem';
+    });
+
+    // Демонстрация пользовательского масштаба
+    function checkZoomLevel() {
+      const zoom = Math.round(window.devicePixelRatio * 100);
+      if (zoom !== 100) {
+        console.log(`Текущий масштаб: ${zoom}% - REM-элементы масштабируются, PX остаются фиксированными`);
+      }
+    }
+    window.addEventListener('load', checkZoomLevel);
+    window.addEventListener('resize', checkZoomLevel);
+
+    // Показать текущий базовый размер
+    const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    console.log(`📏 Текущий базовый размер (html font-size): ${rootSize}px`);
+  </script>
+</body>
+
+</html>
