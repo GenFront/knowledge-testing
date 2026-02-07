@@ -1,378 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Интерактивная шпаргалка по Flex</title>
-  <style>
-    :root {
-      --bg: #0f1724;
-      --card: #0b1220;
-      --accent: #7dd3fc;
-      --muted: #94a3b8;
-      --panel: #0b1220
-    }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, #071028 0, #071827 100%);
-      color: #e6eef8;
-      margin: 0;
-      padding: 24px;
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px
-    }
-
-    header {
-      display: flex;
-      gap: 12px;
-      align-items: center
-    }
-
-    h1 {
-      font-size: 20px;
-      margin-left: 10px;
-    }
-
-    p.lead {
-      margin: 10px;
-      color: var(--muted)
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6)
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px
-    }
-
-    th,
-    td {
-      padding: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      text-align: left
-    }
-
-    th {
-      color: var(--accent);
-      font-weight: 600
-    }
-    .toc li {
-      margin-bottom: 50px;
-    }
-
-    .playground {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 16px;
-      align-items: start
-    }
-
-    .demo {
-      background: linear-gradient(90deg, #07182a, #071020);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.03)
-    }
-
-    .container {
-      display: flex;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
-      padding: 8px;
-      border-radius: 8px;
-      align-items: center;
-      min-height: 120px;
-      transition: all .25s linear;
-      overflow: hidden
-    }
-
-    .item {
-      height: 64px;
-      min-width: 40px;
-      border-radius: 8px;
-      margin: 6px;
-      padding: 8px;
-      color: white;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, #7dd3fc33, #60a5fa22);
-      border: 1px solid rgba(125, 211, 252, 0.18)
-    }
-
-    label {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 6px
-    }
-
-    .controls {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px
-    }
-    .controls figure {
-      margin: 0;
-    } 
-
-    input[type="range"] {
-      width: 100%
-    }
-
-    .row {
-      display: flex;
-      gap: 8px;
-      align-items: center
-    }
-
-    .kbd {
-      background: #0b1220;
-      padding: 6px 8px;
-      border-radius: 6px;
-      font-weight: 600;
-      color: var(--accent)
-    }
-
-    pre {
-      background: #041021;
-      padding: 12px;
-      border-radius: 8px;
-      overflow: auto;
-      font-size: 13px;
-      color: #b6dcef
-    }
-
-    .note {
-      color: var(--muted);
-      font-size: 13px
-    }
-
-    footer {
-      color: var(--muted);
-      font-size: 13px;
-      padding: 6px 0
-    }
-
-    @media (max-width:900px) {
-      .playground {
-        grid-template-columns: 1fr
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная шпаргалка по CSS Flex - Учебные материалы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="icon" href="data:,">
 </head>
 
-<body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Интерактивная шпаргалка по CSS Flex</h1>
-        <p class="lead">Быстро понять <span class="kbd">flex-grow</span>, <span class="kbd">flex-shrink</span>, <span
-            class="kbd">flex-basis</span> и их влияние на размеры</p>
-      </div>
-    </header>
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../../app.html" class="home-button">← Домой</a>
+            <h1>Интерактивная шпаргалка по CSS Flex</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Flexbox: основные свойства</h2>
+                
+                <h3>Свойства flex-контейнера</h3>
+                <ul>
+                    <li><code>display: flex</code> — делает элемент flex-контейнером</li>
+                    <li><code>flex-direction</code> — направление основной оси (row, column, row-reverse, column-reverse)</li>
+                    <li><code>justify-content</code> — выравнивание по основной оси (flex-start, flex-end, center, space-between, space-around, space-evenly)</li>
+                    <li><code>align-items</code> — выравнивание по поперечной оси (stretch, flex-start, flex-end, center, baseline)</li>
+                    <li><code>flex-wrap</code> — перенос элементов (nowrap, wrap, wrap-reverse)</li>
+                    <li><code>align-content</code> — выравнивание строк при наличии свободного места (flex-start, flex-end, center, space-between, space-around, stretch)</li>
+                </ul>
+                
+                <h3>Свойства flex-элементов</h3>
+                <ul>
+                    <li><code>flex-grow</code> — определяет, насколько элемент может расти относительно других</li>
+                    <li><code>flex-shrink</code> — определяет, насколько элемент может сжиматься относительно других</li>
+                    <li><code>flex-basis</code> — начальный размер элемента перед распределением свободного места</li>
+                    <li><code>flex</code> — сокращение для flex-grow, flex-shrink и flex-basis</li>
+                    <li><code>align-self</code> — выравнивание отдельного элемента (override для align-items)</li>
+                    <li><code>order</code> — порядок элемента среди других (по умолчанию 0)</li>
+                </ul>
+                
+                <h3>Практические примеры</h3>
+                <p>Центральное выравнивание: <code>display: flex; justify-content: center; align-items: center;</code></p>
+                <p>Равномерное распределение: <code>display: flex; justify-content: space-between;</code></p>
+            </section>
+        </main>
+    </div>
 
-    <section class="card">
-      <h3>Краткая таблица</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Свойство</th>
-            <th>Что делает</th>
-            <th>Пример</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>flex-grow</b></td>
-            <td>Сколько долей свободного пространства получит элемент (если есть свободное место)</td>
-            <td><code>flex: 2 1 0</code> → grow = 2</td>
-          </tr>
-          <tr>
-            <td><b>flex-shrink</b></td>
-            <td>Во сколько раз элемент уменьшается при нехватке места (чем больше — тем сильнее сжимается)</td>
-            <td><code>flex: 1 2 200px</code> → shrink = 2</td>
-          </tr>
-          <tr>
-            <td><b>flex-basis</b></td>
-            <td>Базовый размер элемента (основа, от которой считаются grow/shrink). <b>auto</b> — используется
-              width/height/контент, <b>0</b> — игнорировать естественный размер</td>
-            <td><code>flex-basis: 0 | auto | 200px</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="card playground">
-      <div>
-        <h3>Интерактивный пример</h3>
-        <p class="note">Поменяй параметры справа и смотри, как меняются размеры блоков.</p>
-        <div class="demo">
-          <div id="container" class="container" style="width:760px">
-            <div id="a" class="item">A<br><small id="a-label">flex: 1 1 auto</small></div>
-            <div id="b" class="item">B<br><small id="b-label">flex: 1 1 auto</small></div>
-            <div id="c" class="item">C<br><small id="c-label">flex: 1 1 auto</small></div>
-          </div>
-          <div style="display:flex;gap:8px;margin-top:8px;align-items:center;justify-content:space-between">
-            <div class="note">Контейнер ширина: <b id="cont-w">760px</b></div>
-            <button id="reset"
-              style="background:#08304a;border:1px solid rgba(255,255,255,0.03);color:var(--accent);padding:6px 10px;border-radius:8px">Сброс</button>
-          </div>
-        </div>
-      </div>
-
-      <aside class="card" style="padding:12px">
-        <h4>Контролы</h4>
-        <div class="controls">
-          <div>
-            <label for="contRange">Ширина контейнера <span class="note">(px)</span></label>
-            <input id="contRange" type="range" min="320" max="1200" value="760" />
-          </div>
-          <fieldset>
-            <div>
-              <legend>Элемент A — <small id="a-info" class="note">flex: 1 1 auto</small></legend>
-
-              <div class="row">
-                <input id="a-grow" type="range" min="0" max="5" value="1" />
-                <input id="a-shrink" type="range" min="0" max="5" value="1" />
-                <input id="a-basis" type="text" value="auto"
-                  style="width:90px;padding:6px;border-radius:6px;background:#041021;border:1px solid rgba(255,255,255,0.03);color:#b6dcef" />
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div>
-              <legend>Элемент B — <small id="b-info" class="note">flex: 1 1 auto</small></legend>
-              <div class="row">
-                <input id="b-grow" type="range" min="0" max="5" value="1" />
-                <input id="b-shrink" type="range" min="0" max="5" value="1" />
-                <input id="b-basis" type="text" value="auto"
-                  style="width:90px;padding:6px;border-radius:6px;background:#041021;border:1px solid rgba(255,255,255,0.03);color:#b6dcef" />
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <div>
-              <legend>Элемент C — <small id="c-info" class="note">flex: 1 1 auto</small></legend>
-              <div class="row">
-                <input id="c-grow" type="range" min="0" max="5" value="1" />
-                <input id="c-shrink" type="range" min="0" max="5" value="1" />
-                <input id="c-basis" type="text" value="auto"
-                  style="width:90px;padding:6px;border-radius:6px;background:#041021;border:1px solid rgba(255,255,255,0.03);color:#b6dcef" />
-              </div>
-            </div>
-          </fieldset>
-
-          <figure>
-            <figcaption>Код примера</figcaption>
-            <pre id="code-sample"></pre>
-          </figure>
-
-        </div>
-      </aside>
-    </section>
-
-    <section class="card">
-      <h3>Мини-примеры (быстрая шпаргалка)</h3>
-      <ol>
-        <li><b>Равные колонки</b>: <code>flex: 1 1 0</code> — игнорирует width, делит пространство поровну.</li>
-        <li><b>С учётом width</b>: <code>flex: 1 1 auto; width: 200px;</code> — базовый размер 200px, затем
-          распределяется свободное место.</li>
-        <li><b>Фиксированный элемент</b>: <code>flex: 0 0 150px;</code> — элемент всегда 150px, не растёт и не
-          сжимается.</li>
-      </ol>
-    </section>
-
-    <footer class="card">
-      <div class="note">Сделано как интерактивная шпаргалка — меняй параметры и наблюдай.</div>
-    </footer>
-  </div>
-
-  <script>
-    (() => {
-      const cont = document.getElementById('container');
-      const contRange = document.getElementById('contRange');
-      const contW = document.getElementById('cont-w');
-      const reset = document.getElementById('reset');
-
-      const items = ['a', 'b', 'c'].map(id => ({
-        el: document.getElementById(id),
-        grow: document.getElementById(id + '-grow'),
-        shrink: document.getElementById(id + '-shrink'),
-        basis: document.getElementById(id + '-basis'),
-        label: document.getElementById(id + '-label'),
-        info: document.getElementById(id + '-info')
-      }));
-
-      function apply() {
-        const width = contRange.value + 'px';
-        cont.style.width = width;
-        contW.textContent = width;
-
-        items.forEach(x => {
-          const grow = parseInt(x.grow.value, 10);
-          const shrink = parseInt(x.shrink.value, 10);
-          let basis = x.basis.value.trim();
-          if (basis === '') basis = 'auto';
-          // allow numeric px values or 'auto' or '0'
-          if (!isNaN(Number(basis))) basis = basis + 'px';
-          // apply style
-          x.el.style.flex = grow + ' ' + shrink + ' ' + basis;
-          x.label.textContent = 'flex: ' + grow + ' ' + shrink + ' ' + basis;
-          x.info.textContent = 'flex: ' + grow + ' ' + shrink + ' ' + basis;
-        });
-
-        // update code sample
-        const code = `/* Контейнер */\n.container { \n display: flex;\n width: ${contRange.value}px;\n }\n\n/* Элементы */\nA { flex: ${items[0].grow.value} ${items[0].shrink.value} ${items[0].basis.value || 'auto'} }\nB { flex: ${items[1].grow.value} ${items[1].shrink.value} ${items[1].basis.value || 'auto'} }\nC { flex: ${items[2].grow.value} ${items[2].shrink.value} ${items[2].basis.value || 'auto'} }`;
-        document.getElementById('code-sample').textContent = code;
-
-        // show computed widths under elements (for clarity)
-        items.forEach(x => {
-          const rect = x.el.getBoundingClientRect();
-          x.el.title = Math.round(rect.width) + 'px';
-          // also show value inside small label
-          x.el.querySelector('small') && (x.el.querySelector('small').textContent = Math.round(rect.width) + 'px');
-        });
-      }
-
-      // init listeners
-      contRange.addEventListener('input', apply);
-      items.forEach(x => {
-        x.grow.addEventListener('input', apply);
-        x.shrink.addEventListener('input', apply);
-        x.basis.addEventListener('change', apply);
-        x.basis.addEventListener('keyup', e => { if (e.key === 'Enter') apply(); });
-      });
-
-      reset.addEventListener('click', () => {
-        contRange.value = 760;
-        items[0].grow.value = 1; items[0].shrink.value = 1; items[0].basis.value = 'auto';
-        items[1].grow.value = 1; items[1].shrink.value = 1; items[1].basis.value = 'auto';
-        items[2].grow.value = 1; items[2].shrink.value = 1; items[2].basis.value = 'auto';
-        apply();
-      });
-
-      // default sizes and labels
-      apply();
-    })();
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Библиотека знаний</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <div class="topic-layout">
+            <!-- Навигация по теме CSS -->
+            <nav class="topic-nav">
+                <h3>CSS</h3>
+                <ul>
+                    <li><a href="#" class="nav-link" data-section="ui-ux">UI / UX справочник</a></li>
+                    <li><a href="#" class="nav-link" data-section="basics">Основы CSS</a></li>
+                    <li><a href="#" class="nav-link" data-section="selectors">Селекторы</a></li>
+                    <li><a href="#" class="nav-link" data-section="properties">Свойства</a></li>
+                    <li><a href="#" class="nav-link" data-section="flexbox">Flexbox</a></li>
+                    <li><a href="#" class="nav-link" data-section="grid">Grid</a></li>
+                    <li><a href="#" class="nav-link" data-section="positioning">Позиционирование</a></li>
+                    <li><a href="#" class="nav-link" data-section="responsive">Адаптивность</a></li>
+                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
+                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
+                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Контент по теме CSS -->
+            <main class="topic-content">
+                <header class="topic-header">
+                    <a href="../app.html" class="home-button">← Домой</a>
+                    <h1>CSS</h1>
+                </header>
+
+                <div id="content-container">
+                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую
+                        информацию</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script>
+        // Функция для открытия внешней страницы (глобальная)
+        function openExternalPage(url) {
+            window.open(url, '_blank');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentContainer = document.getElementById('content-container');
+
+            // Данные контента для CSS
+            const cssContent = {
+                'ui-ux': {
+                    title: 'UI / UX справочник',
+                    content: `
+                        <p>Этот раздел содержит практический справочник по UI / UX для фронтенд-разработчиков.</p>
+                        <ol>
+                            <li><a href="#" onclick="openExternalPage('../fonts/doc_fonts/ui-ux-prakticheskiy-spravochnik.html'); return false;" class="external-link">UI/UX — практический справочник для фронтендера</a></li>
+                        </ol>
+                    `
+                },
+                basics: {
+                    title: 'Основы CSS',
+                    content: `
+                        <p>CSS (Cascading Style Sheets) — это язык описания внешнего вида документа, написанного на языке разметки.</p>
+                        <p>CSS используется для описания внешнего вида элементов веб-страницы: цвета, шрифта, размера, расстояния между элементами и т.д.</p>
+                    `
+                },
+                selectors: {
+                    title: 'Селекторы',
+                    content: `
+                        <p>Селекторы CSS определяют, к каким элементам HTML применяются стили. Существует множество типов селекторов.</p>
+                        <p>Примеры: селекторы по тегу (p), по классу (.class), по ID (#id), псевдоклассы (:hover) и др.</p>
+                    `
+                },
+                properties: {
+                    title: 'Свойства',
+                    content: `
+                        <p>CSS-свойства определяют, как именно будут выглядеть элементы. Существует огромное количество свойств.</p>
+                        <p>Примеры: color, background-color, font-size, margin, padding, border и многие другие.</p>
+                    `
+                },
+                flexbox: {
+                    title: 'Flexbox',
+                    content: `
+                        <p>Flexbox — это одномерная система макета, которая позволяет легко распределять пространство между элементами в контейнере.</p>
+                        <p>Flexbox особенно полезен для создания адаптивных макетов, которые корректно работают на разных размерах экрана.</p>
+                    `
+                },
+                grid: {
+                    title: 'Grid',
+                    content: `
+                        <p>CSS Grid — это двумерная система макета, которая позволяет создавать сложные макеты с помощью строк и столбцов.</p>
+                        <p>Grid идеально подходит для создания сложных макетов, где нужно контролировать как горизонтальное, так и вертикальное расположение элементов.</p>
+                    `
+                },
+                positioning: {
+                    title: 'Позиционирование',
+                    content: `
+                        <p>Свойство position позволяет контролировать, как элементы располагаются на странице.</p>
+                        <p>Значения: static, relative, absolute, fixed, sticky.</p>
+                    `
+                },
+                responsive: {
+                    title: 'Адаптивность',
+                    content: `
+                        <p>Адаптивный дизайн позволяет веб-страницам корректно отображаться на устройствах с различными размерами экрана.</p>
+                        <p>Используются медиа-запросы, гибкие единицы измерения и адаптивные макеты.</p>
+                    `
+                },
+                resources: {
+                    title: 'Полезные ресурсы',
+                    content: `
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+                            <li><a href="https://doka.guide/css/" target="_blank">Дока - CSS</a></li>
+                            <li><a href="https://html5book.ru/css-css3/" target="_blank">HTML5Book - CSS</a></li>
+                            <li><a href="https://yoksel.github.io/flex-cheatsheet/" target="_blank">Интерактивный Flexbox справочник</a></li>
+                            <li><a href="https://css-tricks.com/snippets/" target="_blank">CSS-Tricks</a></li>
+                        </ul>
+                    `
+                }
+            };
+
+            // Обработчик кликов по навигации
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
+                        // Если это ссылка на материалы или тесты, переходим на страницу
+                        window.location.href = this.href;
+                        return;
+                    }
+
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+
+                    // Убираем активный класс у всех ссылок
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Добавляем активный класс текущей ссылке
+                    this.classList.add('active');
+
+                    // Показываем контент для выбранного раздела
+                    showContent(section);
+                });
+            });
+
+            // Функция отображения контента
+            function showContent(section) {
+                if (section && cssContent[section]) {
+                    const sectionData = cssContent[section];
+                    contentContainer.innerHTML = `
+                        <h2>${sectionData.title}</h2>
+                        ${sectionData.content}
+                    `;
+                } else {
+                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

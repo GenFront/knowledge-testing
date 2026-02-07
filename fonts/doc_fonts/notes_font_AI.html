@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/style.css">
-  <title>Заметки AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметка Ai (Кастомные шрифты) - Учебные материалы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="icon" href="data:,">
 </head>
-<body>
-  <header>
-    <h1>Кастомные шрифты</h1>
-    <p><strong>Кастомные шрифты (от англ.<code>custom fonts</code> — «пользовательские шрифты»)</strong> — это шрифты, которые не входят в стандартный набор системных шрифтов (например, <code>Arial, Times New Roman, Helvetica</code>) и подгружаются на веб-страницу или в приложение из внешних источников. Они позволяют дизайнерам и разработчикам использовать уникальные, брендированные или просто более подходящие для проекта шрифты.</p>
-  </header>
-  <main>
-    <section>
-      <h2>Где применяются кастомные шрифты?</h2>
-      <ol>
-        <li>Веб-сайты (через CSS):</li>
-        Подключаются через сервисы вроде <code>Google Fonts, Adobe Fonts</code> или загружаются вручную.
-        <li>Дизайн-макеты <code>(Figma, Photoshop)</code>:</li>
-        Шрифты устанавливаются в систему или подгружаются в программу.
-        <li>Мобильные приложения:</li>
-        Файлы шрифтов <code>(.ttf, .otf)</code> добавляются в проект и регистрируются в коде.
-      </ol>
-    </section>
-    <section>
-      <h2>Популярные источники кастомных шрифтов</h2>
-      <ul>Бесплатные:
-        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a>(Open Sans, Roboto, Lato)</li>
-        <li><a href="https://www.fontsquirrel.com/" target="_blank">Font Squirrel</a></li>
-      </ul>
-      <ul>Платные:
-        <li><a href="https://fonts.adobe.com/" target="_blank">Adobe Fonts</a></li>
-        <li><a href="https://www.myfonts.com/" target="_blank">MyFonts</a></li>
-      </ul>
-    </section>
 
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../../app.html" class="home-button">← Домой</a>
+            <h1>Заметка Ai (Кастомные шрифты)</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Подключение кастомных шрифтов</h2>
+                <p>Кастомные шрифты позволяют использовать нестандартные шрифты на веб-страницах.</p>
+                
+                <h3>Способы подключения</h3>
+                <ul>
+                    <li><strong>Google Fonts</strong> — самый простой способ, подключение через CDN</li>
+                    <li><strong>Self-hosted</strong> — загрузка файлов шрифта на собственный сервер</li>
+                    <li><strong>Adobe Fonts (Typekit)</strong> — сервис от Adobe с большими коллекциями шрифтов</li>
+                </ul>
+                
+                <h3>Преимущества и недостатки</h3>
+                <p><strong>Преимущества:</strong></p>
+                <ul>
+                    <li>Уникальный визуальный стиль</li>
+                    <li>Лучшее соответствие бренду</li>
+                    <li>Более широкий выбор шрифтов</li>
+                </ul>
+                
+                <p><strong>Недостатки:</strong></p>
+                <ul>
+                    <li>Влияние на производительность</li>
+                    <li>Необходимость обеспечения fallback-шрифтов</li>
+                    <li>Возможные лицензионные ограничения</li>
+                </ul>
+                
+                <h3>Лучшие практики</h3>
+                <ul>
+                    <li>Использовать форматы WOFF и WOFF2 для лучшей совместимости</li>
+                    <li>Ограничивать количество подключаемых шрифтов и начертаний</li>
+                    <li>Применять font-display: swap для улучшения производительности</li>
+                    <li>Обеспечивать fallback-шрифты для случаев, когда кастомный шрифт не загрузился</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
-  </main>
-  <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
-      

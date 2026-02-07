@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по HTML - Библиотека знаний</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="data:,">
 </head>
-<body>
- Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nemo numquam voluptatibus magni sapiente cupiditate dolor libero quas ducimus doloremque praesentium perferendis in consectetur maxime adipisci est saepe, odit atque!
-  
- 
+
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../app.html" class="home-button">← Домой</a>
+            <h1>Тест по HTML</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Основы HTML</h2>
+                <form class="test-form">
+                    <div class="question">
+                        <p>1. Что означает аббревиатура HTML?</p>
+                        <label><input type="radio" name="q1" value="a"> Hyperlinks and Text Markup Language</label><br>
+                        <label><input type="radio" name="q1" value="b"> HyperText Markup Language</label><br>
+                        <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label><br>
+                    </div>
+                    
+                    <div class="question">
+                        <p>2. Какой тег используется для создания заголовка самого высокого уровня?</p>
+                        <label><input type="radio" name="q2" value="a"> &lt;h6&gt;</label><br>
+                        <label><input type="radio" name="q2" value="b"> &lt;h1&gt;</label><br>
+                        <label><input type="radio" name="q2" value="c"> &lt;header&gt;</label><br>
+                    </div>
+                    
+                    <div class="question">
+                        <p>3. Какой атрибут используется для указания адреса ссылки?</p>
+                        <label><input type="radio" name="q3" value="a"> src</label><br>
+                        <label><input type="radio" name="q3" value="b"> url</label><br>
+                        <label><input type="radio" name="q3" value="c"> href</label><br>
+                    </div>
+                    
+                    <button type="submit">Проверить результаты</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        document.querySelector('.test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Тест временно недоступен. Пожалуйста, вернитесь позже.');
+        });
+    </script>
 </body>
 </html>

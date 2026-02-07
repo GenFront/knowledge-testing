@@ -1,32 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Напоминание</title>
-    <link rel="stylesheet" href="reminder.css"> 
-    <!-- Отдельный CSS -->
-    <a class="head" href="app.html">Перейти к приложению</a>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека знаний по фронтенду</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="data:,">
 </head>
-<body>
-    <div class="reminder">
-        <!-- Ваш контент с ссылкой на YouTube -->
-        <ul>
-        <li>Посмотреть урок по CSS Flexbox
-        
-        <a href="https://www.youtube.com/watch?v=Hf__JLlFxpk" target="_blank">
-            Перейти к уроку по Flexbox →
-        </a>
-        </li>
-        <li>Посмотреть урок по JavaScript с Нуля
-            <a href="https://www.youtube.com/watch?v=BFmPRC2lMww&t=28s" target="_blank">Перейти к уроку по JavaScript</a>
-        </li>
-        <li>Посмотреть верстку сайта портфолио по шаблону с нуля!
-            <a href="https://www.youtube.com/watch?v=Cyr0fFYrwHU&t=507s" target="_blank">Верстка сайта портфолио</a>
-        </li>
-        <li>Прчитать статью: 
-            <a href="https://weblind.ru" target="_blank">"Как помочь слепым на вашем сайте"</a>
-        </li>
-        </ul>
+
+<body class="homepage">
+    <div class="container">
+        <header>
+            <h1>Библиотека фронтенд-знаний</h1>
+            <p class="subtitle">Выберите тему для изучения</p>
+        </header>
+
+        <!-- Поиск -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Поиск по темам...">
+        </div>
+
+        <!-- Контейнер для карточек -->
+        <section class="simple-cards-grid" id="cards-container">
+            <a href="pages/html.html" class="simple-card">
+                <div class="card-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML</h3>
+                <p>Основы HTML, теги, формы, семантика</p>
+            </a>
+            
+            <a href="pages/css.html" class="simple-card">
+                <div class="card-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h3>CSS</h3>
+                <p>Стилизация, флексбокс, гриды, анимации</p>
+            </a>
+            
+            <a href="pages/js.html" class="simple-card">
+                <div class="card-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p>Основы JS, DOM, события, async</p>
+            </a>
+            
+            <a href="pages/tools.html" class="simple-card">
+                <div class="card-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Инструменты</h3>
+                <p>Git, VS Code, сборщики, отладка</p>
+            </a>
+            
+            <a href="pages/projects.html" class="simple-card">
+                <div class="card-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Проекты</h3>
+                <p>Практика, задачи, портфолио</p>
+            </a>
+        </section>
     </div>
-    <script src="reminder.js"></script> <!-- Отдельный JS -->
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Библиотека знаний</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <div class="topic-layout">
+            <!-- Навигация по теме JavaScript -->
+            <nav class="topic-nav">
+                <h3>JavaScript</h3>
+                <ul>
+                    <li><a href="#" class="nav-link" data-section="basics">Основы JS</a></li>
+                    <li><a href="#" class="nav-link" data-section="variables">Переменные</a></li>
+                    <li><a href="#" class="nav-link" data-section="functions">Функции</a></li>
+                    <li><a href="#" class="nav-link" data-section="objects">Объекты</a></li>
+                    <li><a href="#" class="nav-link" data-section="arrays">Массивы</a></li>
+                    <li><a href="#" class="nav-link" data-section="dom">DOM</a></li>
+                    <li><a href="#" class="nav-link" data-section="events">События</a></li>
+                    <li><a href="#" class="nav-link" data-section="async">Асинхронность</a></li>
+                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
+                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
+                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Контент по теме JavaScript -->
+            <main class="topic-content">
+                <header class="topic-header">
+                    <a href="../app.html" class="home-button">← Домой</a>
+                    <h1>JavaScript</h1>
+                </header>
+
+                <div id="content-container">
+                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentContainer = document.getElementById('content-container');
+
+            // Данные контента для JavaScript
+            const jsContent = {
+                basics: {
+                    title: 'Основы JavaScript',
+                    content: `
+                        <p>JavaScript — это язык программирования, который позволяет делать веб-сайты интерактивными.</p>
+                        <p>JavaScript работает в браузере и может изменять содержимое HTML-страницы, стили и реагировать на действия пользователя.</p>
+                    `
+                },
+                variables: {
+                    title: 'Переменные',
+                    content: `
+                        <p>В JavaScript переменные объявляются с помощью ключевых слов var, let или const.</p>
+                        <p>let и const были добавлены в ES6 и обеспечивают лучшее управление областью видимости.</p>
+                    `
+                },
+                functions: {
+                    title: 'Функции',
+                    content: `
+                        <p>Функции — это многократно используемые блоки кода, которые выполняют определенную задачу.</p>
+                        <p>Функции могут принимать параметры и возвращать значения. Существуют различные способы объявления функций.</p>
+                    `
+                },
+                objects: {
+                    title: 'Объекты',
+                    content: `
+                        <p>Объекты в JavaScript — это коллекции пар ключ-значение. Они используются для хранения связанных данных и функций.</p>
+                        <p>Объекты являются основой объектно-ориентированного программирования в JavaScript.</p>
+                    `
+                },
+                arrays: {
+                    title: 'Массивы',
+                    content: `
+                        <p>Массивы — это специальные объекты, предназначенные для хранения упорядоченных коллекций данных.</p>
+                        <p>Массивы имеют методы для добавления, удаления и изменения элементов.</p>
+                    `
+                },
+                dom: {
+                    title: 'DOM',
+                    content: `
+                        <p>DOM (Document Object Model) — это программный интерфейс для веб-документов.</p>
+                        <p>Он представляет страницу так, что программа может изменять структуру документа, стиль и содержимое. DOM соединяет веб-страницу с языками сценариев.</p>
+                    `
+                },
+                events: {
+                    title: 'События',
+                    content: `
+                        <p>События — это сигналы от браузера о том, что что-то произошло. Например, клик мыши, загрузка страницы и т.д.</p>
+                        <p>JavaScript может реагировать на события с помощью обработчиков событий.</p>
+                    `
+                },
+                async: {
+                    title: 'Асинхронность',
+                    content: `
+                        <p>Асинхронное программирование позволяет выполнять операции без блокировки выполнения других операций.</p>
+                        <p>В JavaScript используются Promise, async/await и callback-функции для работы с асинхронным кодом.</p>
+                    `
+                },
+                resources: {
+                    title: 'Полезные ресурсы',
+                    content: `
+                        <ul>
+                            <li><a href="https://learn.javascript.ru/" target="_blank">Современный учебник JavaScript</a></li>
+                            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN Web Docs - JavaScript</a></li>
+                            <li><a href="https://doka.guide/js/" target="_blank">Дока - JavaScript</a></li>
+                            <li><a href="https://htmlacademy.ru/courses/343/run/17" target="_blank">HTML Academy - Основы JS</a></li>
+                        </ul>
+                    `
+                }
+            };
+
+            // Обработчик кликов по навигации
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
+                        // Если это ссылка на материалы или тесты, переходим на страницу
+                        window.location.href = this.href;
+                        return;
+                    }
+
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+
+                    // Убираем активный класс у всех ссылок
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Добавляем активный класс текущей ссылке
+                    this.classList.add('active');
+
+                    // Показываем контент для выбранного раздела
+                    showContent(section);
+                });
+            });
+
+            // Функция отображения контента
+            function showContent(section) {
+                if (section && jsContent[section]) {
+                    const sectionData = jsContent[section];
+                    contentContainer.innerHTML = `
+                        <h2>${sectionData.title}</h2>
+                        ${sectionData.content}
+                    `;
+                } else {
+                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

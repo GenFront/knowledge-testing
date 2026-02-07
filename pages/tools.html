@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструменты - Библиотека знаний</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <div class="topic-layout">
+            <!-- Навигация по теме Инструменты -->
+            <nav class="topic-nav">
+                <h3>Инструменты</h3>
+                <ul>
+                    <li><a href="#" class="nav-link" data-section="git">Git и GitHub</a></li>
+                    <li><a href="#" class="nav-link" data-section="vscode">VS Code</a></li>
+                    <li><a href="#" class="nav-link" data-section="terminal">Терминал</a></li>
+                    <li><a href="#" class="nav-link" data-section="debug">Отладка</a></li>
+                    <li><a href="#" class="nav-link" data-section="devtools">DevTools</a></li>
+                    <li><a href="#" class="nav-link" data-section="build">Сборщики</a></li>
+                    <li><a href="#" class="nav-link" data-section="testing">Тестирование</a></li>
+                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
+                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
+                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Контент по теме Инструменты -->
+            <main class="topic-content">
+                <header class="topic-header">
+                    <a href="../app.html" class="home-button">← Домой</a>
+                    <h1>Инструменты</h1>
+                </header>
+
+                <div id="content-container">
+                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentContainer = document.getElementById('content-container');
+
+            // Данные контента для Инструментов
+            const toolsContent = {
+                git: {
+                    title: 'Git и GitHub',
+                    content: `
+                        <p>Git — это распределённая система управления версиями файлов. GitHub — это веб-платформа для хостинга проектов, использующих Git.</p>
+                        <p>Git позволяет отслеживать изменения в файлах, работать в команде и управлять версиями кода.</p>
+                    `
+                },
+                vscode: {
+                    title: 'VS Code',
+                    content: `
+                        <p>Visual Studio Code — это мощный редактор кода с поддержкой множества языков программирования.</p>
+                        <p>VS Code имеет встроенную поддержку Git, IntelliSense, отладчик и широкие возможности для настройки.</p>
+                    `
+                },
+                terminal: {
+                    title: 'Терминал',
+                    content: `
+                        <p>Терминал — это текстовый интерфейс для взаимодействия с операционной системой.</p>
+                        <p>Знание командной строки важно для эффективной работы с Git, установки зависимостей и автоматизации задач.</p>
+                    `
+                },
+                debug: {
+                    title: 'Отладка',
+                    content: `
+                        <p>Отладка — это процесс поиска и устранения ошибок в коде.</p>
+                        <p>Используются инструменты отладки, точки останова, консоль для логирования и анализ проблем.</p>
+                    `
+                },
+                devtools: {
+                    title: 'DevTools',
+                    content: `
+                        <p>Инструменты разработчика (DevTools) — это набор инструментов для отладки и анализа веб-страниц.</p>
+                        <p>DevTools позволяют анализировать DOM, стили, производительность, сеть и многое другое.</p>
+                    `
+                },
+                build: {
+                    title: 'Сборщики',
+                    content: `
+                        <p>Сборщики модулей автоматизируют задачи разработки: объединение файлов, минификация, транспиляция и т.д.</p>
+                        <p>Популярные сборщики: Webpack, Vite, Parcel, Rollup.</p>
+                    `
+                },
+                testing: {
+                    title: 'Тестирование',
+                    content: `
+                        <p>Тестирование — это процесс проверки корректности работы кода.</p>
+                        <p>Существуют различные виды тестирования: модульное, интеграционное, сквозное и др.</p>
+                    `
+                },
+                resources: {
+                    title: 'Полезные ресурсы',
+                    content: `
+                        <ul>
+                            <li><a href="https://git-scm.com/book/ru/v2" target="_blank">Pro Git (русская версия)</a></li>
+                            <li><a href="https://code.visualstudio.com/docs" target="_blank">Документация VS Code</a></li>
+                            <li><a href="https://habr.com/ru/articles/905658/" target="_blank">15 команд Git</a></li>
+                            <li><a href="https://thecode.media/vsyo-pro-devtools-i-instrumenty-razrabotchika-v-brauzere/" target="_blank">DevTools - подробное руководство</a></li>
+                            <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank">Chrome DevTools Documentation</a></li>
+                        </ul>
+                    `
+                }
+            };
+
+            // Обработчик кликов по навигации
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
+                        // Если это ссылка на материалы или тесты, переходим на страницу
+                        window.location.href = this.href;
+                        return;
+                    }
+
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+
+                    // Убираем активный класс у всех ссылок
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Добавляем активный класс текущей ссылке
+                    this.classList.add('active');
+
+                    // Показываем контент для выбранного раздела
+                    showContent(section);
+                });
+            });
+
+            // Функция отображения контента
+            function showContent(section) {
+                if (section && toolsContent[section]) {
+                    const sectionData = toolsContent[section];
+                    contentContainer.innerHTML = `
+                        <h2>${sectionData.title}</h2>
+                        ${sectionData.content}
+                    `;
+                } else {
+                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

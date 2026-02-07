@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Библиотека знаний</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <div class="topic-layout">
+            <!-- Навигация по теме Проекты -->
+            <nav class="topic-nav">
+                <h3>Проекты</h3>
+                <ul>
+                    <li><a href="#" class="nav-link" data-section="practice">Практика</a></li>
+                    <li><a href="#" class="nav-link" data-section="mentors">Frontendmentor</a></li>
+                    <li><a href="#" class="nav-link" data-section="examples">Примеры проектов</a></li>
+                    <li><a href="#" class="nav-link" data-section="portfolio">Портфолио</a></li>
+                    <li><a href="#" class="nav-link" data-section="tasks">Задачи</a></li>
+                    <li><a href="#" class="nav-link" data-section="collaboration">Совместная работа</a></li>
+                    <li><a href="#" class="nav-link" data-section="deployment">Развертывание</a></li>
+                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
+                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
+                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Контент по теме Проекты -->
+            <main class="topic-content">
+                <header class="topic-header">
+                    <a href="../app.html" class="home-button">← Домой</a>
+                    <h1>Проекты</h1>
+                </header>
+
+                <div id="content-container">
+                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentContainer = document.getElementById('content-container');
+
+            // Данные контента для Проектов
+            const projectsContent = {
+                practice: {
+                    title: 'Практика',
+                    content: `
+                        <p>Практика — важнейшая часть обучения. Реальные проекты позволяют применить теоретические знания на практике.</p>
+                        <p>Практика помогает закрепить навыки, выявить пробелы в знаниях и развить уверенность в своих силах.</p>
+                    `
+                },
+                mentors: {
+                    title: 'Frontendmentor',
+                    content: `
+                        <p>Frontendmentor — это платформа с реальными задачами для практики верстки и разработки.</p>
+                        <p>Задачи различаются по уровню сложности и включают в себя макеты, требования и проверку решений.</p>
+                    `
+                },
+                examples: {
+                    title: 'Примеры проектов',
+                    content: `
+                        <p>Примеры проектов помогают понять, как различные технологии применяются в реальных условиях.</p>
+                        <p>Изучение чужого кода и адаптация под свои нужды — отличный способ учиться.</p>
+                    `
+                },
+                portfolio: {
+                    title: 'Портфолио',
+                    content: `
+                        <p>Портфолио — это демонстрация ваших навыков и опыта потенциальным работодателям.</p>
+                        <p>Хорошее портфолио должно содержать качественные проекты, демонстрирующие разнообразные навыки.</p>
+                    `
+                },
+                tasks: {
+                    title: 'Задачи',
+                    content: `
+                        <p>Решение задач помогает развить логическое мышление и навыки программирования.</p>
+                        <p>Платформы с задачами: Codewars, LeetCode, FreeCodeCamp и другие.</p>
+                    `
+                },
+                collaboration: {
+                    title: 'Совместная работа',
+                    content: `
+                        <p>Совместная работа над проектами развивает навыки командной разработки и взаимодействия.</p>
+                        <p>Использование Git, GitHub Flow, code review и другие практики важны для успешной командной работы.</p>
+                    `
+                },
+                deployment: {
+                    title: 'Развертывание',
+                    content: `
+                        <p>Развертывание — это процесс публикации проекта в интернете для доступа к нему.</p>
+                        <p>Популярные платформы для развертывания: Netlify, Vercel, GitHub Pages, Heroku.</p>
+                    `
+                },
+                resources: {
+                    title: 'Полезные ресурсы',
+                    content: `
+                        <ul>
+                            <li><a href="https://www.frontendmentor.io/" target="_blank">Frontendmentor</a></li>
+                            <li><a href="https://github.com/GenFront/htmlacademy-sedona" target="_blank">Проект Седона</a></li>
+                            <li><a href="https://codewars.com/" target="_blank">Codewars</a></li>
+                            <li><a href="https://github.com/topics/frontend-projects" target="_blank">GitHub - Frontend Projects</a></li>
+                            <li><a href="https://roadmap.sh/frontend" target="_blank">Frontend Roadmap</a></li>
+                        </ul>
+                    `
+                }
+            };
+
+            // Обработчик кликов по навигации
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
+                        // Если это ссылка на материалы или тесты, переходим на страницу
+                        window.location.href = this.href;
+                        return;
+                    }
+
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+
+                    // Убираем активный класс у всех ссылок
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Добавляем активный класс текущей ссылке
+                    this.classList.add('active');
+
+                    // Показываем контент для выбранного раздела
+                    showContent(section);
+                });
+            });
+
+            // Функция отображения контента
+            function showContent(section) {
+                if (section && projectsContent[section]) {
+                    const sectionData = projectsContent[section];
+                    contentContainer.innerHTML = `
+                        <h2>${sectionData.title}</h2>
+                        ${sectionData.content}
+                    `;
+                } else {
+                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

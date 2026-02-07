@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Классическая схема верстки - Учебные материалы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../../app.html" class="home-button">← Домой</a>
+            <h1>Классическая схема верстки</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Классическая схема верстки с reset/normalize CSS</h2>
+                <p>Профессиональный стандарт для предсказуемой верстки, обеспечивающий единообразное отображение элементов в разных браузерах.</p>
+                
+                <h3>Что включает в себя классическая схема:</h3>
+                <ul>
+                    <li>Reset или Normalize CSS для сброса/нормализации стилей браузера по умолчанию</li>
+                    <li>Единый подход к отображению элементов в разных браузерах</li>
+                    <li>Предсказуемое поведение элементов при изменении условий</li>
+                    <li>Базовая структура документа</li>
+                    <li>Система сеток для адаптивной верстки</li>
+                    <li>Модульный подход к CSS</li>
+                </ul>
+                
+                <h3>Reset vs Normalize</h3>
+                <p><strong>Reset CSS</strong> — полностью сбрасывает все стили браузера по умолчанию, устанавливая одинаковые значения для всех элементов.</p>
+                <p><strong>Normalize CSS</strong> — нормализует стили, сохраняя полезные значения по умолчанию и устраняя различия между браузерами.</p>
+                
+                <h3>Пример структуры HTML документа</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Название страницы&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/normalize.css"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="page-header"&gt;
+        &lt;!-- Шапка сайта --&gt;
+    &lt;/header&gt;
+    
+    &lt;main class="page-main"&gt;
+        &lt;!-- Основное содержимое --&gt;
+    &lt;/main&gt;
+    
+    &lt;footer class="page-footer"&gt;
+        &lt;!-- Подвал сайта --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                
+                <h3>Преимущества классической схемы</h3>
+                <ul>
+                    <li>Предсказуемость поведения элементов</li>
+                    <li>Единообразие отображения в разных браузерах</li>
+                    <li>Легкость в поддержке и развитии</li>
+                    <li>Совместимость с различными CSS-фреймворками</li>
+                    <li>Удобство для командной разработки</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

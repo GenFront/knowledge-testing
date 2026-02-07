@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Схема структуры React-компонента - Учебные материалы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../../app.html" class="home-button">← Домой</a>
+            <h1>Схема структуры React-компонента</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Структура React-компонента</h2>
+                <p>React-компонент — это независимая часть пользовательского интерфейса, которая может иметь собственное состояние и жизненный цикл.</p>
+                
+                <h3>Функциональный компонент</h3>
+                <pre><code>import React from 'react';
+
+function MyComponent({ prop1, prop2 }) {
+  // Логика компонента
+  const [state, setState] = useState(initialValue);
+  
+  useEffect(() => {
+    // Логика при монтировании/обновлении
+  }, []);
+  
+  const handleClick = () => {
+    // Обработка клика
+  };
+  
+  return (
+    &lt;div className="my-component"&gt;
+      &lt;h2&gt;{prop1}&lt;/h2&gt;
+      &lt;p&gt;{prop2}&lt;/p&gt;
+      &lt;button onClick={handleClick}&gt;
+        Нажми меня
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default MyComponent;
+</code></pre>
+                
+                <h3>Классовый компонент</h3>
+                <pre><code>import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: initialValue
+    };
+  }
+  
+  componentDidMount() {
+    // Логика при монтировании
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    // Логика при обновлении
+  }
+  
+  componentWillUnmount() {
+    // Логика при размонтировании
+  }
+  
+  handleClick = () => {
+    // Обработка клика
+  }
+  
+  render() {
+    return (
+      &lt;div className="my-component"&gt;
+        &lt;h2&gt;{this.props.prop1}&lt;/h2&gt;
+        &lt;p&gt;{this.props.prop2}&lt;/p&gt;
+        &lt;button onClick={this.handleClick}&gt;
+          Нажми меня
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MyComponent;
+</code></pre>
+                
+                <h3>Жизненный цикл компонента</h3>
+                <ul>
+                    <li><strong>Монтирование</strong> — создание и вставка компонента в DOM</li>
+                    <li><strong>Обновление</strong> — изменение состояния или пропсов</li>
+                    <li><strong>Размонтирование</strong> — удаление компонента из DOM</li>
+                </ul>
+                
+                <h3>Хуки в функциональных компонентах</h3>
+                <ul>
+                    <li><code>useState</code> — для управления состоянием</li>
+                    <li><code>useEffect</code> — для побочных эффектов</li>
+                    <li><code>useContext</code> — для работы с контекстом</li>
+                    <li><code>useReducer</code> — альтернатива useState для сложного состояния</li>
+                    <li><code>useCallback</code> и <code>useMemo</code> — для оптимизации</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

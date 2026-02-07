@@ -1,97 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пройтись по демке</title>
-  <link rel="stylesheet" href="/styles/html_fundamentals.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чек-лист - Учебные материалы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="icon" href="data:,">
 </head>
-<body>
-  <main>
-    <section class="delicate-text">
-      <h1 class="h1-centered">Cистематическая проверка по чек-листу</h1>
-      <p><span class="bold-text">«Пройтись по демке»</span> — это жаргонное выражение, очень распространённое среди верстальщиков и разработчиков. Оно означает <span class="bold-text">тщательно проверить готовый (свёрстанный) сайт или его часть</span> перед тем, как показать заказчику, сдать работу или запустить в продакшен.
-      <br>
-      Это не просто беглый взгляд, а <span class="bold-text">систематическая проверка по чек-листу</span>, чтобы найти и исправить все возможные ошибки.
-    </p>
-    <hr>
-  </section>
-  <section>
-    <h2>Конкретно что значит «пройтись»?</h2>
-    <p>
-      Это процесс, когда вы открываете свёрстанную страницу в браузере и последовательно проверяете:
-    </p>
-    <ol>
-      <li><span class="bold-text">Внешний вид (Визуальная часть):</span>
-        <ul>
-          <li><span class="bold-text">Вёрстка pixel perfect:</span> Соответствует ли вёрстка макету (Figma, Photoshop)? Все ли отступы, размеры, цвета совпадают?</li>
-          <li><span class="bold-text">Состояния элементов:</span> Работают ли все состояния у интерактивных элементов ( <span class="protocol-box">:hover</span>, <span class="protocol-box">:focus</span>, <span class="protocol-box">:active</span> )? Красиво ли выглядит кнопка при наведении и нажатии?</li>
-          <li><span class="bold-text">Загрузились ли все шрифты?</span> Не «поплыла» ли вёрстка из-за подгрузки шрифтов?</li>
-          <li><span class="bold-text">Загрузились ли все картинки и иконки?</span> Нет ли битых изображений ( <span class="protocol-box">alt</span> тексты должны быть на месте! ).</li>
-        </ul>
-      </li>
-      <li>
-        <span class="bold-text">Функциональность (Как всё работает):</span>
-        <ul>
-          <li><span class="bold-text">Кликабельно ли всё, что должно быть кликабельным?</span> Ссылки, кнопки, элементы меню.</li>
-          <li><span class="bold-text">Работает ли навигация?</span> Открываются ли выпадающие меню? Переход по ссылкам ведёт куда нужно?</li>
-          <li><span class="bold-text">Работают ли формы?</span> Можно ли ввести текст в поля? Отправляется ли форма (хотя бы визуально, если нет бэкенда)?</li>
-          <li><span class="bold-text">Корректно ли работают скрипты?</span> Слайдеры листаются, модальные окна открываются и закрываются, аккордеоны работают.</li>
-        </ul>
-      </li>
-      <li>
-        <span class="bold-text">Адаптивность:</span>
-        <ul>
-          <li><span class="bold-text">«Пройтись» по разным разрешениям:</span> Проверить, как выглядит сайт на ширине 1920px, 1440px, 1280px, 1024px (планшет), 768px (планшет), 375px (мобильный) и т.д.</li>
-          <li><span class="bold-text">Не ломается ли вёрстка на разных разрешениях?</span> Ничего не вылезает за края, не наезжает друг на друга?</li>
-          <li><span class="bold-text">Корректно ли срабатывают брейкпоинты?</span> (Точки перехода между разными версиями вёрстки).</li>
-        </ul>
-      </li>
-      <li>
-        <li><span class="bold-text">Кроссбраузерность:</span>
-          <ul>
-            <li><span class="bold-text">«Пройтись» по разным браузерам:</span> Проверить, чтобы сайт примерно одинаково выглядел и работал в Chrome, Firefox, Safari, Edge.</li>
-            <li><span class="bold-text">Особое внимание:</span> Часто отдельно проверяют в старых версиях браузеров, если они нужны по ТЗ.
-            </li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-    <hr>
-  <section>
-    <h2>Почему это называется именно «по демке»?</h2>
-      <ul>
-        <li><span class="bold-text">«Демка»</span> — сокращение от <span class="bold-text">«демонстрационная версия».</span></li>
-        <li>Это версия сайта, которую уже можно показать заказчику или команде для демонстрации результата, но которая ещё не запущена на боевой сервер.</li>
-      </ul>
-    </section>
-    <hr>
-    <section>
-      <h2>Аналоги и синонимы:</h2>
-      <ul>
-        <li><span class="bold-text">«Протестировать готовую вёрстку»</span> — более формальный вариант.</li>
-        <li><span class="bold-text">«Покликать по сайту»</span> — неформальный, суть та же.</li>
-        <li><span class="bold-text">«Сделать QA вёрстки»</span> (Quality Assurance) — самый правильный технический термин.</li>
-      </ul>
-      <p>
-        <span class="bold-text">Итог:</span> Когда вам говорят «пройдись по демке», это значит: <span class="bold-text">«Внимательно проверь всё, что ты сделал, открой во всех браузерах, на всех разрешениях, покликай все кнопки и убедись, что всё идеально работает, прежде чем сдавать работу».</span> Это последний и очень важный этап перед сдачей проекта.</p>
-    </section>
-  </main>
-  
+
+<body class="topic-page">
+    <div class="container">
+        <header class="topic-header">
+            <a href="../../app.html" class="home-button">← Домой</a>
+            <h1>Чек-лист</h1>
+        </header>
+        
+        <main class="topic-content">
+            <section>
+                <h2>Чек-лист для проверки готового сайта</h2>
+                
+                <h3>HTML</h3>
+                <ul>
+                    <li>✓ Правильная структура документа (DOCTYPE, html, head, body)</li>
+                    <li>✓ Семантическая разметка (header, nav, main, article, section, footer и т.д.)</li>
+                    <li>✓ Правильное использование заголовков (h1-h6) по иерархии</li>
+                    <li>✓ Все изображения имеют атрибут alt</li>
+                    <li>✓ Все ссылки имеют осмысленный текст</li>
+                    <li>✓ Формы имеют правильные метки (label)</li>
+                    <li>✓ Код валиден (проверить на validator.w3.org)</li>
+                </ul>
+                
+                <h3>CSS</h3>
+                <ul>
+                    <li>✓ Адаптивный дизайн (медиа-запросы)</li>
+                    <li>✓ Проверка на разных размерах экрана</li>
+                    <li>✓ Правильное выравнивание элементов</li>
+                    <li>✓ Согласованные цвета и шрифты</li>
+                    <li>✓ Проверка на разных браузерах</li>
+                    <li>✓ Оптимизированные изображения</li>
+                </ul>
+                
+                <h3>Доступность</h3>
+                <ul>
+                    <li>✓ Контрастность цветов (не менее 4.5:1)</li>
+                    <li>✓ Возможность навигации с клавиатуры</li>
+                    <li>✓ ARIA-атрибуты при необходимости</li>
+                    <li>✓ Читаемость для скринридеров</li>
+                </ul>
+                
+                <h3>Производительность</h3>
+                <ul>
+                    <li>✓ Оптимизированные изображения</li>
+                    <li>✓ Минимизированные CSS и JS файлы</li>
+                    <li>✓ Использование сжатия (gzip/brotli)</li>
+                    <li>✓ Оптимизация загрузки шрифтов</li>
+                </ul>
+                
+                <h3>SEO</h3>
+                <ul>
+                    <li>✓ Meta теги (title, description)</li>
+                    <li>✓ Правильная иерархия заголовков</li>
+                    <li>✓ Alt-атрибуты для изображений</li>
+                    <li>✓ Структурированные данные (Schema.org)</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
-    
-    
-    
-
-
-
-
-
-
-
-
