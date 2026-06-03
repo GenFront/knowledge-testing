@@ -94,19 +94,20 @@
             <li><a href="#" class="array-topic" data-topic="indexes">Индексы</a></li>
             <li><a href="#" class="array-topic" data-topic="length">length</a></li>
             <li><a href="#" class="array-topic" data-topic="push">push()</a></li>
-            <li>pop()</li>
-            <li>shift()</li>
-            <li>unshift()</li>
+            <li><a href="#" class="array-topic" data-topic="pop">pop()</a></li>
+            <li><a href="#" class="array-topic" data-topic="shift">shift()</a></li>
+            <li><a href="#" class="array-topic" data-topic="unshift">unshift()</a></li>
             <li>Перебор массива через for</li>
+            <li>Сумма элементов массива</li>
+            <li>Четное и нечетное количество элементов в массиве</li>
+            <li>Среднее арифметическое элементов массива</li>
+            <li><a href="#" class="array-topic" data-topic="median">Медиана массива</a></li>
             <li>Поиск максимального элемента</li>
             <li>Поиск минимального элемента</li>
             <li>Сумма элементов массива</li>
             <li>Вложенные циклы</li>
-            <li>
-                <a href="#" class="array-topic" data-topic="selectionSort">
-                Selection Sort
-                </a>
-            </li>
+            <li><a href="#" class="array-topic" data-topic="selectionSort">Selection Sort</a></li>
+            <li><a href="#" class="array-topic" data-topic="attendanceAnalysis">Практический пример анализа посещаемости</a></li>
         </ul>
 
         <p>
@@ -300,17 +301,13 @@ for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
 
 console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
 </code></pre>
-        <p>
-            Повторяем процесс снова. Код почти идентичен — меняется только индекс.
-        </p>
+        <p>Повторяем процесс снова. Код почти идентичен — меняется только индекс.</p>
 
         <hr>
 
         <h3>4. Замечаем повторение кода</h3>
 
-        <p>
-            Три раза написал одинаковую логику. Меняется только currentIndex.
-        </p>
+        <p>Три раза написал одинаковую логику. Меняется только currentIndex.</p>
 
         <pre><code>
 currentIndex = 0
@@ -376,6 +373,282 @@ for (let i = 0; i < usersByDay.length - 1; i++) {
         <p>
             Ключевая идея: Не сортируем сразу — а постепенно “ставим минимальные элементы на свои места”.
         </p>
+    `
+},
+attendanceAnalysis: {
+    title: 'Практический пример анализа посещаемости',
+    content: `
+
+        <h3>Задача</h3>
+
+        <p>
+            Есть массив посещаемости сайта за несколько дней.
+        </p>
+
+        <p>
+            Необходимо:
+        </p>
+
+        <ul>
+            <li>Посчитать общее количество посетителей.</li>
+            <li>Найти среднюю посещаемость.</li>
+            <li>Отсортировать данные.</li>
+            <li>Найти медиану.</li>
+        </ul>
+
+        <hr>
+
+        <h3>Исходные данные</h3>
+
+        <pre><code>
+let expectedUsers = 1000;
+
+let usersByDay = [
+    817, 581, 1370, 752, 1247,
+    681, 1120, 915, 875, 1341,
+    757, 610, 812, 741, 1139,
+    812, 638, 877, 1242, 1159,
+    1372, 1170, 845, 1289, 515,
+    1247, 769, 1261, 2805, 1201
+];</code></pre>
+<p>Каждый элемент массива хранит количество посетителей за один день.</p>
+<hr>
+
+        <h3>Шаг 1. Суммирование элементов массива</h3>
+
+        <pre><code>
+let totalUsers = 0;
+
+for (let i = 0; i <= usersByDay.length - 1; i++) {
+    totalUsers += usersByDay[i];
+}
+<p>Эквивалентная запись:</p><pre><code>for (let i = 0; i < usersByDay.length; i++)</code></pre>
+</code></pre>
+
+        <p>
+            Что происходит:
+        </p>
+
+        <p>
+            Берём каждый элемент массива
+            <br>
+            ↓
+            <br>
+            Добавляем его к общей сумме
+            <br>
+            ↓
+            <br>
+            Получаем сумму посещаемости за все дни
+        <hr>
+
+<h3>Шаг 2. Расчёт среднего значения</h3>
+
+<pre><code>
+let averageUsers = totalUsers / usersByDay.length;
+</code></pre>
+
+<p>
+Что происходит:
+</p>
+<p>
+Общая посещаемость ÷ Количество дней = Средняя посещаемость
+</p>
+
+<p>
+Формула:
+</p>
+<pre><code>Среднее значение = Сумма элементов / Количество элементов</code></pre>
+<hr>
+<h3>Шаг 3. Сравнение с ожидаемым результатом</h3>
+
+<pre><code>
+if (averageUsers > expectedUsers) {
+    console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} else {
+    console.log('Посещаемость так себе. Нужно поднапрячься!');
+}</code></pre>
+<p>
+Что происходит:
+</p>
+<p>
+Средняя посещаемость
+<br>
+↓
+<br>
+Сравнивается с ожидаемым значением
+<br>
+↓
+<br>
+Выводится сообщение
+</p>
+
+<p>
+Здесь используется условная конструкция:
+</p>
+
+<pre><code>
+if (...) {
+    ...
+} else {
+    ...
+}
+</code></pre>
+
+<p>
+Иногда блок else называют
+«альтернативной веткой условия».
+</p>
+<hr>
+
+<h3>Шаг 4. Сортировка массива</h3>
+
+<pre><code>
+for (let i = 0; i <= usersByDay.length - 2; i++) {
+
+    let minValue = usersByDay[i];
+
+    for (let j = i + 1;
+         j <= usersByDay.length - 1;
+         j++) {
+
+        if (usersByDay[j] < minValue) {
+
+            minValue = usersByDay[j];
+
+            let swap = usersByDay[i];
+
+            usersByDay[i] = minValue;
+            usersByDay[j] = swap;
+        }
+    }
+}
+</code></pre>
+
+<p>Что происходит:</p>
+
+<p>
+Находим минимальный элемент
+<br>
+↓
+<br>
+Ставим его на текущую позицию
+<br>
+↓
+<br>
+Повторяем процесс для оставшейся части массива
+</p>
+
+<p>
+После завершения цикла массив будет
+отсортирован по возрастанию.
+</p>
+
+<p>
+Подробный разбор алгоритма находится
+в заметке <strong><a href="#" class="array-topic" data-topic="selectionSort">Selection Sort</a></strong>.
+</p>
+<p>
+<b>Важно:</b>
+</p>
+<p>
+Медиану можно искать только
+в отсортированном массиве.
+</p>
+
+<p>
+Например:
+</p>
+<pre><code>[7, 1, 5, 3, 9]</code></pre>
+<p>
+Из такого массива медиану определить нельзя.
+</p>
+<p>
+Сначала нужно получить:
+</p>
+<pre><code>[1, 3, 5, 7, 9]</code></pre>
+<p>
+Теперь центральный элемент легко найти.
+</p>
+<hr>
+
+<h3>Шаг 5. Проверка количества элементов</h3>
+
+<pre><code>usersByDay.length % 2</code></pre>
+<p>Что происходит:</p>
+<p>Количество элементов массива
+<br>
+↓
+<br>
+Делится на 2
+<br>
+↓
+<br>
+Проверяется остаток от деления</p>
+<p>Если остаток равен 1:</p>
+<pre><code>usersByDay.length % 2 !== 0</code></pre><p>
+Количество элементов нечётное.</p>
+<p>Если остаток равен 0:</p>
+<pre><code>usersByDay.length % 2 === 0</code></pre>
+<p>Количество элементов чётное.</p>
+<h4>Нечётное количество элементов</h4>
+<pre><code>
+let medianIndex = (usersByDay.length - 1) / 2;
+median = usersByDay[medianIndex];</code></pre>
+<p>Пример:</p>
+<pre><code>[1, 3, 5, 7, 9]</code></pre>
+<p>Индексы:</p>
+<pre><code>0  1  2  3  4</code></pre>
+<p>Центральный элемент:</p>
+<pre><code>5</code></pre>
+<h4>Чётное количество элементов</h4>
+<pre><code>
+let leftIndex = usersByDay.length / 2 - 1;
+let rightIndex = usersByDay.length / 2;
+median = (usersByDay[leftIndex] + usersByDay[rightIndex]) / 2;
+</code></pre>
+<p>Пример:</p>
+<pre><code>[1, 3, 5, 7]</code></pre>
+<p>Индексы:</p>
+<pre><code>0  1  2  3</code></pre>
+<p>Берём элементы:</p>
+<pre><code>3 и 5</code></pre>
+<p>Считаем среднее:</p>
+<pre><code>(3 + 5) / 2</code></pre>
+<p>Медиана:</p>
+<pre><code>4</code></pre>
+<p>
+<b>Важно:</b>
+</p>
+
+<p>В некоторых задачах блок else называют «альтернативной веткой условия».</p>
+<pre><code>
+if (...) {
+    ...
+} else {
+    ...
+}
+</code></pre>
+
+<p>Под альтернативной веткой понимается блок else.</p>
+<hr>
+
+<h3>Итог</h3>
+
+<p>В одном практическом примере используются сразу несколько важных тем JavaScript:</p>
+<ul>
+    <li>Массивы</li>
+    <li>Индексы</li>
+    <li>length</li>
+    <li>Цикл for</li>
+    <li>Вложенные циклы</li>
+    <li>Суммирование элементов массива</li>
+    <li>Среднее арифметическое</li>
+    <li>if / else</li>
+    <li>Selection Sort</li>
+    <li>Медиана</li>
+</ul>
+
+<p>Этот пример показывает, как отдельные темы объединяются в решение одной практической задачи.</p>
     `
 }
 
@@ -473,7 +746,7 @@ console.log('Сейчас меняем содержимое');
                     <hr>
 
                     <div id="array-topic-content">
-                        <p>Выберите тему из списка выше.</p>
+                        
                     </div>
                 </div>
             `;
