@@ -102,7 +102,11 @@
             <li>Поиск минимального элемента</li>
             <li>Сумма элементов массива</li>
             <li>Вложенные циклы</li>
-            <li>Selection Sort</li>
+            <li>
+                <a href="#" class="array-topic" data-topic="selectionSort">
+                Selection Sort
+                </a>
+            </li>
         </ul>
 
         <p>
@@ -207,7 +211,174 @@ console.log(arr);
         </code></pre>
     `
 },
-    
+  selectionSort: {
+    title: "Selection Sort — эволюция мышления",
+    content: `
+        <h3>1. Поиск минимального элемента для позиции 0</h3>
+
+        <p>
+/* <br>
+После выполнения цикла на позиции 0 окажется самое маленькое число.<br>
+Код для currentIndex = 0 <br>
+*/ <br> </p>
+
+               <pre><code>
+let usersByDay = [4, 2, 1, 3];
+console.log(usersByDay);
+
+let currentIndex = 0;
+let minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+  if (usersByDay[j] < minValue) {
+    minValue = usersByDay[j];
+    let swap = usersByDay[currentIndex];
+    usersByDay[currentIndex] = minValue;
+    usersByDay[j] = swap;
+    console.log('Меняю местами ' + swap + ' и ' + minValue);
+    console.log('Массив сейчас: ' + usersByDay);
+  }
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+        </code></pre>
+
+        <hr>
+
+        <h3>2. Поиск минимального элемента для позиции 1</h3>
+       <p>
+/*<br>
+Теперь позиция 0 уже отсортирована.<br>
+Продолжаем искать минимальный элемент среди оставшихся элементов<br>
+для позиции 1.<br>
+*/<br> </p>
+<pre><code>
+console.log(usersByDay);
+currentIndex = 1;
+minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+  if (usersByDay[j] < minValue) {
+    minValue = usersByDay[j];
+    let swap = usersByDay[currentIndex];
+    usersByDay[currentIndex] = minValue;
+    usersByDay[j] = swap;
+    console.log('Меняю местами ' + swap + ' и ' + minValue);
+    console.log('Массив сейчас: ' + usersByDay);
+  }
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+</code></pre>
+        <p>
+            Теперь первая позиция уже “зафиксирована”, и мы повторяем ту же логику для следующего индекса.
+        </p>
+
+        <hr>
+
+        <h3>3. Поиск минимального элемента для позиции 2</h3>
+<p>
+/*<br>
+Позиции 0 и 1 уже содержат минимальные элементы.<br>
+Остаётся найти минимальный элемент для позиции 2.<br>
+*/<br> </p>
+<pre><code>
+console.log(usersByDay);
+currentIndex = 2;
+minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+  if (usersByDay[j] < minValue) {
+    minValue = usersByDay[j];
+    let swap = usersByDay[currentIndex];
+    usersByDay[currentIndex] = minValue;
+    usersByDay[j] = swap;
+    console.log('Меняю местами ' + swap + ' и ' + minValue);
+    console.log('Массив сейчас: ' + usersByDay);
+  }
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+</code></pre>
+        <p>
+            Повторяем процесс снова. Код почти идентичен — меняется только индекс.
+        </p>
+
+        <hr>
+
+        <h3>4. Замечаем повторение кода</h3>
+
+        <p>
+            Три раза написал одинаковую логику. Меняется только currentIndex.
+        </p>
+
+        <pre><code>
+currentIndex = 0
+currentIndex = 1
+currentIndex = 2
+        </code></pre>
+
+        <hr>
+
+        <h3>5. Выносим повторение в цикл</h3>
+
+        <p>
+            Понимаем, что можно автоматизировать процесс через внешний цикл.
+        </p>
+
+        <pre><code>
+for (let currentIndex = 0; currentIndex < usersByDay.length - 1; currentIndex++) {
+
+    let minValue = usersByDay[currentIndex];
+
+    for (let j = currentIndex + 1; j < usersByDay.length; j++) {
+
+        if (usersByDay[j] < minValue) {
+
+            minValue = usersByDay[j];
+
+            let swap = usersByDay[currentIndex];
+            usersByDay[currentIndex] = minValue;
+            usersByDay[j] = swap;
+        }
+    }
+}
+        </code></pre>
+
+        <hr>
+
+        <h3>6. Итог: Selection Sort</h3>
+
+        <p>
+            Получаем классический алгоритм сортировки выбором.
+        </p>
+
+        <pre><code>
+let usersByDay = [4, 2, 1, 3];
+
+for (let i = 0; i < usersByDay.length - 1; i++) {
+
+    let minIndex = i;
+
+    for (let j = i + 1; j < usersByDay.length; j++) {
+
+        if (usersByDay[j] < usersByDay[minIndex]) {
+            minIndex = j;
+        }
+    }
+
+    let temp = usersByDay[i];
+    usersByDay[i] = usersByDay[minIndex];
+    usersByDay[minIndex] = temp;
+}
+        </code></pre>
+
+        <p>
+            Ключевая идея: Не сортируем сразу — а постепенно “ставим минимальные элементы на свои места”.
+        </p>
+    `
+}
+
 };
 
 /*
