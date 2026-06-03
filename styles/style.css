@@ -665,3 +665,26 @@ a:visited {
   color: var(--primary-color);
   padding-left: 0.75rem;
 }
+
+/* ==========================================
+   Раздел "Массивы"
+   ========================================== */
+
+.arrays-layout {
+    display: flex;
+    gap: 30px;
+}
+
+#arrays-menu {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+#array-topic-content {
+    flex-grow: 1;
+}
+
+#arrays-menu {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}

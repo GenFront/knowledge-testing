@@ -84,12 +84,32 @@
                     `
                 },
                 arrays: {
-                    title: 'Массивы',
-                    content: `
-                        <p>Массивы — это специальные объекты, предназначенные для хранения упорядоченных коллекций данных.</p>
-                        <p>Массивы имеют методы для добавления, удаления и изменения элементов.</p>
-                    `
-                },
+    title: 'Массивы',
+    content: `
+        <h3>Содержание</h3>
+
+        <ul>
+            <li>Что такое массив</li>
+            <li>Создание массива</li>
+            <li><a href="#" class="array-topic" data-topic="indexes">Индексы</a></li>
+            <li><a href="#" class="array-topic" data-topic="length">length</a></li>
+            <li><a href="#" class="array-topic" data-topic="push">push()</a></li>
+            <li>pop()</li>
+            <li>shift()</li>
+            <li>unshift()</li>
+            <li>Перебор массива через for</li>
+            <li>Поиск максимального элемента</li>
+            <li>Поиск минимального элемента</li>
+            <li>Сумма элементов массива</li>
+            <li>Вложенные циклы</li>
+            <li>Selection Sort</li>
+        </ul>
+
+        <p>
+            Раздел находится в процессе наполнения.
+        </p>
+    `
+},
                 dom: {
                     title: 'DOM',
                     content: `
@@ -124,6 +144,118 @@
                 }
             };
 
+            // Данные подразделов массива
+const arraysContent = {
+    indexes: {
+        title: 'Индексы',
+        content: `
+            <p>
+                Индекс — это порядковый номер элемента массива.
+            </p>
+
+            <pre><code>
+            let arr = ['a', 'b', 'c'];
+
+            console.log(arr[0]); // a
+            console.log(arr[1]); // b
+            console.log(arr[2]); // c
+            </code></pre>
+
+            <p>
+                В JavaScript индексы начинаются с 0.
+            </p>
+        `
+    },
+
+    length: {
+        title: 'length',
+        content: `
+            <p>
+                Свойство length показывает количество элементов массива.
+            </p>
+
+            <pre><code>
+            let arr = [10, 20, 30];
+
+            console.log(arr.length); // 3
+            </code></pre>
+
+            <p>
+                Последний элемент массива:
+            </p>
+
+            <pre><code>
+            arr[arr.length - 1]
+            </code></pre>
+    `
+},
+
+push: {
+    title: 'push()',
+    content: `
+        <p>
+            Метод push() добавляет элемент в конец массива.
+        </p>
+
+        <pre><code>
+let arr = [1, 2];
+
+arr.push(3);
+
+console.log(arr);
+// [1, 2, 3]
+        </code></pre>
+    `
+},
+    
+};
+
+/*
+==================================================
+Отображение заметки подраздела массива
+==================================================
+
+Принимает ключ подраздела:
+
+showArrayTopic('indexes')
+
+и показывает соответствующую заметку
+из объекта arraysContent.
+*/
+
+function showArrayTopic(topic) {
+
+     console.log('showArrayTopic вызвана');
+
+    if (!arraysContent[topic]) {
+        return;
+    }
+
+    const topicData = arraysContent[topic];
+
+    console.log(topicData);
+
+    const topicContainer =
+        document.getElementById('array-topic-content');
+
+
+ console.log(topicContainer);
+
+
+    if (!topicContainer) {
+        return;
+    }
+
+console.log('Сейчас меняем содержимое');
+
+    topicContainer.innerHTML = `
+        <h2>${topicData.title}</h2>
+        ${topicData.content}
+    `;
+    console.log(topicContainer.innerHTML);
+}
+
+
             // Обработчик кликов по навигации
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -147,17 +279,98 @@
             });
 
             // Функция отображения контента
-            function showContent(section) {
-                if (section && jsContent[section]) {
-                    const sectionData = jsContent[section];
-                    contentContainer.innerHTML = `
-                        <h2>${sectionData.title}</h2>
+           function showContent(section) {
+
+
+    if (section && jsContent[section]) {
+
+        const sectionData = jsContent[section];
+
+        // Особое отображение для раздела "Массивы"
+        if (section === 'arrays') {
+
+
+            contentContainer.innerHTML = `
+                <h2>${sectionData.title}</h2>
+
+                <div class="arrays-layout">
+
+                    <div id="arrays-menu">
                         ${sectionData.content}
-                    `;
-                } else {
-                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
-                }
-            }
+                    </div>
+
+                    <hr>
+
+                    <div id="array-topic-content">
+                        <p>Выберите тему из списка выше.</p>
+                    </div>
+                </div>
+            `;
+
+            return;
+        }
+
+        // Отображение остальных разделов
+        contentContainer.innerHTML = `
+            <h2>${sectionData.title}</h2>
+            ${sectionData.content}
+        `;
+
+    } else {
+
+        contentContainer.innerHTML =
+            '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+
+    }
+}
+/*
+==================================================
+Обработчик подразделов внутри темы "Массивы"
+==================================================
+
+Что делает:
+
+1. Отслеживает клик по ссылкам вида:
+
+   <a class="array-topic" data-topic="indexes">
+
+2. Получает значение data-topic.
+
+   Например:
+   data-topic="indexes"
+
+3. Находит соответствующую заметку
+   в объекте arraysContent.
+
+4. Подменяет содержимое contentContainer.
+
+Таким образом внутри раздела "Массивы"
+появляется возможность открывать
+отдельные заметки ("Индексы", "length",
+"push()" и т.д.) без перезагрузки страницы.
+
+Связанные объекты:
+
+- arraysContent
+- contentContainer
+- data-topic
+
+Дата добавления:
+02 Июнь 2026
+*/
+            document.addEventListener('click', function (event) {
+// Проверяем, что клик был именно по ссылке подраздела массива
+    if (!event.target.classList.contains('array-topic')) {
+        return;
+    }
+// Отменяем стандартное поведение ссылки
+    event.preventDefault();
+// Получаем название подраздела из data-topic
+    const topic = event.target.dataset.topic;
+
+
+    showArrayTopic(topic);
+});
         });
     </script>
 </body>
