@@ -1,111 +1,412 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Проекты - Библиотека знаний</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="icon" href="data:,">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="data:," />
+  </head>
 
-<body class="topic-page">
+  <body class="topic-page">
     <div class="container">
-        <div class="topic-layout">
-            <!-- Навигация по теме Проекты -->
-            <nav class="topic-nav">
-                <h3>Проекты</h3>
-                <ul>
-                    <li><a href="#" class="nav-link" data-section="practice">Практика</a></li>
-                    <li><a href="#" class="nav-link" data-section="mentors">Frontendmentor</a></li>
-                    <li><a href="#" class="nav-link" data-section="examples">Примеры проектов</a></li>
-                    <li><a href="#" class="nav-link" data-section="portfolio">Портфолио</a></li>
-                    <li><a href="#" class="nav-link" data-section="tasks">Задачи</a></li>
-                    <li><a href="#" class="nav-link" data-section="collaboration">Совместная работа</a></li>
-                    <li><a href="#" class="nav-link" data-section="deployment">Развертывание</a></li>
-                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
-                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
-                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
-                </ul>
-            </nav>
+      <div class="topic-layout">
+        <!-- Навигация по теме Проекты -->
+        <nav class="topic-nav">
+          <h3>Проекты</h3>
+          <ul>
+            <li>
+              <a href="#" class="nav-link" data-section="practice">Практика</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="mentors"
+                >Frontendmentor</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="examples"
+                >Примеры проектов</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="portfolio"
+                >Портфолио</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="tasks">Задачи</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="collaboration"
+                >Совместная работа</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="deployment"
+                >Развертывание</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="resources"
+                >Полезные ресурсы</a
+              >
+            </li>
+            <li>
+              <a href="materials.html" class="nav-link">Учебные материалы</a>
+            </li>
+            <li><a href="tests.html" class="nav-link">Тесты</a></li>
+          </ul>
+        </nav>
 
-            <!-- Контент по теме Проекты -->
-            <main class="topic-content">
-                <header class="topic-header">
-                    <a href="../app.html" class="home-button">← Домой</a>
-                    <h1>Проекты</h1>
-                </header>
+        <!-- Контент по теме Проекты -->
+        <main class="topic-content">
+          <header class="topic-header">
+            <a href="../app.html" class="home-button">← Домой</a>
+            <h1>Проекты</h1>
+          </header>
 
-                <div id="content-container">
-                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
-                </div>
-            </main>
-        </div>
+          <div id="content-container">
+            <p class="placeholder-text">
+              Выберите раздел из навигации слева, чтобы увидеть соответствующую
+              информацию
+            </p>
+          </div>
+        </main>
+      </div>
     </div>
 
     <!-- Подключение Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="../scripts/search.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const contentContainer = document.getElementById('content-container');
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const contentContainer = document.getElementById("content-container");
 
-            // Данные контента для Проектов
-            const projectsContent = {
-                practice: {
-                    title: 'Практика',
-                    content: `
+        // Данные задач
+
+        const tasksContent = {
+          qualificationJumps: {
+            title: "Квалификация по прыжкам",
+            content: `
+            <p>
+                Практическая задача по массивам,
+                сортировке и среднему арифметическому.
+            </p>
+            <h3>Условие</h3>
+
+<p>
+Я провожу тренировки и хочу понять,
+пройду ли квалификацию.
+</p>
+
+<p>
+В течение тренировки выполняется несколько прыжков.
+Длины прыжков хранятся в массиве attempts.
+</p>
+
+<p>
+Необходимо:
+</p>
+
+<ul>
+    <li>Найти три лучших прыжка.</li>
+    <li>Посчитать их среднее значение.</li>
+    <li>Сравнить результат с нормативом.</li>
+    <li>Определить, пройдена квалификация или нет.</li>
+</ul>
+<h3>Разбор вручную</h3>
+
+<pre><code>
+[120, 150, 160, 201, 203, 180, 202]
+</code></pre>
+
+<p>
+Три лучших результата:
+</p>
+
+<pre><code>
+203
+202
+201
+</code></pre>
+
+<p>
+Среднее:
+</p>
+
+<pre><code>
+(203 + 202 + 201) / 3
+</code></pre>
+
+<p>
+Получаем:
+</p>
+
+<pre><code>
+202
+</code></pre>
+
+<p>
+Норматив:
+</p>
+
+<pre><code>
+200
+</code></pre>
+
+<p>
+Поскольку 202 > 200,
+квалификация пройдена.
+</p>
+<h3>Что нужно найти</h3>
+
+<p>
+Чтобы получить три лучших прыжка,
+сначала нужно понять,
+где они находятся в массиве.
+</p>
+
+<p>
+В исходном массиве результаты расположены случайным образом.
+</p>
+
+<p>
+Поэтому сначала необходимо отсортировать массив.
+</p>
+<h3>Сортировка массива</h3>
+
+<p>
+Для сортировки используется алгоритм
+Selection Sort.
+</p>
+
+<p>
+После сортировки массив будет выглядеть так:
+</p>
+
+<pre><code>
+[120, 150, 160, 180, 201, 202, 203]
+</code></pre>
+
+<p>
+Теперь лучшие результаты находятся в конце массива.
+</p>
+
+<p>
+Подробный разбор алгоритма:
+<a href="#" class="array-topic" data-topic="selectionSort">
+Selection Sort
+</a>
+</p>
+<h3>Получение лучших результатов</h3>
+
+<pre><code>
+let best = attempts[attempts.length - 1];
+
+let secondBest =
+    attempts[attempts.length - 2];
+
+let thirdBest =
+    attempts[attempts.length - 3];
+</code></pre>
+
+<p>
+После сортировки максимальные элементы
+всегда находятся в конце массива.
+</p>
+<h3>Почему именно length - 1</h3>
+
+<p>
+После сортировки:
+</p>
+
+<pre><code>
+[120, 150, 160, 180, 201, 202, 203]
+</code></pre>
+
+<p>
+Индексы:
+</p>
+
+<pre><code>
+ 0    1    2    3    4    5    6
+</code></pre>
+
+<p>
+Длина массива:
+</p>
+
+<pre><code>
+attempts.length === 7
+</code></pre>
+
+<p>
+Последний индекс:
+</p>
+
+<pre><code>
+7 - 1 = 6
+</code></pre>
+
+<p>
+Поэтому:
+</p>
+
+<pre><code>
+attempts[attempts.length - 1]
+</code></pre>
+
+<p>
+вернёт максимальный элемент массива.
+</p>
+<h3>Среднее значение лучших прыжков</h3>
+
+<pre><code>
+averageBest =
+    (best + secondBest + thirdBest) / 3;
+</code></pre>
+
+<p>
+Складываем три лучших результата
+и делим на 3.
+</p>
+<h3>Проверка квалификации</h3>
+
+<pre><code>
+qualified =
+    averageBest > qualificationDistance;
+</code></pre>
+
+<p>
+Если среднее значение лучших прыжков
+больше норматива,
+спортсмен проходит квалификацию.
+</p>
+<h3>Итоговое решение</h3>
+<pre><code>
+// Квалификационное значение
+let qualificationDistance = 200;
+// Длины прыжков
+let attempts = [120, 150, 160, 201, 203, 180, 202];
+// Результат прохождения трех прыжков
+let qualified = false;
+// Среднее значение трех лучших прыжков
+let averageBest = 0;
+
+
+for (let i = 0; i < attempts.length - 1; i++) {
+
+    let minIndex = i;
+
+    for (let j = i + 1; j < attempts.length; j++) {
+
+        if (attempts[j] < attempts[minIndex]) {
+            minIndex = j;
+        }
+    }
+
+    let temp = attempts[i];
+    attempts[i] = attempts[minIndex];
+    attempts[minIndex] = temp;
+    console.log(attempts);
+}
+averageBest = (attempts[attempts.length - 1] + attempts[attempts.length - 2] + attempts[attempts.length - 3]) / 3;
+let best = attempts[attempts.length - 1];
+let secondBest = attempts[attempts.length - 2];
+let thirdBest = attempts[attempts.length - 3];
+
+averageBest = (best + secondBest + thirdBest) / 3;</code></pre>
+<h3>Что я понял после решения</h3>
+
+<ul>
+    <li>
+        Selection Sort можно использовать
+        как подготовительный этап
+        для анализа данных.
+    </li>
+
+    <li>
+        После сортировки удобно получать
+        максимальные элементы через индексы.
+    </li>
+
+    <li>
+        Запись length - 1 позволяет получить
+        последний элемент массива независимо
+        от его размера.
+    </li>
+
+    <li>
+        Среднее арифметическое помогает
+        оценивать результат сразу по нескольким значениям.
+    </li>
+</ul>
+        `,
+          },
+        };
+
+        // Данные контента для Проектов
+        const projectsContent = {
+          practice: {
+            title: "Практика",
+            content: `
                         <p>Практика — важнейшая часть обучения. Реальные проекты позволяют применить теоретические знания на практике.</p>
                         <p>Практика помогает закрепить навыки, выявить пробелы в знаниях и развить уверенность в своих силах.</p>
-                    `
-                },
-                mentors: {
-                    title: 'Frontendmentor',
-                    content: `
+                    `,
+          },
+          mentors: {
+            title: "Frontendmentor",
+            content: `
                         <p>Frontendmentor — это платформа с реальными задачами для практики верстки и разработки.</p>
                         <p>Задачи различаются по уровню сложности и включают в себя макеты, требования и проверку решений.</p>
-                    `
-                },
-                examples: {
-                    title: 'Примеры проектов',
-                    content: `
+                    `,
+          },
+          examples: {
+            title: "Примеры проектов",
+            content: `
                         <p>Примеры проектов помогают понять, как различные технологии применяются в реальных условиях.</p>
                         <p>Изучение чужого кода и адаптация под свои нужды — отличный способ учиться.</p>
-                    `
-                },
-                portfolio: {
-                    title: 'Портфолио',
-                    content: `
+                    `,
+          },
+          portfolio: {
+            title: "Портфолио",
+            content: `
                         <p>Портфолио — это демонстрация ваших навыков и опыта потенциальным работодателям.</p>
                         <p>Хорошее портфолио должно содержать качественные проекты, демонстрирующие разнообразные навыки.</p>
-                    `
-                },
-                tasks: {
-                    title: 'Задачи',
-                    content: `
-                        <p>Решение задач помогает развить логическое мышление и навыки программирования.</p>
-                        <p>Платформы с задачами: Codewars, LeetCode, FreeCodeCamp и другие.</p>
-                    `
-                },
-                collaboration: {
-                    title: 'Совместная работа',
-                    content: `
+                    `,
+          },
+          tasks: {
+            title: "Задачи",
+            content: `
+                        <h3>Список задач</h3>
+                        <ul>
+                            <li><a href="#" class="task-topic" data-topic="qualificationJumps"> Квалификация по прыжкам</a></li>
+                        </ul>
+    `,
+          },
+          collaboration: {
+            title: "Совместная работа",
+            content: `
                         <p>Совместная работа над проектами развивает навыки командной разработки и взаимодействия.</p>
                         <p>Использование Git, GitHub Flow, code review и другие практики важны для успешной командной работы.</p>
-                    `
-                },
-                deployment: {
-                    title: 'Развертывание',
-                    content: `
+                    `,
+          },
+          deployment: {
+            title: "Развертывание",
+            content: `
                         <p>Развертывание — это процесс публикации проекта в интернете для доступа к нему.</p>
                         <p>Популярные платформы для развертывания: Netlify, Vercel, GitHub Pages, Heroku.</p>
-                    `
-                },
-                resources: {
-                    title: 'Полезные ресурсы',
-                    content: `
+                    `,
+          },
+          resources: {
+            title: "Полезные ресурсы",
+            content: `
                         <ul>
                             <li><a href="https://www.frontendmentor.io/" target="_blank">Frontendmentor</a></li>
                             <li><a href="https://github.com/GenFront/htmlacademy-sedona" target="_blank">Проект Седона</a></li>
@@ -113,45 +414,174 @@
                             <li><a href="https://github.com/topics/frontend-projects" target="_blank">GitHub - Frontend Projects</a></li>
                             <li><a href="https://roadmap.sh/frontend" target="_blank">Frontend Roadmap</a></li>
                         </ul>
-                    `
-                }
-            };
+                    `,
+          },
+        };
 
-            // Обработчик кликов по навигации
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
-                        // Если это ссылка на материалы или тесты, переходим на страницу
-                        window.location.href = this.href;
-                        return;
-                    }
+        //функцию отображения задачи
+        function showTaskTopic(topic) {
+          console.log("showTaskTopic");
+          console.log(topic);
 
-                    e.preventDefault();
-                    const section = this.getAttribute('data-section');
+          if (!tasksContent[topic]) {
+            return;
+          }
 
-                    // Убираем активный класс у всех ссылок
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    // Добавляем активный класс текущей ссылке
-                    this.classList.add('active');
+          const topicData = tasksContent[topic];
 
-                    // Показываем контент для выбранного раздела
-                    showContent(section);
-                });
-            });
+          const topicContainer = document.getElementById("task-topic-content");
 
-            // Функция отображения контента
-            function showContent(section) {
-                if (section && projectsContent[section]) {
-                    const sectionData = projectsContent[section];
-                    contentContainer.innerHTML = `
-                        <h2>${sectionData.title}</h2>
-                        ${sectionData.content}
-                    `;
-                } else {
-                    contentContainer.innerHTML = '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
-                }
+          console.log(topicContainer);
+
+          if (!topicContainer) {
+            return;
+          }
+
+          topicContainer.innerHTML = `
+        <h2>${topicData.title}</h2>
+        ${topicData.content}
+    `;
+        }
+
+        // Обработчик кликов по навигации
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (
+              this.href.endsWith("materials.html") ||
+              this.href.endsWith("tests.html")
+            ) {
+              // Если это ссылка на материалы или тесты, переходим на страницу
+              window.location.href = this.href;
+              return;
             }
+
+            e.preventDefault();
+            const section = this.getAttribute("data-section");
+
+            // Убираем активный класс у всех ссылок
+            navLinks.forEach((l) => l.classList.remove("active"));
+            // Добавляем активный класс текущей ссылке
+            this.classList.add("active");
+
+            // Показываем контент для выбранного раздела
+            showContent(section);
+          });
         });
+
+        // Функция отображения контента
+        function showContent(section) {
+          if (section && projectsContent[section]) {
+            const sectionData = projectsContent[section];
+
+            /*
+        ==================================================
+        Особый режим отображения раздела "Задачи"
+        ==================================================
+        
+        Раздел состоит из двух колонок:
+        
+        Левая колонка:
+        - список задач
+        
+        Правая колонка:
+        - содержимое выбранной задачи
+        
+        Архитектура повторяет подход,
+        используемый в разделе "Массивы".
+        
+        Дата добавления:
+        06 Июнь 2026
+        */
+            if (section === "tasks") {
+              contentContainer.innerHTML = `
+        <h2>${sectionData.title}</h2>
+
+        <div class="arrays-layout">
+
+            <div id="tasks-menu">
+                ${sectionData.content}
+            </div>
+
+            <div id="task-topic-content">
+                
+            </div>
+
+        </div>
+    `;
+
+              return;
+            }
+
+            // Отображение остальных разделов
+          } else {
+            contentContainer.innerHTML =
+              '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+          }
+        }
+
+        /*
+==================================================
+Обработчик подразделов внутри раздела "Задачи"
+==================================================
+
+Что делает:
+
+1. Отслеживает клики по элементам,
+   имеющим класс "task-topic"
+   (или вложенным внутри таких элементов)
+
+   Например:
+
+   <a class="task-topic" data-topic="qualificationJumps">
+       Квалификация по прыжкам
+   </a>
+
+2. Находит ближайший элемент с классом:
+   .task-topic
+
+3. Получает значение data-topic
+
+   Например:
+   qualificationJumps
+
+4. Передаёт его в функцию:
+
+   showTaskTopic(topic)
+
+5. Функция отображает выбранную задачу
+   в правой колонке интерфейса без перезагрузки страницы.
+
+Архитектура позволяет:
+
+- добавлять новые задачи без изменения логики
+- расширять библиотеку знаний
+- переиспользовать один обработчик событий
+
+Связанные сущности:
+
+- tasksContent
+- task-topic-content
+- showTaskTopic()
+- data-topic
+
+Дата добавления:
+06 Июнь 2026
+*/
+
+        document.addEventListener("click", function (event) {
+          const link = event.target.closest(".task-topic");
+
+          if (!link) return;
+
+          event.preventDefault();
+
+          const topic = link.dataset.topic;
+
+          console.log("task clicked", topic);
+
+          showTaskTopic(topic);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
