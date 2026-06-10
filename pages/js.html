@@ -1,159 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- HTML-структура и метаданные -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript - Библиотека знаний</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="icon" href="data:,">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="data:," />
+  </head>
 
-<body class="topic-page">
+  <body class="topic-page">
     <div class="container">
-        <div class="topic-layout">
-            <!-- Навигация по теме JavaScript -->
-            <nav class="topic-nav">
-                <h3>JavaScript</h3>
-                <ul>
-                    <li><a href="#" class="nav-link" data-section="basics">Основы JS</a></li>
-                    <li><a href="#" class="nav-link" data-section="variables">Переменные</a></li>
-                    <li><a href="#" class="nav-link" data-section="functions">Функции</a></li>
-                    <li><a href="#" class="nav-link" data-section="objects">Объекты</a></li>
-                    <li><a href="#" class="nav-link" data-section="arrays">Массивы</a></li>
-                    <li><a href="#" class="nav-link" data-section="dom">DOM</a></li>
-                    <li><a href="#" class="nav-link" data-section="events">События</a></li>
-                    <li><a href="#" class="nav-link" data-section="async">Асинхронность</a></li>
-                    <li><a href="#" class="nav-link" data-section="resources">Полезные ресурсы</a></li>
-                    <li><a href="materials.html" class="nav-link">Учебные материалы</a></li>
-                    <li><a href="tests.html" class="nav-link">Тесты</a></li>
-                </ul>
-            </nav>
+      <div class="topic-layout">
+        <!-- Навигация по теме JavaScript -->
+        <nav class="topic-nav">
+          <h3>JavaScript</h3>
+          <ul>
+            <li>
+              <a href="#" class="nav-link" data-section="basics">Основы JS</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="variables"
+                >Переменные</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="functions">Функции</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="objects">Объекты</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="arrays">Массивы</a>
+            </li>
+            <li><a href="#" class="nav-link" data-section="dom">DOM</a></li>
+            <li>
+              <a href="#" class="nav-link" data-section="events">События</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="async"
+                >Асинхронность</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="resources"
+                >Полезные ресурсы</a
+              >
+            </li>
+            <li>
+              <a href="materials.html" class="nav-link">Учебные материалы</a>
+            </li>
+            <li><a href="tests.html" class="nav-link">Тесты</a></li>
+          </ul>
+        </nav>
 
-            <!-- Контент по теме JavaScript -->
-            <main class="topic-content">
-                <header class="topic-header">
-                    <a href="../app.html" class="home-button">← Домой</a>
-                    <h1>JavaScript</h1>
-                </header>
+        <!-- Контент по теме JavaScript -->
+        <main class="topic-content">
+          <header class="topic-header">
+            <a href="../app.html" class="home-button">← Домой</a>
+            <h1>JavaScript</h1>
+          </header>
 
-                <div id="content-container">
-                    <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
-                </div>
-            </main>
-        </div>
+          <div id="content-container">
+            <p class="placeholder-text">
+              Выберите раздел из навигации слева, чтобы увидеть соответствующую
+              информацию
+            </p>
+          </div>
+        </main>
+      </div>
     </div>
 
     <!-- Подключение Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="../scripts/search.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const contentContainer = document.getElementById('content-container');
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const contentContainer = document.getElementById("content-container");
 
-            // Данные контента для JavaScript
-            const jsContent = {
-                basics: {
-                    title: 'Основы JavaScript',
-                    content: `
+        // Данные контента для JavaScript (const jsContent это объект, объявленный через литерал объекта)
+        const jsContent = {
+          basics: {
+            title: "Основы JavaScript",
+            content: `
                         <p>JavaScript — это язык программирования, который позволяет делать веб-сайты интерактивными.</p>
                         <p>JavaScript работает в браузере и может изменять содержимое HTML-страницы, стили и реагировать на действия пользователя.</p>
-                    `
-                },
-                variables: {
-                    title: 'Переменные',
-                    content: `
+                    `,
+          },
+          variables: {
+            title: "Переменные",
+            content: `
                         <p>В JavaScript переменные объявляются с помощью ключевых слов var, let или const.</p>
                         <p>let и const были добавлены в ES6 и обеспечивают лучшее управление областью видимости.</p>
-                    `
-                },
-                functions: {
-                    title: 'Функции',
-                    content: `
+                    `,
+          },
+          functions: {
+            title: "Функции",
+            content: `
                         <p>Функции — это многократно используемые блоки кода, которые выполняют определенную задачу.</p>
                         <p>Функции могут принимать параметры и возвращать значения. Существуют различные способы объявления функций.</p>
-                    `
-                },
-                objects: {
-                    title: 'Объекты',
-                    content: `
+                    `,
+          },
+          objects: {
+            title: "Объекты",
+            content: `
                         <p>Объекты в JavaScript — это коллекции пар ключ-значение. Они используются для хранения связанных данных и функций.</p>
                         <p>Объекты являются основой объектно-ориентированного программирования в JavaScript.</p>
-                    `
-                },
-                arrays: {
-    title: 'Массивы',
-    content: `
-        <h3>Содержание</h3>
+                    `,
+          },
+          arrays: {
+            title: "Массивы",
+            content: `
+                        <h3>Содержание</h3>
 
-        <ul>
-            <li>Что такое массив</li>
-            <li>Создание массива</li>
-            <li><a href="#" class="array-topic" data-topic="indexes">Индексы</a></li>
-            <li><a href="#" class="array-topic" data-topic="length">length</a></li>
-            <li><a href="#" class="array-topic" data-topic="push">push()</a></li>
-            <li><a href="#" class="array-topic" data-topic="pop">pop()</a></li>
-            <li><a href="#" class="array-topic" data-topic="shift">shift()</a></li>
-            <li><a href="#" class="array-topic" data-topic="unshift">unshift()</a></li>
-            <li>Перебор массива через for</li>
-            <li>Сумма элементов массива</li>
-            <li>Четное и нечетное количество элементов в массиве</li>
-            <li>Среднее арифметическое элементов массива</li>
-            <li><a href="#" class="array-topic" data-topic="median">Медиана массива</a></li>
-            <li>Поиск максимального элемента</li>
-            <li>Поиск минимального элемента</li>
-            <li>Сумма элементов массива</li>
-            <li>Вложенные циклы</li>
-            <li><a href="#" class="array-topic" data-topic="selectionSort">Selection Sort</a></li>
-            <li><a href="#" class="array-topic" data-topic="attendanceAnalysis">Практический пример анализа посещаемости</a></li>
-        </ul>
+                            <ul>
+                                <li>Что такое массив</li>
+                                <li>Создание массива</li>
+                                <li><a href="#" class="array-topic" data-topic="indexes">Индексы</a></li>
+                                <li><a href="#" class="array-topic" data-topic="length">length</a></li>
+                                <li><a href="#" class="array-topic" data-topic="push">push()</a></li>
+                                <li><a href="#" class="array-topic" data-topic="pop">pop()</a></li>
+                                <li><a href="#" class="array-topic" data-topic="shift">shift()</a></li>
+                                <li><a href="#" class="array-topic" data-topic="unshift">unshift()</a></li>
+                                <li>Перебор массива через for</li>
+                                <li>Сумма элементов массива</li>
+                                <li>Четное и нечетное количество элементов в массиве</li>
+                                <li>Среднее арифметическое элементов массива</li>
+                                <li><a href="#" class="array-topic" data-topic="median">Медиана массива</a></li>
+                                <li>Поиск максимального элемента</li>
+                                <li>Поиск минимального элемента</li>
+                                <li>Сумма элементов массива</li>
+                                <li>Вложенные циклы</li>
+                                <li><a href="#" class="array-topic" data-topic="selectionSort">Selection Sort</a></li>
+                                <li><a href="#" class="array-topic" data-topic="attendanceAnalysis">Практический пример анализа посещаемости</a></li>
+                            </ul>
 
-        <p>
-            Раздел находится в процессе наполнения.
-        </p>
-    `
-},
-                dom: {
-                    title: 'DOM',
-                    content: `
+                            <p>Раздел находится в процессе наполнения.</p>
+                    `,
+          },
+          dom: {
+            title: "DOM",
+            content: `
                         <p>DOM (Document Object Model) — это программный интерфейс для веб-документов.</p>
                         <p>Он представляет страницу так, что программа может изменять структуру документа, стиль и содержимое. DOM соединяет веб-страницу с языками сценариев.</p>
-                    `
-                },
-                events: {
-                    title: 'События',
-                    content: `
+                    `,
+          },
+          events: {
+            title: "События",
+            content: `
                         <p>События — это сигналы от браузера о том, что что-то произошло. Например, клик мыши, загрузка страницы и т.д.</p>
                         <p>JavaScript может реагировать на события с помощью обработчиков событий.</p>
-                    `
-                },
-                async: {
-                    title: 'Асинхронность',
-                    content: `
+                    `,
+          },
+          async: {
+            title: "Асинхронность",
+            content: `
                         <p>Асинхронное программирование позволяет выполнять операции без блокировки выполнения других операций.</p>
                         <p>В JavaScript используются Promise, async/await и callback-функции для работы с асинхронным кодом.</p>
-                    `
-                },
-                resources: {
-                    title: 'Полезные ресурсы',
-                    content: `
+                    `,
+          },
+          resources: {
+            title: "Полезные ресурсы",
+            content: `
                         <ul>
                             <li><a href="https://learn.javascript.ru/" target="_blank">Современный учебник JavaScript</a></li>
                             <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN Web Docs - JavaScript</a></li>
                             <li><a href="https://doka.guide/js/" target="_blank">Дока - JavaScript</a></li>
                             <li><a href="https://htmlacademy.ru/courses/343/run/17" target="_blank">HTML Academy - Основы JS</a></li>
                         </ul>
-                    `
-                }
-            };
+                    `,
+          },
+        };
 
-            // Данные подразделов массива
-const arraysContent = {
-    indexes: {
-        title: 'Индексы',
-        content: `
+        // Данные подразделов массива
+        const arraysContent = {
+          indexes: {
+            title: "Индексы",
+            content: `
             <p>
                 Индекс — это порядковый номер элемента массива.
             </p>
@@ -169,12 +198,12 @@ const arraysContent = {
             <p>
                 В JavaScript индексы начинаются с 0.
             </p>
-        `
-    },
+        `,
+          },
 
-    length: {
-        title: 'length',
-        content: `
+          length: {
+            title: "length",
+            content: `
             <p>
                 Свойство length показывает количество элементов массива.
             </p>
@@ -192,12 +221,12 @@ const arraysContent = {
             <pre><code>
             arr[arr.length - 1]
             </code></pre>
-    `
-},
+    `,
+          },
 
-push: {
-    title: 'push()',
-    content: `
+          push: {
+            title: "push()",
+            content: `
         <p>
             Метод push() добавляет элемент в конец массива.
         </p>
@@ -210,11 +239,11 @@ arr.push(3);
 console.log(arr);
 // [1, 2, 3]
         </code></pre>
-    `
-},
-  selectionSort: {
-    title: "Selection Sort — эволюция мышления",
-    content: `
+    `,
+          },
+          selectionSort: {
+            title: "Selection Sort — эволюция мышления",
+            content: `
         <h3>1. Поиск минимального элемента для позиции 0</h3>
 
         <p>
@@ -373,11 +402,11 @@ for (let i = 0; i < usersByDay.length - 1; i++) {
         <p>
             Ключевая идея: Не сортируем сразу — а постепенно “ставим минимальные элементы на свои места”.
         </p>
-    `
-},
-attendanceAnalysis: {
-    title: 'Практический пример анализа посещаемости',
-    content: `
+    `,
+          },
+          attendanceAnalysis: {
+            title: "Практический пример анализа посещаемости",
+            content: `
 
         <h3>Задача</h3>
 
@@ -649,92 +678,85 @@ if (...) {
 </ul>
 
 <p>Этот пример показывает, как отдельные темы объединяются в решение одной практической задачи.</p>
-    `
-}
+    `,
+          },
+        };
 
-};
+        /*
+        ==================================================
+        Отображение заметки подраздела массива
+        ==================================================
 
-/*
-==================================================
-Отображение заметки подраздела массива
-==================================================
+        Принимает ключ подраздела:
 
-Принимает ключ подраздела:
+        showArrayTopic('indexes')
 
-showArrayTopic('indexes')
+        и показывает соответствующую заметку
+        из объекта arraysContent.
+        */
 
-и показывает соответствующую заметку
-из объекта arraysContent.
-*/
+        function showArrayTopic(topic) {
+            
+          console.log("showArrayTopic вызвана");
 
-function showArrayTopic(topic) {
+          if (!arraysContent[topic]) {
+            return;
+          }
 
-     console.log('showArrayTopic вызвана');
+          const topicData = arraysContent[topic];
 
-    if (!arraysContent[topic]) {
-        return;
-    }
+          console.log(topicData);
 
-    const topicData = arraysContent[topic];
+          const topicContainer = document.getElementById("array-topic-content");
 
-    console.log(topicData);
+          console.log(topicContainer);
 
-    const topicContainer =
-        document.getElementById('array-topic-content');
+          if (!topicContainer) {
+            return;
+          }
 
+          console.log("Сейчас меняем содержимое");
 
- console.log(topicContainer);
-
-
-    if (!topicContainer) {
-        return;
-    }
-
-console.log('Сейчас меняем содержимое');
-
-    topicContainer.innerHTML = `
+          topicContainer.innerHTML = `
         <h2>${topicData.title}</h2>
         ${topicData.content}
     `;
-    console.log(topicContainer.innerHTML);
-}
+          console.log(topicContainer.innerHTML);
+        }
 
+        // Обработчик кликов по навигации
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (
+              this.href.endsWith("materials.html") ||
+              this.href.endsWith("tests.html")
+            ) {
+              // Если это ссылка на материалы или тесты, переходим на страницу
+              window.location.href = this.href;
+              return;
+            }
 
-            // Обработчик кликов по навигации
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.href.endsWith('materials.html') || this.href.endsWith('tests.html')) {
-                        // Если это ссылка на материалы или тесты, переходим на страницу
-                        window.location.href = this.href;
-                        return;
-                    }
+            e.preventDefault();
+            const section = this.getAttribute("data-section");
 
-                    e.preventDefault();
-                    const section = this.getAttribute('data-section');
+            // Убираем активный класс у всех ссылок
+            navLinks.forEach((l) => l.classList.remove("active"));
+            // Добавляем активный класс текущей ссылке
+            this.classList.add("active");
 
-                    // Убираем активный класс у всех ссылок
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    // Добавляем активный класс текущей ссылке
-                    this.classList.add('active');
+            // Показываем контент для выбранного раздела
+            showContent(section);
+          });
+        });
 
-                    // Показываем контент для выбранного раздела
-                    showContent(section);
-                });
-            });
+        // Функция отображения контента
+        function showContent(section) {
+          if (section && jsContent[section]) {
+            const sectionData = jsContent[section];
 
-            // Функция отображения контента
-           function showContent(section) {
-
-
-    if (section && jsContent[section]) {
-
-        const sectionData = jsContent[section];
-
-        // Особое отображение для раздела "Массивы"
-        if (section === 'arrays') {
-
-
-            contentContainer.innerHTML = `
+            // Особое отображение для раздела "Массивы"
+            if (section === "arrays") {
+              contentContainer.innerHTML = `
                 <h2>${sectionData.title}</h2>
 
                 <div class="arrays-layout">
@@ -751,23 +773,20 @@ console.log('Сейчас меняем содержимое');
                 </div>
             `;
 
-            return;
-        }
+              return;
+            }
 
-        // Отображение остальных разделов
-        contentContainer.innerHTML = `
+            // Отображение остальных разделов
+            contentContainer.innerHTML = `
             <h2>${sectionData.title}</h2>
             ${sectionData.content}
         `;
-
-    } else {
-
-        contentContainer.innerHTML =
-            '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
-
-    }
-}
-/*
+          } else {
+            contentContainer.innerHTML =
+              '<p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>';
+          }
+        }
+        /*
 ==================================================
 Обработчик подразделов внутри темы "Массивы"
 ==================================================
@@ -802,20 +821,19 @@ console.log('Сейчас меняем содержимое');
 Дата добавления:
 02 Июнь 2026
 */
-            document.addEventListener('click', function (event) {
-// Проверяем, что клик был именно по ссылке подраздела массива
-    if (!event.target.classList.contains('array-topic')) {
-        return;
-    }
-// Отменяем стандартное поведение ссылки
-    event.preventDefault();
-// Получаем название подраздела из data-topic
-    const topic = event.target.dataset.topic;
+        document.addEventListener("click", function (event) {
+          // Проверяем, что клик был именно по ссылке подраздела массива
+          if (!event.target.classList.contains("array-topic")) {
+            return;
+          }
+          // Отменяем стандартное поведение ссылки
+          event.preventDefault();
+          // Получаем название подраздела из data-topic
+          const topic = event.target.dataset.topic;
 
-
-    showArrayTopic(topic);
-});
+          showArrayTopic(topic);
         });
+      });
     </script>
-</body>
+  </body>
 </html>
