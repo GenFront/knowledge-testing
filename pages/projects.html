@@ -1219,6 +1219,65 @@ flightsVariantSecond
 для принятия решения.
 </p>
 <hr>
+<h3>Итоговое решение: Бонусные мили авиакомпании</h3>
+
+<pre><code>
+let calculateMiles = function (distance, isBusinessClass) {
+  console.log(typeof calculateMiles);
+
+  let percent = 0.18;
+
+  if (isBusinessClass) {
+    percent += 0.04;
+  }
+
+  if (distance > 3500) {
+    percent += 0.15;
+  }
+
+  return distance * percent;
+};
+
+let calculateFlights = function (distance, isBusinessClass, milesTarget) {
+  let miles = calculateMiles(distance, isBusinessClass);
+  let flights = Math.ceil(milesTarget / miles);
+  return flights;
+};
+
+let targets = [3000, 7500, 15000];
+
+for (let i = 0; i < targets.length; i++) {
+
+  let flightsVariantFirst =
+    calculateFlights(3118, true, targets[i]);
+
+  let flightsVariantSecond =
+    calculateFlights(3617, false, targets[i]);
+
+  console.log(
+    'Необходимое количество полётов в бизнес-классе до Валенсии: ' +
+    flightsVariantFirst
+  );
+
+  console.log(
+    'Необходимое количество полётов в экономе до Лиссабона: ' +
+    flightsVariantSecond
+  );
+
+  if (flightsVariantFirst > flightsVariantSecond) {
+    console.log(
+      'Быстрей накопишь полётами в экономе до Лиссабона! Количество полётов: ' +
+      flightsVariantSecond
+    );
+  } else {
+    console.log(
+      'Быстрей накопишь полётами в бизнесе до Валенсии! Количество полётов: ' +
+      flightsVariantFirst
+    );
+  }
+}
+</code></pre>
+<hr>
 
 <h3>Что я понял после решения</h3>
 
@@ -1259,6 +1318,227 @@ flightsVariantSecond
     </li>
 </ul>
     `
+},
+lunchMenuManager: {
+  title: "Lunch Menu Manager — система управления обедами",
+  content: `
+    <h3>1. Состояние (State)</h3>
+
+    <p>
+      Создаём массив, который хранит все блюда.
+      Это основа всей системы.
+    </p>
+
+    <pre><code>
+let lunches = [];
+    </code></pre>
+
+    <hr>
+
+    <h3>2. Добавление в конец (Create)</h3>
+
+    <p>Добавляем элемент в конец массива с помощью push().</p>
+
+    <pre><code>
+function addLunchToEnd(lunches, menuItem) {
+  lunches.push(menuItem);
+  return lunches;
+}
+    </code></pre>
+
+    <hr>
+
+    <h3>3. Добавление в начало (Create)</h3>
+
+    <p>Добавляем элемент в начало массива через unshift().</p>
+
+    <pre><code>
+function addLunchToStart(lunches, menuItem) {
+  lunches.unshift(menuItem);
+  return lunches;
+}
+    </code></pre>
+
+    <hr>
+
+    <h3>4. Удаление последнего элемента (Delete)</h3>
+
+    <p>pop() удаляет последний элемент и возвращает его.</p>
+
+    <pre><code>
+function removeLastLunch(lunches) {
+  let removedItem = lunches.pop();
+
+  if (removedItem === undefined) {
+    console.log("No lunches to remove.");
+  }
+
+  return lunches;
+}
+    </code></pre>
+
+    <hr>
+
+    <h3>5. Удаление первого элемента (Delete)</h3>
+
+    <p>shift() удаляет первый элемент массива.</p>
+
+    <pre><code>
+function removeFirstLunch(lunches) {
+  let removedItem = lunches.shift();
+
+  if (removedItem === undefined) {
+    console.log("No lunches to remove.");
+  }
+
+  return lunches;
+}
+    </code></pre>
+
+    <hr>
+
+    <h3>6. Случайный выбор (Algorithm)</h3>
+
+    <p>Генерация случайного индекса через Math.random().</p>
+
+    <pre><code>
+function getRandomLunch(lunches) {
+  let randomIndex = Math.floor(Math.random() * lunches.length);
+  let randomItem = lunches[randomIndex];
+
+  if (randomItem === undefined) {
+    console.log("No lunches available.");
+  }
+}
+    </code></pre>
+
+    <hr>
+
+    <h3>7. Вывод меню (Read)</h3>
+
+    <p>Отображение массива через join().</p>
+
+    <pre><code>
+function showLunchMenu(lunches) {
+  if (lunches.length > 0) {
+    console.log(lunches.join(", "));
+  }
+}
+    </code></pre>
+
+    <hr>
+
+    <p>
+      Мы получили мини-систему управления данными:
+      CRUD + случайный выбор + защита от пустых значений.
+    </p>
+    <h3>Итоговое решение</h3>
+
+<p>
+В результате была создана мини-система управления списком обедов.
+Система позволяет:
+</p>
+
+<ul>
+    <li>добавлять блюда в начало и конец списка;</li>
+    <li>удалять блюда из начала и конца списка;</li>
+    <li>случайным образом выбирать блюдо;</li>
+    <li>отображать текущее меню;</li>
+    <li>обрабатывать ситуации с пустым массивом.</li>
+</ul>
+
+<pre><code>
+let lunches = []; // состояние (mini database)
+
+function addLunchToEnd(lunches, menuItem) {
+  lunches.push(menuItem);
+
+  console.log(\`\${menuItem} added to the end of the lunch menu.\`);
+
+  return lunches;
+}
+
+function addLunchToStart(lunches, menuItem) {
+  lunches.unshift(menuItem);
+
+  console.log(\`\${menuItem} added to the start of the lunch menu.\`);
+
+  return lunches;
+}
+
+function removeLastLunch(lunches) {
+  let removedItem = lunches.pop();
+
+  if (removedItem === undefined) {
+    console.log("No lunches to remove.");
+  } else {
+    console.log(\`\${removedItem} removed from the end of the lunch menu.\`);
+  }
+
+  return lunches;
+}
+
+function removeFirstLunch(lunches) {
+  let removedItem = lunches.shift();
+
+  if (removedItem === undefined) {
+    console.log("No lunches to remove.");
+  } else {
+    console.log(\`\${removedItem} removed from the start of the lunch menu.\`);
+  }
+
+  return lunches;
+}
+
+function getRandomLunch(lunches) {
+  let randomIndex =
+    Math.floor(Math.random() * lunches.length);
+
+  let randomItem = lunches[randomIndex];
+
+  if (randomItem === undefined) {
+    console.log("No lunches available.");
+  } else {
+    console.log(
+      \`Randomly selected lunch: \${randomItem}\`
+    );
+  }
+}
+
+function showLunchMenu(lunches) {
+  if (lunches.length > 0) {
+    console.log(
+      \`Menu items: \${lunches.join(", ")}\`
+    );
+  } else {
+    console.log("The menu is empty.");
+  }
+}
+</code></pre>
+
+<p>
+В ходе решения были разобраны:
+</p>
+
+<ol>
+    <li>Создание и хранение состояния в массиве.</li>
+    <li>Операции CRUD для массива.</li>
+    <li>Методы push(), pop(), shift(), unshift().</li>
+    <li>Передача параметров в функции.</li>
+    <li>Возврат значений через return.</li>
+    <li>Проверка на undefined.</li>
+    <li>Использование свойства length.</li>
+    <li>Генерация случайного индекса через Math.random().</li>
+    <li>Округление индекса через Math.floor().</li>
+    <li>Преобразование массива в строку через join().</li>
+</ol>
+
+<p>
+Ключевая идея задачи:
+массив lunches выступает в роли состояния системы,
+а функции являются набором операций для управления этим состоянием.
+</p>
+  `
 }
         };
 
@@ -1299,6 +1579,7 @@ flightsVariantSecond
                         <ul>
                             <li><a href="#" class="task-topic" data-topic="qualificationJumps"> Квалификация по прыжкам</a></li>
                             <li><a href="#" class="task-topic" data-topic="airlineMiles"> Бонусные мили авиакомпании</a></li>
+                            <li><a href="#" class="task-topic" data-topic="lunchMenuManager"> Управление меню обедов</a></li>
                         </ul>
     `,
           },
