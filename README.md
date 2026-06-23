@@ -4,23 +4,49 @@
 
 ## Архитектура
 
+Проект построен по принципу **data-driven генерации**:
+
 ```
-JSON (data/tasks)  ──►  Handlebars-шаблон  ──►  Статические HTML
-                              │
-                    ES-модули (src/scripts/)
-                    ├── app.js           — роутер по классу <body>
-                    ├── navigation.js    — загрузка секций по клику
-                    ├── content-loader.js — рендеринг контента
-                    ├── task-viewer.js    — отображение задач
-                    └── search.js        — поиск по индексу
+src/templates/page.handlebars     # Единый шаблон
+         │
+tools/generate-pages.js           # Генератор HTML
+         │
+         ▼
+pages/*.html  ────────           # Статические страницы
+                            │
+src/data/*.json              │    # Данные тем (content, title)
+src/tasks/*.json              │   # Данные задач
+                            │
+         ▼                  ▼
+src/scripts/app.js  ───  src/scripts/navigation.js
+src/scripts/content-loader.js ─ src/scripts/task-viewer.js
+src/scripts/search.js
 ```
 
-**Принцип:**
-- Все HTML-страницы генерируются скриптом `tools/generate-pages.js`.
-- Данные и контент хранятся в JSON (`src/data/`, `src/tasks/`).
-- JavaScript-модули загружают JSON и рендерят его в DOM.
-- Навигация работает через `data-section` / `data-path` на ссылках.
-- Для работы модулей требуется HTTP-сервер (ES-модули не работают из `file://`).
+**Схема работы:**
+
+1. **Данные** — JSON-файлы в `src/data/` (секции тем) и `src/tasks/` (структурированные задачи).
+2. **Генерация** — `tools/generate-pages.js` читает шаблон `page.handlebars` + JSON и создаёт статические HTML-страницы в `pages/`.
+3. **Роутинг** — `app.js` определяет тип страницы по классу `<body>` и подключает нужные модули.
+4. **Навигация** — клик по ссылке с `data-section`/`data-path` загружает JSON-секцию и рендерит в DOM.
+5. **Поиск** — `generate-index.js` строит `search-index.json` из всех JSON-файлов.
+
+**Важно:** ES-модули не работают из `file://` (CORS). Для разработки используйте HTTP-сервер.
+
+---
+
+## Команды
+
+| Команда | Описание |
+|---|---|
+| `npm run build` | **Полная сборка:** страницы + поисковый индекс |
+| `npm run build:pages` | Генерация HTML-страниц из шаблона + JSON |
+| `npm run build:index` | Генерация поискового индекса `search-index.json` |
+| `npm run validate` | Проверка проекта: JSON, поля, ссылки |
+| `npm run lint:css` | Проверка CSS-стилей |
+| `npm run lint:css-fix` | Автоисправление CSS-стилей |
+
+---
 
 ## Развёртывание и использование
 
@@ -35,13 +61,33 @@ JSON (data/tasks)  ──►  Handlebars-шаблон  ──►  Статиче
 npm install
 ```
 
-### Генерация страниц
+### Полная сборка
 
 ```bash
-npm run build:pages
+npm run build
 ```
 
-Скрипт читает `src/templates/page.handlebars` + JSON-данные и записывает HTML-файлы в `pages/`.
+Эквивалентно последовательному запуску:
+
+```bash
+npm run build:pages    # генерирует HTML в pages/
+npm run build:index    # генерирует src/data/search-index.json
+```
+
+### Валидация
+
+```bash
+npm run validate
+```
+
+Проверяет:
+- Синтаксис всех JSON-файлов в `src/data/` и `src/tasks/`.
+- Наличие обязательных полей (`title`, `content` для секций; `id`, `title`, `difficulty`, `tags`, `date`, `content` для задач).
+- Теги задач — массив непустых строк.
+- Даты задач — формат `YYYY-MM-DD`.
+- Навигационные ссылки — все `href` указывают на существующие файлы.
+
+Завершается с `exit code 1` при любой ошибке (можно использовать в CI).
 
 ### Запуск локального сервера
 
@@ -53,39 +99,54 @@ python3 -m http.server 8080
 
 Открой `http://localhost:3000/app.html` в браузере.
 
-> **Важно:** ES-модули не работают при открытии `file://`. Всегда используйте HTTP-сервер.
+---
 
 ## Структура проекта
 
 ```
 ├── src/
-│   ├── data/               # Данные тем (html, css, js, tools, projects, materials, tests)
-│   ├── tasks/              # Данные задач (qualification-jumps, airline-miles, lunch-menu-manager)
-│   ├── scripts/            # ES-модули приложения
-│   │   ├── app.js          #   — единая точка входа (роутер по классу <body>)
-│   │   ├── navigation.js   #   — обработка кликов по навигации
-│   │   ├── content-loader.js # — рендеринг секций и задач из JSON
-│   │   ├── task-viewer.js  #   — отображение задачи в two-column layout
-│   │   └── search.js       #   — поиск по search-index.json
-│   └── templates/          # Handlebars-шаблоны
-│       └── page.handlebars #   — единый шаблон для всех страниц
-├── pages/                  # Сгенерированные HTML-страницы (7 шт.)
-├── tools/
-│   └── generate-pages.js   # Генератор страниц из шаблона + JSON
+│   ├── data/                          # Данные тем (7 JSON-файлов)
+│   │   ├── html.json                  #   — 8 секций (basics, tags, forms, ...)
+│   │   ├── css.json                   #   — 9 секций
+│   │   ├── js.json                    #   — 9 секций
+│   │   ├── tools.json                 #   — 8 секций
+│   │   ├── projects.json              #   — 8 секций (включая задачи)
+│   │   ├── materials.json             #   — 5 секций (учебные материалы)
+│   │   ├── tests.json                 #   — 5 секций (тесты)
+│   │   └── search-index.json          #   — поисковый индекс (авто-генерация)
+│   ├── tasks/                         # Данные задач (3 JSON-файла)
+│   │   ├── qualification-jumps.json
+│   │   ├── airline-miles.json
+│   │   └── lunch-menu-manager.json
+│   ├── scripts/                       # ES-модули приложения
+│   │   ├── app.js                     #   — единая точка входа
+│   │   ├── navigation.js              #   — навигация (data-section/data-path)
+│   │   ├── content-loader.js          #   — рендеринг из JSON в DOM
+│   │   ├── task-viewer.js             #   — two-column layout для задач
+│   │   └── search.js                  #   — поиск по search-index.json
+│   └── templates/
+│       └── page.handlebars            # Единый Handlebars-шаблон
+├── pages/                             # Сгенерированные HTML (7 файлов)
+├── tools/                             # Скрипты и утилиты
+│   ├── generate-pages.js              # Генератор страниц
+│   ├── generate-index.js              # Генератор поискового индекса
+│   └── validate.js                    # Валидация проекта
 ├── styles/
-│   └── style.css           # Единственный активный CSS
+│   └── style.css                      # Единственный активный CSS
 ├── css/
-│   └── normalize.css       # Normalize.css
-├── fonts/doc_fonts/        # Документация и шпаргалки (22 HTML-файла)
+│   └── normalize.css                  # Normalize.css
+├── fonts/doc_fonts/                   # Документация и шпаргалки (22 HTML-файла)
 ├── docs/
-│   └── Normalize.html      # Памятка по Normalize.css
-├── tests/                  # HTML-тесты (test-css, test-html)
-├── snippets/               # Шпаргалки (bootstrap-cheatsheet)
-├── images/                 # Иконки
-├── app.html                # Главная страница (карточки тем)
-├── index.html              # Редирект на app.html
-└── package.json            # npm-скрипты: build:pages, lint:css
+│   └── Normalize.html                 # Памятка по Normalize.css
+├── tests/                             # HTML-тесты (test-css, test-html)
+├── snippets/                          # Шпаргалки (bootstrap-cheatsheet)
+├── images/                            # Иконки
+├── app.html                           # Главная страница (карточки тем)
+├── index.html                         # Редирект на app.html
+└── package.json                       # npm-скрипты
 ```
+
+---
 
 ## Как добавить новую тему
 
@@ -102,8 +163,17 @@ python3 -m http.server 8080
      }
    }
    ```
-2. Зарегистрировать страницу в `tools/generate-pages.js` (массив `PAGES_CONFIG`).
-3. Выполнить `npm run build:pages`.
+2. Зарегистрировать страницу в `tools/generate-pages.js` (массив `PAGES_CONFIG`):
+   ```js
+   {
+     id: 'my-topic',
+     title: 'Моя тема',
+     navTitle: 'Моя тема',
+     jsonFile: 'src/data/my-topic.json',
+     pageType: 'topic-page',
+   },
+   ```
+3. Выполнить `npm run build`.
 
 Каждая секция автоматически станет пунктом навигации. Ключ объекта — значение `data-section`, путь к JSON — значение `data-path` в сгенерированной HTML-ссылке.
 
@@ -112,9 +182,11 @@ python3 -m http.server 8080
 "tasks": {
   "title": "Задачи",
   "layout": "two-column",
-  "content": "..."
+  "content": "<h3>Список задач</h3><ul>...</ul>"
 }
 ```
+
+---
 
 ## Как добавить новую задачу
 
@@ -127,7 +199,7 @@ python3 -m http.server 8080
      "tags": ["arrays", "loops"],
      "date": "2026-06-23",
      "content": [
-       { "type": "p", "text": "Описание задачи..." },
+       { "type": "paragraph", "text": "Описание задачи..." },
        { "type": "code", "text": "const x = 1;", "language": "javascript" },
        { "type": "list", "items": ["пункт 1", "пункт 2"], "ordered": false }
      ]
@@ -137,27 +209,24 @@ python3 -m http.server 8080
    ```html
    <li><a href="#" class="task-topic" data-topic="my-task">Моя задача</a></li>
    ```
+3. Выполнить `npm run build` (перегенерирует страницы и поисковый индекс).
 
 Поддерживаемые типы блоков контента:
 
-| type     | Поля                          | HTML-результат          |
-|----------|-------------------------------|-------------------------|
-| `p`      | `text`                        | `<p>`                   |
-| `h3`     | `text`                        | `<h3>`                  |
-| `code`   | `text`, `language`            | `<pre><code>`           |
-| `list`   | `items`, `ordered`            | `<ul>` / `<ol>`         |
-| `hr`     | —                             | `<hr>`                  |
+| type | Поля | HTML-результат |
+|---|---|---|
+| `paragraph` | `text` | `<p>` |
+| `heading` | `text`, `level` (по умолч. 3) | `<h2>` — `<h6>` |
+| `code` | `text`, `language` | `<pre><code class="language-...">` |
+| `list` | `items`, `ordered` | `<ul>` / `<ol>` |
+| `hr` | — | `<hr>` |
 
-## Команды
-
-| Команда | Описание |
-|---|---|
-| `npm run build:pages` | Сгенерировать все HTML-страницы |
-| `npm run lint:css` | Проверить CSS стили |
-| `npm run lint:css-fix` | Автоисправление CSS |
+---
 
 ## Технические заметки
 
-- Проект сугубо статический — не требует серверного рендеринга или сборщика (Vite/Parcel опционально).
-- При добавлении новой задачи проверьте, что `title` и `tags` не пустые — скрипт генерации индекса (`generate-index.js`, Фаза 6) при их отсутствии выведет ошибку, но сборку не сломает.
+- Проект сугубо статический — не требует серверного рендеринга или сборщика. Vite/Parcel можно добавить опционально для HMR.
+- Все JSON-файлы проходят валидацию при `npm run validate`. При добавлении данных убедитесь, что все обязательные поля заполнены.
+- `search-index.json` автоматически перестраивается при `npm run build`. При отсутствии `title` или `tags` задача попадает в индекс, но валидатор выдаст предупреждение.
 - Для поддержки CORS при разработке используйте `npx serve .` — он корректно обслуживает `type="module"`.
+- Handlebars-шаблон `page.handlebars` используется для генерации всех страниц. Изменение шаблона требует перезапуска `npm run build:pages`.
