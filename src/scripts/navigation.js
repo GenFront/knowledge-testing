@@ -76,6 +76,15 @@ export function initNavigation() {
   // -----------------------------------------------------------------------
   // Авто-открытие секции из hash при загрузке страницы
   // -----------------------------------------------------------------------
+  openSectionFromHash(navLinks);
+}
+
+/**
+ * Проверяет window.location.hash при загрузке страницы.
+ * Если хэш соответствует секции — открывает её (без задержки).
+ * Если хэша нет — открывает первый пункт меню.
+ */
+function openSectionFromHash(navLinks) {
   if (window.location.hash) {
     const hash = window.location.hash.slice(1);
     const targetLink = Array.from(navLinks).find(
@@ -84,16 +93,18 @@ export function initNavigation() {
         link.getAttribute('data-section') === hash.replace(/-/g, ''),
     );
     if (targetLink) {
-      // Вызываем клик после небольшой задержки, чтобы DOM успел инициализироваться
-      setTimeout(() => targetLink.click(), 100);
+      targetLink.click();
+      return;
     }
+    // Если хэш не соответствует ни одной секции (например, это хэш задачи) —
+    // ничего не делаем, task-viewer.js обработает сам
   } else {
     // Открываем первый пункт меню по умолчанию
     const firstLink = Array.from(navLinks).find(
       (link) => link.getAttribute('data-section') && link.getAttribute('data-path'),
     );
     if (firstLink) {
-      setTimeout(() => firstLink.click(), 100);
+      firstLink.click();
     }
   }
 }

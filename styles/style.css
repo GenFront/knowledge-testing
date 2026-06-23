@@ -102,6 +102,57 @@ body {
   box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.2);
 }
 
+/* ===== SEARCH RESULTS (TASK LINKS) ===== */
+.search-results {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+}
+
+.search-results-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results-list li {
+  margin-bottom: 0.25rem;
+}
+
+.search-result-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+  font-size: 0.95rem;
+}
+
+.search-result-link:hover {
+  background: var(--bg-primary);
+  text-decoration: underline;
+}
+
+.search-nothing {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
 /* ===== SIMPLE CARDS GRID ===== */
 .simple-cards-grid {
   display: grid;
