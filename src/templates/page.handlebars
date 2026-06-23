@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}} - Библиотека знаний</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body class="{{pageType}}">
+    <div class="container">
+      <div class="topic-layout">
+        <!-- Навигация -->
+        <nav class="topic-nav">
+          <h3>{{navTitle}}</h3>
+          <ul>
+            {{#each navItems}}
+            <li>
+              {{#if this.href}}
+              <!-- Ссылка на другую страницу -->
+              <a href="{{this.href}}" class="nav-link{{#if this.class}} {{this.class}}{{/if}}">
+                {{this.label}}
+              </a>
+              {{else}}
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="{{this.section}}" data-path="{{this.path}}">
+                {{this.label}}
+              </a>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
+        </nav>
+
+        <!-- Контент -->
+        <main class="topic-content">
+          <header class="topic-header">
+            <a href="../app.html" class="home-button">← Домой</a>
+            <h1>{{title}}</h1>
+          </header>
+
+          <div id="content-container">
+            {{{content}}}
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script type="module" src="../src/scripts/app.js"></script>
+  </body>
+</html>

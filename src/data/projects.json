@@ -1,0 +1,35 @@
+{
+  "practice": {
+    "title": "Практика",
+    "content": "<p>Практика — важнейшая часть обучения. Реальные проекты позволяют применить теоретические знания на практике.</p><p>Практика помогает закрепить навыки, выявить пробелы в знаниях и развить уверенность в своих силах.</p>"
+  },
+  "mentors": {
+    "title": "Frontendmentor",
+    "content": "<p>Frontendmentor — это платформа с реальными задачами для практики верстки и разработки.</p><p>Задачи различаются по уровню сложности и включают в себя макеты, требования и проверку решений.</p>"
+  },
+  "examples": {
+    "title": "Примеры проектов",
+    "content": "<p>Примеры проектов помогают понять, как различные технологии применяются в реальных условиях.</p><p>Изучение чужого кода и адаптация под свои нужды — отличный способ учиться.</p>"
+  },
+  "portfolio": {
+    "title": "Портфолио",
+    "content": "<p>Портфолио — это демонстрация ваших навыков и опыта потенциальным работодателям.</p><p>Хорошее портфолио должно содержать качественные проекты, демонстрирующие разнообразные навыки.</p>"
+  },
+  "tasks": {
+    "title": "Задачи",
+    "layout": "two-column",
+    "content": "<h3>Список задач</h3><ul><li><a href=\"#\" class=\"task-topic\" data-topic=\"qualificationJumps\">Квалификация по прыжкам</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"airlineMiles\">Бонусные мили авиакомпании</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"lunchMenuManager\">Управление меню обедов</a></li></ul>"
+  },
+  "collaboration": {
+    "title": "Совместная работа",
+    "content": "<p>Совместная работа над проектами развивает навыки командной разработки и взаимодействия.</p><p>Использование Git, GitHub Flow, code review и другие практики важны для успешной командной работы.</p>"
+  },
+  "deployment": {
+    "title": "Развертывание",
+    "content": "<p>Развертывание — это процесс публикации проекта в интернете для доступа к нему.</p><p>Популярные платформы для развертывания: Netlify, Vercel, GitHub Pages, Heroku.</p>"
+  },
+  "resources": {
+    "title": "Полезные ресурсы",
+    "content": "<ul><li><a href=\"https://www.frontendmentor.io/\" target=\"_blank\">Frontendmentor</a></li><li><a href=\"https://github.com/GenFront/htmlacademy-sedona\" target=\"_blank\">Проект Седона</a></li><li><a href=\"https://codewars.com/\" target=\"_blank\">Codewars</a></li><li><a href=\"https://github.com/topics/frontend-projects\" target=\"_blank\">GitHub - Frontend Projects</a></li><li><a href=\"https://roadmap.sh/frontend\" target=\"_blank\">Frontend Roadmap</a></li></ul>"
+  }
+}

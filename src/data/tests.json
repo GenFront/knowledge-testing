@@ -1,0 +1,22 @@
+{
+  "html": {
+    "title": "HTML — тесты",
+    "content": "<p>Проверьте свои знания по HTML.</p><ul><li><a href=\"../tests/test-html.html\" target=\"_blank\">Тест: основы HTML</a></li></ul>"
+  },
+  "css": {
+    "title": "CSS — тесты",
+    "content": "<p>Проверьте свои знания по CSS.</p><ul><li><a href=\"../tests/test-css.html\" target=\"_blank\">Тест: основы CSS</a></li></ul>"
+  },
+  "js": {
+    "title": "JavaScript — тесты",
+    "content": "<p>Проверьте свои знания по JavaScript.</p><ul><li><p class=\"placeholder-text\">Тесты в разработке</p></li></ul>"
+  },
+  "tools": {
+    "title": "Инструменты — тесты",
+    "content": "<p>Проверьте свои знания по инструментам.</p><ul><li><p class=\"placeholder-text\">Тесты в разработке</p></li></ul>"
+  },
+  "projects": {
+    "title": "Проекты — тесты",
+    "content": "<p>Проверьте свои знания по проектам.</p><ul><li><p class=\"placeholder-text\">Тесты в разработке</p></li></ul>"
+  }
+}

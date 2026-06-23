@@ -1,0 +1,38 @@
+{
+  "basics": {
+    "title": "Основы JavaScript",
+    "content": "<p>JavaScript — это язык программирования, который позволяет делать веб-сайты интерактивными.</p><p>JavaScript работает в браузере и может изменять содержимое HTML-страницы, стили и реагировать на действия пользователя.</p>"
+  },
+  "variables": {
+    "title": "Переменные",
+    "content": "<p>В JavaScript переменные объявляются с помощью ключевых слов var, let или const.</p><p>let и const были добавлены в ES6 и обеспечивают лучшее управление областью видимости.</p>"
+  },
+  "functions": {
+    "title": "Функции",
+    "content": "<p>Функции — это многократно используемые блоки кода, которые выполняют определенную задачу.</p><p>Функции могут принимать параметры и возвращать значения. Существуют различные способы объявления функций.</p>"
+  },
+  "objects": {
+    "title": "Объекты",
+    "content": "<p>Объекты в JavaScript — это коллекции пар ключ-значение. Они используются для хранения связанных данных и функций.</p><p>Объекты являются основой объектно-ориентированного программирования в JavaScript.</p>"
+  },
+  "arrays": {
+    "title": "Массивы",
+    "content": "<h3>Содержание</h3><ul><li>Что такое массив</li><li>Создание массива</li><li><a href=\"#\" class=\"array-topic\" data-topic=\"indexes\">Индексы</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"length\">length</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"push\">push()</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"pop\">pop()</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"shift\">shift()</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"unshift\">unshift()</a></li><li>Перебор массива через for</li><li>Сумма элементов массива</li><li>Четное и нечетное количество элементов в массиве</li><li>Среднее арифметическое элементов массива</li><li><a href=\"#\" class=\"array-topic\" data-topic=\"median\">Медиана массива</a></li><li>Поиск максимального элемента</li><li>Поиск минимального элемента</li><li>Сумма элементов массива</li><li>Вложенные циклы</li><li><a href=\"#\" class=\"array-topic\" data-topic=\"selectionSort\">Selection Sort</a></li><li><a href=\"#\" class=\"array-topic\" data-topic=\"attendanceAnalysis\">Практический пример анализа посещаемости</a></li></ul><p>Раздел находится в процессе наполнения.</p>"
+  },
+  "dom": {
+    "title": "DOM",
+    "content": "<p>DOM (Document Object Model) — это программный интерфейс для веб-документов.</p><p>Он представляет страницу так, что программа может изменять структуру документа, стиль и содержимое. DOM соединяет веб-страницу с языками сценариев.</p>"
+  },
+  "events": {
+    "title": "События",
+    "content": "<p>События — это сигналы от браузера о том, что что-то произошло. Например, клик мыши, загрузка страницы и т.д.</p><p>JavaScript может реагировать на события с помощью обработчиков событий.</p>"
+  },
+  "async": {
+    "title": "Асинхронность",
+    "content": "<p>Асинхронное программирование позволяет выполнять операции без блокировки выполнения других операций.</p><p>В JavaScript используются Promise, async/await и callback-функции для работы с асинхронным кодом.</p>"
+  },
+  "resources": {
+    "title": "Полезные ресурсы",
+    "content": "<ul><li><a href=\"https://learn.javascript.ru/\" target=\"_blank\">Современный учебник JavaScript</a></li><li><a href=\"https://developer.mozilla.org/ru/docs/Web/JavaScript\" target=\"_blank\">MDN Web Docs - JavaScript</a></li><li><a href=\"https://doka.guide/js/\" target=\"_blank\">Дока - JavaScript</a></li><li><a href=\"https://htmlacademy.ru/courses/343/run/17\" target=\"_blank\">HTML Academy - Основы JS</a></li></ul>"
+  }
+}

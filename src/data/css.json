@@ -1,0 +1,38 @@
+{
+  "ui-ux": {
+    "title": "UI / UX справочник",
+    "content": "<p>Этот раздел содержит практический справочник по UI / UX для фронтенд-разработчиков.</p><ol><li><a href=\"../fonts/doc_fonts/ui-ux-prakticheskiy-spravochnik.html\" class=\"external-link\" target=\"_blank\">UI/UX — практический справочник для фронтендера</a></li></ol>"
+  },
+  "basics": {
+    "title": "Основы CSS",
+    "content": "<p>CSS (Cascading Style Sheets) — это язык описания внешнего вида документа, написанного на языке разметки.</p><p>CSS используется для описания внешнего вида элементов веб-страницы: цвета, шрифта, размера, расстояния между элементами и т.д.</p>"
+  },
+  "selectors": {
+    "title": "Селекторы",
+    "content": "<p>Селекторы CSS определяют, к каким элементам HTML применяются стили. Существует множество типов селекторов.</p><p>Примеры: селекторы по тегу (p), по классу (.class), по ID (#id), псевдоклассы (:hover) и др.</p>"
+  },
+  "properties": {
+    "title": "Свойства",
+    "content": "<p>CSS-свойства определяют, как именно будут выглядеть элементы. Существует огромное количество свойств.</p><p>Примеры: color, background-color, font-size, margin, padding, border и многие другие.</p>"
+  },
+  "flexbox": {
+    "title": "Flexbox",
+    "content": "<p>Flexbox — это одномерная система макета, которая позволяет легко распределять пространство между элементами в контейнере.</p><p>Flexbox особенно полезен для создания адаптивных макетов, которые корректно работают на разных размерах экрана.</p>"
+  },
+  "grid": {
+    "title": "Grid",
+    "content": "<p>CSS Grid — это двумерная система макета, которая позволяет создавать сложные макеты с помощью строк и столбцов.</p><p>Grid идеально подходит для создания сложных макетов, где нужно контролировать как горизонтальное, так и вертикальное расположение элементов.</p>"
+  },
+  "positioning": {
+    "title": "Позиционирование",
+    "content": "<p>Свойство position позволяет контролировать, как элементы располагаются на странице.</p><p>Значения: static, relative, absolute, fixed, sticky.</p>"
+  },
+  "responsive": {
+    "title": "Адаптивность",
+    "content": "<p>Адаптивный дизайн позволяет веб-страницам корректно отображаться на устройствах с различными размерами экрана.</p><p>Используются медиа-запросы, гибкие единицы измерения и адаптивные макеты.</p>"
+  },
+  "resources": {
+    "title": "Полезные ресурсы",
+    "content": "<ul><li><a href=\"https://developer.mozilla.org/ru/docs/Web/CSS\" target=\"_blank\">MDN Web Docs - CSS</a></li><li><a href=\"https://doka.guide/css/\" target=\"_blank\">Дока - CSS</a></li><li><a href=\"https://html5book.ru/css-css3/\" target=\"_blank\">HTML5Book - CSS</a></li><li><a href=\"https://yoksel.github.io/flex-cheatsheet/\" target=\"_blank\">Интерактивный Flexbox справочник</a></li><li><a href=\"https://css-tricks.com/snippets/\" target=\"_blank\">CSS-Tricks</a></li></ul>"
+  }
+}

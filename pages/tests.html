@@ -1,46 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Тесты - Библиотека знаний</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="icon" href="data:,">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" href="data:," />
+  </head>
 
-<body class="topic-page">
+  <body class="tests-page">
     <div class="container">
-        <div class="topic-layout">
-            <!-- Навигация по темам -->
-            <nav class="topic-nav">
-                <h3>Темы</h3>
-                <ul>
-                    <li><a href="html.html" class="nav-link">HTML</a></li>
-                    <li><a href="css.html" class="nav-link">CSS</a></li>
-                    <li><a href="js.html" class="nav-link">JavaScript</a></li>
-                    <li><a href="tools.html" class="nav-link">Инструменты</a></li>
-                    <li><a href="projects.html" class="nav-link">Проекты</a></li>
-                </ul>
-            </nav>
+      <div class="topic-layout">
+        <!-- Навигация -->
+        <nav class="topic-nav">
+          <h3>Темы</h3>
+          <ul>
+            <li>
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="html" data-path="../src/data/tests.json">
+                HTML — тесты
+              </a>
+            </li>
+            <li>
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="css" data-path="../src/data/tests.json">
+                CSS — тесты
+              </a>
+            </li>
+            <li>
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="js" data-path="../src/data/tests.json">
+                JavaScript — тесты
+              </a>
+            </li>
+            <li>
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="tools" data-path="../src/data/tests.json">
+                Инструменты — тесты
+              </a>
+            </li>
+            <li>
+              <!-- Ссылка на секцию в JSON -->
+              <a href="#" class="nav-link" data-section="projects" data-path="../src/data/tests.json">
+                Проекты — тесты
+              </a>
+            </li>
+            <li>
+              <!-- Ссылка на другую страницу -->
+              <a href="materials.html" class="nav-link">
+                Учебные материалы
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-            <!-- Контент по тестам -->
-            <main class="topic-content">
-                <header class="topic-header">
-                    <a href="../index.html" class="home-button">← Домой</a>
-                    <h1>Тесты</h1>
-                </header>
-                
-                <div id="tests-container">
-                    <p class="placeholder-text">Выберите тему из навигации слева, чтобы увидеть соответствующие тесты</p>
-                </div>
-            </main>
-        </div>
+        <!-- Контент -->
+        <main class="topic-content">
+          <header class="topic-header">
+            <a href="../app.html" class="home-button">← Домой</a>
+            <h1>Тесты</h1>
+          </header>
+
+          <div id="content-container">
+            <p class="placeholder-text">Выберите раздел из навигации слева, чтобы увидеть соответствующую информацию</p>
+          </div>
+        </main>
+      </div>
     </div>
 
-    <!-- Подключение Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="../scripts/search.js"></script>
-</body>
+    <script type="module" src="../src/scripts/app.js"></script>
+  </body>
 </html>
