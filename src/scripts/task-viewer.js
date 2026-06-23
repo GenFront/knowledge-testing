@@ -27,6 +27,7 @@ const TASK_MAP = {
   qualificationJumps: '../src/tasks/qualification-jumps.json',
   airlineMiles: '../src/tasks/airline-miles.json',
   lunchMenuManager: '../src/tasks/lunch-menu-manager.json',
+  diceGameCats: '../src/tasks/dice-game-cats.json',
 };
 
 // ────────────────────────────────────────────────────

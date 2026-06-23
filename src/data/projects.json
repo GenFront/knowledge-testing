@@ -18,7 +18,7 @@
   "tasks": {
     "title": "Задачи",
     "layout": "two-column",
-    "content": "<h3>Список задач</h3><ul><li><a href=\"#\" class=\"task-topic\" data-topic=\"qualificationJumps\">Квалификация по прыжкам</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"airlineMiles\">Бонусные мили авиакомпании</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"lunchMenuManager\">Управление меню обедов</a></li></ul>"
+    "content": "<h3>Список задач</h3><ul><li><a href=\"#\" class=\"task-topic\" data-topic=\"qualificationJumps\">Квалификация по прыжкам</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"airlineMiles\">Бонусные мили авиакомпании</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"lunchMenuManager\">Управление меню обедов</a></li><li><a href=\"#\" class=\"task-topic\" data-topic=\"diceGameCats\">Игра в кости между котами</a></li></ul>"
   },
   "collaboration": {
     "title": "Совместная работа",

@@ -32,11 +32,25 @@
   },
   {
     "title": "Задачи",
-    "content": "Список задач Квалификация по прыжкам Бонусные мили авиакомпании Управление меню обедов",
+    "content": "Список задач Квалификация по прыжкам Бонусные мили авиакомпании Управление меню обедов Игра в кости между котами",
     "category": "projects",
     "tags": [],
     "path": "projects.html#tasks",
     "type": "topic"
+  },
+  {
+    "title": "Игра в кости между котами",
+    "content": "Сначала создаются правила игры. Для этого используется объект gameRuleset.",
+    "category": "projects",
+    "tags": [
+      "objects",
+      "arrays",
+      "functions",
+      "loops",
+      "decomposition"
+    ],
+    "path": "projects.html#diceGameCats",
+    "type": "task"
   },
   {
     "title": "Инструменты — материалы",
