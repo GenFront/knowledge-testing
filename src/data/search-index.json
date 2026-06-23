@@ -1,0 +1,464 @@
+[
+  {
+    "title": "Адаптивность",
+    "content": "Адаптивный дизайн позволяет веб-страницам корректно отображаться на устройствах с различными размерами экрана.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#responsive",
+    "type": "topic"
+  },
+  {
+    "title": "Асинхронность",
+    "content": "Асинхронное программирование позволяет выполнять операции без блокировки выполнения других операций.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#async",
+    "type": "topic"
+  },
+  {
+    "title": "Бонусные мили авиакомпании",
+    "content": "В процессе решения были разобраны:",
+    "category": "projects",
+    "tags": [
+      "functions",
+      "decomposition",
+      "arrays",
+      "loops",
+      "math-ceil",
+      "if-else"
+    ],
+    "path": "projects.html#airline-miles",
+    "type": "task"
+  },
+  {
+    "title": "Задачи",
+    "content": "Список задач Квалификация по прыжкам Бонусные мили авиакомпании Управление меню обедов",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#tasks",
+    "type": "topic"
+  },
+  {
+    "title": "Инструменты — материалы",
+    "content": "Документация Пути и ссылки Чеклист разработчика Заметки по шрифтам Библиотеки иконок Fallback-стратегии Ресурсы Pro Git (рус.) VS Code Docs Frontend Roadmap Bootstrap Cheatsheet",
+    "category": "materials",
+    "tags": [],
+    "path": "materials.html#tools",
+    "type": "topic"
+  },
+  {
+    "title": "Инструменты — тесты",
+    "content": "Проверьте свои знания по инструментам.",
+    "category": "tests",
+    "tags": [],
+    "path": "tests.html#tools",
+    "type": "topic"
+  },
+  {
+    "title": "Квалификация по прыжкам",
+    "content": "Практическая задача по массивам, сортировке и среднему арифметическому.",
+    "category": "projects",
+    "tags": [
+      "arrays",
+      "sorting",
+      "selection-sort",
+      "average"
+    ],
+    "path": "projects.html#qualification-jumps",
+    "type": "task"
+  },
+  {
+    "title": "Массивы",
+    "content": "Раздел находится в процессе наполнения.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#arrays",
+    "type": "topic"
+  },
+  {
+    "title": "Объекты",
+    "content": "Объекты в JavaScript — это коллекции пар ключ-значение. Они используются для хранения связанных данных и функций.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#objects",
+    "type": "topic"
+  },
+  {
+    "title": "Основы CSS",
+    "content": "CSS (Cascading Style Sheets) — это язык описания внешнего вида документа, написанного на языке разметки.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#basics",
+    "type": "topic"
+  },
+  {
+    "title": "Основы HTML",
+    "content": "HTML (HyperText Markup Language) — это язык гипертекстовой разметки, стандартный для документов, предназначенных для отображения в браузере.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#basics",
+    "type": "topic"
+  },
+  {
+    "title": "Основы JavaScript",
+    "content": "JavaScript — это язык программирования, который позволяет делать веб-сайты интерактивными.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#basics",
+    "type": "topic"
+  },
+  {
+    "title": "Отладка",
+    "content": "Отладка — это процесс поиска и устранения ошибок в коде.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#debug",
+    "type": "topic"
+  },
+  {
+    "title": "Переменные",
+    "content": "В JavaScript переменные объявляются с помощью ключевых слов var, let или const.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#variables",
+    "type": "topic"
+  },
+  {
+    "title": "Позиционирование",
+    "content": "Свойство position позволяет контролировать, как элементы располагаются на странице.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#positioning",
+    "type": "topic"
+  },
+  {
+    "title": "Полезные ресурсы",
+    "content": "MDN Web Docs - CSS Дока - CSS HTML5Book - CSS Интерактивный Flexbox справочник CSS-Tricks",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#resources",
+    "type": "topic"
+  },
+  {
+    "title": "Полезные ресурсы",
+    "content": "MDN Web Docs - HTML HTML5Book - HTML Дока - HTML HTML Academy - Разметка текста",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#resources",
+    "type": "topic"
+  },
+  {
+    "title": "Полезные ресурсы",
+    "content": "Современный учебник JavaScript MDN Web Docs - JavaScript Дока - JavaScript HTML Academy - Основы JS",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#resources",
+    "type": "topic"
+  },
+  {
+    "title": "Полезные ресурсы",
+    "content": "Frontendmentor Проект Седона Codewars GitHub - Frontend Projects Frontend Roadmap",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#resources",
+    "type": "topic"
+  },
+  {
+    "title": "Полезные ресурсы",
+    "content": "Pro Git (русская версия) Документация VS Code 15 команд Git DevTools - подробное руководство Chrome DevTools Documentation",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#resources",
+    "type": "topic"
+  },
+  {
+    "title": "Портфолио",
+    "content": "Портфолио — это демонстрация ваших навыков и опыта потенциальным работодателям.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#portfolio",
+    "type": "topic"
+  },
+  {
+    "title": "Практика",
+    "content": "Практика — важнейшая часть обучения. Реальные проекты позволяют применить теоретические знания на практике.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#practice",
+    "type": "topic"
+  },
+  {
+    "title": "Примеры проектов",
+    "content": "Примеры проектов помогают понять, как различные технологии применяются в реальных условиях.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#examples",
+    "type": "topic"
+  },
+  {
+    "title": "Проекты — материалы",
+    "content": "Документация Пути и ссылки в проектах Sticky Footer — реализация Ресурсы Frontendmentor Codewars GitHub — Frontend Projects",
+    "category": "materials",
+    "tags": [],
+    "path": "materials.html#projects",
+    "type": "topic"
+  },
+  {
+    "title": "Проекты — тесты",
+    "content": "Проверьте свои знания по проектам.",
+    "category": "tests",
+    "tags": [],
+    "path": "tests.html#projects",
+    "type": "topic"
+  },
+  {
+    "title": "Развертывание",
+    "content": "Развертывание — это процесс публикации проекта в интернете для доступа к нему.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#deployment",
+    "type": "topic"
+  },
+  {
+    "title": "Сборщики",
+    "content": "Сборщики модулей автоматизируют задачи разработки: объединение файлов, минификация, транспиляция и т.д.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#build",
+    "type": "topic"
+  },
+  {
+    "title": "Свойства",
+    "content": "CSS-свойства определяют, как именно будут выглядеть элементы. Существует огромное количество свойств.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#properties",
+    "type": "topic"
+  },
+  {
+    "title": "Селекторы",
+    "content": "Селекторы CSS определяют, к каким элементам HTML применяются стили. Существует множество типов селекторов.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#selectors",
+    "type": "topic"
+  },
+  {
+    "title": "Семантика",
+    "content": "Семантическая разметка — это использование HTML-элементов по их прямому назначению, что улучшает доступность и SEO.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#semantics",
+    "type": "topic"
+  },
+  {
+    "title": "События",
+    "content": "События — это сигналы от браузера о том, что что-то произошло. Например, клик мыши, загрузка страницы и т.д.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#events",
+    "type": "topic"
+  },
+  {
+    "title": "Совместная работа",
+    "content": "Совместная работа над проектами развивает навыки командной разработки и взаимодействия.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#collaboration",
+    "type": "topic"
+  },
+  {
+    "title": "Ссылки",
+    "content": "Ссылки (гиперссылки) позволяют пользователям перемещаться между страницами. Они создаются с помощью тега <a> .",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#links",
+    "type": "topic"
+  },
+  {
+    "title": "Сущности",
+    "content": "HTML-сущности — это специальные символы, которые имеют особое значение в HTML и должны быть экранированы.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#entities",
+    "type": "topic"
+  },
+  {
+    "title": "Таблицы",
+    "content": "HTML-таблицы используются для представления табличных данных. Они состоят из строк и столбцов ячеек.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#tables",
+    "type": "topic"
+  },
+  {
+    "title": "Теги и атрибуты",
+    "content": "HTML-теги — это элементы языка, определяющие структуру и содержание веб-страницы. Атрибуты предоставляют дополнительную информацию об элементе.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#tags",
+    "type": "topic"
+  },
+  {
+    "title": "Терминал",
+    "content": "Терминал — это текстовый интерфейс для взаимодействия с операционной системой.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#terminal",
+    "type": "topic"
+  },
+  {
+    "title": "Тестирование",
+    "content": "Тестирование — это процесс проверки корректности работы кода.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#testing",
+    "type": "topic"
+  },
+  {
+    "title": "Формы",
+    "content": "HTML-формы позволяют пользователям вводить данные, которые затем могут быть отправлены на сервер для обработки.",
+    "category": "html",
+    "tags": [],
+    "path": "html.html#forms",
+    "type": "topic"
+  },
+  {
+    "title": "Функции",
+    "content": "Функции — это многократно используемые блоки кода, которые выполняют определенную задачу.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#functions",
+    "type": "topic"
+  },
+  {
+    "title": "CSS — материалы",
+    "content": "Документация Box model — памятка Высоты, Flexbox, Grid, переменные Flexbox шпаргалка Grid + Flex шпаргалка Классические макеты px vs rem (2026) Margin: auto + Sticky Footer UI/UX — практический справо",
+    "category": "materials",
+    "tags": [],
+    "path": "materials.html#css",
+    "type": "topic"
+  },
+  {
+    "title": "CSS — тесты",
+    "content": "Проверьте свои знания по CSS.",
+    "category": "tests",
+    "tags": [],
+    "path": "tests.html#css",
+    "type": "topic"
+  },
+  {
+    "title": "DevTools",
+    "content": "Инструменты разработчика (DevTools) — это набор инструментов для отладки и анализа веб-страниц.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#devtools",
+    "type": "topic"
+  },
+  {
+    "title": "DOM",
+    "content": "DOM (Document Object Model) — это программный интерфейс для веб-документов.",
+    "category": "js",
+    "tags": [],
+    "path": "js.html#dom",
+    "type": "topic"
+  },
+  {
+    "title": "Flexbox",
+    "content": "Flexbox — это одномерная система макета, которая позволяет легко распределять пространство между элементами в контейнере.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#flexbox",
+    "type": "topic"
+  },
+  {
+    "title": "Frontendmentor",
+    "content": "Frontendmentor — это платформа с реальными задачами для практики верстки и разработки.",
+    "category": "projects",
+    "tags": [],
+    "path": "projects.html#mentors",
+    "type": "topic"
+  },
+  {
+    "title": "Git и GitHub",
+    "content": "Git — это распределённая система управления версиями файлов. GitHub — это веб-платформа для хостинга проектов, использующих Git.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#git",
+    "type": "topic"
+  },
+  {
+    "title": "Grid",
+    "content": "CSS Grid — это двумерная система макета, которая позволяет создавать сложные макеты с помощью строк и столбцов.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#grid",
+    "type": "topic"
+  },
+  {
+    "title": "HTML — материалы",
+    "content": "Документация Основы HTML — шпаргалка Семантическая разметка Семантика — интерактив Семантические изображения Ресурсы MDN Web Docs — HTML Дока — HTML HTML Academy",
+    "category": "materials",
+    "tags": [],
+    "path": "materials.html#html",
+    "type": "topic"
+  },
+  {
+    "title": "HTML — тесты",
+    "content": "Проверьте свои знания по HTML.",
+    "category": "tests",
+    "tags": [],
+    "path": "tests.html#html",
+    "type": "topic"
+  },
+  {
+    "title": "JavaScript — материалы",
+    "content": "Документация Типы данных Отладка JS — шпаргалка React — структура проекта Ресурсы Современный учебник JavaScript MDN Web Docs — JavaScript Дока — JavaScript",
+    "category": "materials",
+    "tags": [],
+    "path": "materials.html#js",
+    "type": "topic"
+  },
+  {
+    "title": "JavaScript — тесты",
+    "content": "Проверьте свои знания по JavaScript.",
+    "category": "tests",
+    "tags": [],
+    "path": "tests.html#js",
+    "type": "topic"
+  },
+  {
+    "title": "Lunch Menu Manager — система управления обедами",
+    "content": "Создаём массив, который хранит все блюда. Это основа всей системы.",
+    "category": "projects",
+    "tags": [
+      "arrays",
+      "crud",
+      "push",
+      "pop",
+      "shift",
+      "unshift",
+      "math-random",
+      "join",
+      "state-management"
+    ],
+    "path": "projects.html#lunch-menu-manager",
+    "type": "task"
+  },
+  {
+    "title": "UI / UX справочник",
+    "content": "Этот раздел содержит практический справочник по UI / UX для фронтенд-разработчиков.",
+    "category": "css",
+    "tags": [],
+    "path": "css.html#ui-ux",
+    "type": "topic"
+  },
+  {
+    "title": "VS Code",
+    "content": "Visual Studio Code — это мощный редактор кода с поддержкой множества языков программирования.",
+    "category": "tools",
+    "tags": [],
+    "path": "tools.html#vscode",
+    "type": "topic"
+  }
+]

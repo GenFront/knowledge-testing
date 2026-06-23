@@ -1,6 +1,9 @@
 {
   "scripts": {
     "build:pages": "node tools/generate-pages.js",
+    "build:index": "node tools/generate-index.js",
+    "build": "npm run build:pages && npm run build:index",
+    "validate": "node tools/validate.js",
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:css-fix": "stylelint \"**/*.{css,scss}\" --fix"
   },
