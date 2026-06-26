@@ -156,7 +156,180 @@
 {
   "type": "code",
   "text": "cats[2]\n↓\n{ name: 'Рокки', points: 0 }\n↓\n.name\n↓\n'Рокки'"
+},
+{
+  "type": "heading",
+  "level": 3,
+  "text": "4. Функция броска кубика"
+},
+{
+  "type": "paragraph",
+  "text": "Следующая часть программы отвечает за получение результата броска кубика."
+},
+{
+  "type": "code",
+  "language": "javascript",
+  "text": "function throwDice(min, max) {\n  return 7;\n}"
+},
+{
+  "type": "paragraph",
+  "text": "В учебной задаче функция упрощена. Независимо от переданных параметров она всегда возвращает число 7."
+},
+{
+  "type": "paragraph",
+  "text": "Это позволяет сосредоточиться на архитектуре программы и взаимодействии функций, не отвлекаясь на генерацию случайных чисел."
+},
+{
+  "type": "code",
+  "text": "throwDice(1, 6)\n↓\n7"
+},
+{
+  "type": "code",
+  "text": "throwDice(100, 500)\n↓\n7"
+},
+{
+  "type": "paragraph",
+  "text": "Сейчас параметры min и max ещё не используются внутри функции."
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Что я понял после этого шага"
+},
+{
+  "type": "paragraph",
+  "text": "Функция может принимать параметры, но не использовать их. В данном примере функция всегда возвращает одно и то же значение через return."
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Вопросы для закрепления"
+},
+{
+  "type": "list",
+  "ordered": true,
+  "items": [
+    "Что вернёт выражение throwDice(1, 6)?",
+    "Что вернёт выражение throwDice(100, 500)?",
+    "Каким образом функция возвращает значение?",
+    "Что произойдёт, если убрать return из функции?"
+  ]
+},
+{
+  "type": "paragraph",
+  "text": "Переменная throwResult хранит результат одного броска кубика. Игровые очки игрока хранятся отдельно в свойстве points объекта игрока."
+},
+{
+  "type": "heading",
+  "level": 3,
+  "text": "5. Проведение игры"
+},
+{
+  "type": "paragraph",
+  "text": "Функция runGame отвечает за проведение игры. Именно здесь игроки выполняют броски кубика и получают игровые очки."
+},
+{
+  "type": "code",
+  "language": "javascript",
+  "text": "let runGame = function (ruleset, players) {\n\n  for (\n    let currentAttempt = 1;\n    currentAttempt <= ruleset.maxAttempts;\n    currentAttempt++\n  ) {\n\n    for (let i = 0; i < players.length; i++) {\n\n      let throwResult = throwDice(\n        ruleset.diceNumber,\n        ruleset.diceNumber * 6\n      );\n\n      players[i].points += throwResult;\n\n      console.log(\n        players[i].name +\n        ' выбросил ' +\n        players[i].points\n      );\n    }\n  }\n\n  return players;\n};"
+},
+{
+  "type": "paragraph",
+  "text": "Внешний цикл отвечает за количество попыток."
+},
+{
+  "type": "code",
+  "text": "for (\n  let currentAttempt = 1;\n  currentAttempt <= ruleset.maxAttempts;\n  currentAttempt++\n)"
+},
+{
+  "type": "paragraph",
+  "text": "Сейчас значение maxAttempts равно 1, поэтому цикл выполнится только один раз."
+},
+{
+  "type": "paragraph",
+  "text": "Внутренний цикл перебирает всех игроков массива players."
+},
+{
+  "type": "code",
+  "text": "for (let i = 0; i < players.length; i++)"
+},
+{
+  "type": "code",
+  "text": "Попытка №1\n├── Кекс\n├── Рудольф\n└── Рокки"
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Что я понял после этого шага"
+},
+{
+  "type": "paragraph",
+  "text": "Внешний цикл управляет количеством игровых раундов, а внутренний цикл перебирает игроков. Такое сочетание циклов называется вложенными циклами."
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Вопросы для закрепления"
+},
+{
+  "type": "list",
+  "ordered": true,
+  "items": [
+    "За что отвечает внешний цикл?",
+    "За что отвечает внутренний цикл?",
+    "Сколько раз выполнится внешний цикл при maxAttempts = 3?",
+    "Сколько раз выполнится внутренний цикл при трёх игроках?",
+    "Почему в этой задаче используются вложенные циклы?"
+  ]
+},
+{
+  "type": "paragraph",
+  "text": "При работе с вложенными циклами общее количество выполнений внутреннего действия можно вычислить как произведение количества итераций внешнего и внутреннего циклов."
+},
+{
+  "type": "code",
+  "text": "2 попытки × 3 игрока = 6 начислений очков\n\n5 попыток × 3 игрока = 15 начислений очков"
+},
+{
+  "type": "heading",
+  "level": 3,
+  "text": "6. Начисление очков игрокам"
+},
+{
+  "type": "paragraph",
+  "text": "После получения результата броска программа добавляет очки текущему игроку."
+},
+{
+  "type": "code",
+  "language": "javascript",
+  "text": "let throwResult = throwDice(\n  ruleset.diceNumber,\n  ruleset.diceNumber * 6\n);\n\nplayers[i].points += throwResult;"
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Что я понял после этого шага"
+},
+{
+  "type": "paragraph",
+  "text": "Массив хранит объекты игроков. Когда изменяется свойство points, изменяется сам объект внутри массива. Поэтому после завершения игры массив players уже содержит обновлённые результаты."
+},
+{
+  "type": "heading",
+  "level": 4,
+  "text": "Вопросы для закрепления"
+},
+{
+  "type": "list",
+  "ordered": true,
+  "items": [
+    "Что хранится в переменной throwResult?",
+    "Чем отличается players[i] от players[i].points?",
+    "Почему запись += можно заменить на полную форму присваивания?",
+    "Что произойдёт с объектом игрока после выполнения players[i].points += throwResult?",
+    "Изменяется ли объект внутри массива или создаётся новый?"
+  ]
 }
+
 ]
   
 }
